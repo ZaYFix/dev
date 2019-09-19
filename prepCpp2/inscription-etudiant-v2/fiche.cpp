@@ -8,13 +8,12 @@
 Fiche fiches[FICHES_MAX];
 unsigned int nbFemmes = 0;
 unsigned int positionPlusJeuneEleve = 0;
+unsigned int nbFiches = 0;
 
 using namespace std;
 
 void inscrireEtudiants()
-{
-    unsigned int nbFiches = 0;
-    
+{   
     do
     {
         cin >> nbFiches;
@@ -39,9 +38,9 @@ void inscrireEtudiants()
             fiches[i].nom[j] = tolower(fiches[i].nom[j]);
             fiches[i].prenom[j] = tolower(fiches[i].prenom[j]);
         }
-        rechercherPlusJeune(unsigned int i);
+        //rechercherPlusJeune(unsigned int i);
     }
-    afficherListeEtudiant();
+    //afficherListeEtudiant();
 }
 
 int rechercherPlusJeune(unsigned int i)
