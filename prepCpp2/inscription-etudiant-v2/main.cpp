@@ -1,12 +1,11 @@
 #include <iostream>
 #include <ctype.h>
 #include "fiche.h"
-
 using namespace std;
 
 int main()
 {
     inscrireEtudiants();
-    //afficherListeEtudiant();
+    afficherListeEtudiant();
     return 0;
 }
