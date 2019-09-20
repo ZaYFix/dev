@@ -16,13 +16,17 @@
 
 #include "mastermind.h"
 
+#define REDONDANCE 1
+#define TAILLE_CODE 5
+#define ESSAIS_MAX 12
+
 // Programme principal
 int main() 
 {
     // TODO :
     
     // 1. Instancier un objet de type Mastermind en utilisant le constructeur par défaut
-    Mastermind mastermind(1,5,12);
+    Mastermind mastermind(REDONDANCE, TAILLE_CODE, ESSAIS_MAX);
     
     // Avant de jouer, il est conseillé d'afficher les règles du jeu
     mastermind.usage();
