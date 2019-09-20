@@ -50,9 +50,9 @@ void reecriture(unsigned int i)
 void compterFemmes(unsigned int i)
 {
     if((fiches[i].sexe == SEXE_FEMININ_MINUSCULE) || ( fiches[i].sexe == SEXE_FEMININ_MAJUSCULE))
-        {
-            nbFemmes++;
-        }
+    {
+        nbFemmes++;
+    }
 }
 
 int rechercherPlusJeune(unsigned int i, unsigned int nbFiches)
@@ -60,13 +60,13 @@ int rechercherPlusJeune(unsigned int i, unsigned int nbFiches)
     unsigned int plusJeuneEleve = fiches[0].age;
             
     for(unsigned int i = 0; i < nbFiches;i++)
+    {
+        if(plusJeuneEleve > fiches[i].age)
         {
-            if(plusJeuneEleve > fiches[i].age)
-            {
-                plusJeuneEleve = fiches[i].age;
-                positionPlusJeuneEleve = i;
-            }
+            plusJeuneEleve = fiches[i].age;
+            positionPlusJeuneEleve = i;
         }
+    }
     return positionPlusJeuneEleve;
 }
 

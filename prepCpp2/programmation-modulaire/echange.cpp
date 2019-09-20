@@ -1,8 +1,7 @@
 #include "echange.h"
-
 using namespace std;
 
-// Echange par Adresse
+// Échange par Adresse
 void echange2ParAdresse(float *pa, float *pb)
 {
     float variableEchange = 0.0;
@@ -21,7 +20,7 @@ void ordonne3(float *pa, float *pb, float *pc)
     echange2ParAdresse(pa,pb);
 }
 
-// Echange par Reference
+// Échange par Référence
 void echange2ParReference(float &a, float &b)
 {
     float variableEchange = 0.0;
