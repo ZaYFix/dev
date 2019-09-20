@@ -12,7 +12,7 @@ TARGET := vendanges
 HEADERFILES	:= $(wildcard *.h)
 SRCFILES	:= $(wildcard *.cpp)
 #OBJFILES	:= $(patsubst %.cpp, %.o, $(SRCFILES))
-OBJFILES := main-v2.o robot.o
+OBJFILES := main.o robot.o
 
 ifndef VERSION
 VERSION = RELEASE
@@ -38,7 +38,7 @@ $(TARGET): $(OBJFILES)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean: 
-	$(RM) -f $(TARGET) main-v2.o *~
+	$(RM) -f $(TARGET) main.o *~
 
 dep:
 	$(MAKEDEP) $(CFLAGS) -Y -s "# Dependances by 'make dep'" *.cpp 2> /dev/null
@@ -46,4 +46,4 @@ dep:
 # Dependances by 'make dep'
 
 robot.o: robot.h
-main-v2.o: robot.h
+main.o: robot.h
