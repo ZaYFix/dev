@@ -12,8 +12,6 @@
 // Auteur : Ackermann Théo (theoackrm@gmail.com)
 // Etablissement : LT LA SALLE Avignon
 //
-// 
-// test v2
 //==============================================================
 
 #include "mastermind.h"
