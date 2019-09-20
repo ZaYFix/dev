@@ -10,8 +10,6 @@ int main()
     float c = 0.0;
     
     //echange2ParAdresse(&a,&b);
-    ordonne3(a, b, c);
-    cout << a << " < " << b << " < " << c << endl;
     ordonne3(&a,&b,&c);
     cout << a << " < " << b << " < " << c << endl;
     
