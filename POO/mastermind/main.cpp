@@ -13,7 +13,7 @@
 // Etablissement : LT LA SALLE Avignon
 //
 // 
-// test
+// test v2
 //==============================================================
 
 #include "mastermind.h"
