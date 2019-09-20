@@ -40,7 +40,7 @@ void reecriture(unsigned int i)
     fiches[i].prenom[0] = toupper(fiches[i].prenom[0]);
 
     // Réécriture minuscule
-    for(unsigned int j=1;j< CHAR_MAX;j++)
+    for(unsigned int j=1; fiches[i].nom[j] != CARACTERE_NUL ;j++)
     {
         fiches[i].nom[j] = tolower(fiches[i].nom[j]);
         fiches[i].prenom[j] = tolower(fiches[i].prenom[j]);

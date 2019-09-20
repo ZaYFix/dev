@@ -5,6 +5,7 @@
 #define CHAR_MAX 50
 #define SEXE_FEMININ_MAJUSCULE 'F'
 #define SEXE_FEMININ_MINUSCULE 'f'
+#define CARACTERE_NUL '\0'
 
 struct Fiche
 {
