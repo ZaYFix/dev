@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {  
-    Tonneau tonneau1(5); // un tonneau de 2 L
-    Tonneau tonneau2(3); // un tonneau de 2 L
+    Tonneau tonneau1(5); // un tonneau de 5 L
+    Tonneau tonneau2(3); // un tonneau de 3 L
 
     tonneau2.remplir(); // on remplit le tonneau 2
     cout << "Tonneau1 " << tonneau1.contenance() << "L : " << tonneau1.quantite() << " l" << endl;
