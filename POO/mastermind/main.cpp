@@ -20,19 +20,11 @@
 #define TAILLE_CODE 5
 #define ESSAIS_MAX 12
 
-// Programme principal
 int main() 
 {
-    // TODO :
-    
-    // 1. Instancier un objet de type Mastermind en utilisant le constructeur par défaut
     Mastermind mastermind(REDONDANCE, TAILLE_CODE, ESSAIS_MAX);
     
-    // Avant de jouer, il est conseillé d'afficher les règles du jeu
     mastermind.usage();
-    
-    // 2. Implémenter le diagramme de séquence "jouer une manche"
-    
     mastermind.choisirSolution();
     
     do
