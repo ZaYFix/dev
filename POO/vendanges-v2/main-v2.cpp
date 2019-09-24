@@ -6,8 +6,6 @@
 int main()
 {  
     Robot robot(NOUVEAU_POSITION_TAS, NOUVELLE_POSITION_CHARETTE, NOUVEAU_TAILLE_TAS);
-
-    robot.getTailleTas();
     
     do
     {
@@ -26,7 +24,7 @@ int main()
             robot.allerGauche();
         }
     }
-    while(robot.estMissionFinie() == false);
+    while(!robot.estMissionFinie());
 
     return 0;
 }

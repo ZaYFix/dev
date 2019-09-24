@@ -21,7 +21,7 @@ int main()
             robot.allerGauche();
         }
     }
-    while(robot.estMissionFinie() == false);
+    while(!robot.estMissionFinie());
 
     return 0;
 }

@@ -34,7 +34,7 @@ int main()
         mastermind.afficherResultat();
         mastermind.estFinie();
     }
-    while (mastermind.estFinie() == false);
+    while (!mastermind.estFinie());
     
     return 0;
 }
