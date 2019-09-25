@@ -39,8 +39,70 @@ int main()
     cout << "Tonneau " << tonneau5.contenance() << "L : " << tonneau5.quantite() << " l" << endl;
     
     /* Question 4 */
-    // TODO : Au moyen de deux tonneaux dont les capacités respectives sont neuf litres et quatre litres, nous souhaitons disposer d'une quantité d'eau de six litres. 
     cout << "Un tonneau de 9L qui contient 6L ?" << endl;
+    
+    Tonneau tonneau9(9);
+    Tonneau tonneau4(4);
+    
+    cout << "On rempli le tonneau 9." << endl;
+    tonneau9.remplir();
+    
+    cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
+    cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
+    
+    cout << "On transvase le tonneau 9 vers le tonneau 4." << endl;
+    
+    tonneau4.remplir(tonneau9);
+    
+    cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
+    cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
+    
+    cout << "On vide le tonneau 4." << endl;
+    tonneau4.vider();
+    
+    cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
+    cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
+
+    cout << "On transvase le tonneau 9 vers le tonneau 4." << endl;
+
+    tonneau4.remplir(tonneau9);
+
+    cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
+    cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
+    
+    cout << "On vide le tonneau 4." << endl;
+    
+    tonneau4.vider();
+    
+    cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
+    cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
+    
+    cout << "On transvase le tonneau 9 vers le tonneau 4." << endl;
+
+    tonneau4.remplir(tonneau9);
+    
+    cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
+    cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
+    
+    cout << "On rempli le tonneau 9." << endl;
+    tonneau9.remplir();
+    
+    cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
+    cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
+    
+    cout << "On transvase le tonneau 9 vers le tonneau 4." << endl;
+    
+    tonneau4.remplir(tonneau9);
+
+    cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
+    cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
+    
+    cout << "On vide le tonneau 4 " << endl;
+    
+    tonneau4.vider();
+    
+    cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
+    cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
 
     return 0;
 }

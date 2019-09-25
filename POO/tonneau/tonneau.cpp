@@ -29,16 +29,9 @@ void Tonneau::vider()
 
 void Tonneau::remplir(Tonneau &t)
 {
-        if (_contenance < _quantite + t.quantite() )
-		{
-			/*t.vider(_contenance - _quantite);
-			_quantite = _contenance;*/
-			
-		}
-		
-		else
-		{
-			_quantite = _quantite + t.quantite();
-			t.vider();
-		}
+    while(_quantite < _contenance && t._quantite > 0)
+    {
+        _quantite++;
+        t._quantite--;
+    }
 }
