@@ -4,7 +4,7 @@
 #define POSITION_CHARETTE  15
 #define POSITION_TAS       0
 #define TAILLE_CHARETTE    1
-#define TAILLE_TAS         20
+#define TAILLE_TAS         20 
 
 //#define CHEAT
 

@@ -1,16 +1,12 @@
 #include <ctype.h>
 #include <iostream>
 #include "fiche.h"
-
-#define FICHES_MAX 500
-#define CHAR_MAX 50
+using namespace std;
 
 Fiche fiches[FICHES_MAX];
 unsigned int nbFemmes = 0;
 unsigned int positionPlusJeuneEleve = 0;
 unsigned int nbFiches = 0;
-
-using namespace std;
 
 void inscrireEtudiants()
 {   
@@ -31,37 +27,46 @@ void inscrireEtudiants()
         cout << "Age : ";
         cin >> fiches[i].age;
         
-        fiches[i].nom[0] = toupper(fiches[i].nom[0]);
-        fiches[i].prenom[0] = toupper(fiches[i].prenom[0]);
-        for(unsigned int j=1;j< CHAR_MAX;j++)
-        {
-            fiches[i].nom[j] = tolower(fiches[i].nom[j]);
-            fiches[i].prenom[j] = tolower(fiches[i].prenom[j]);
-        }
-        //rechercherPlusJeune(unsigned int i);
+        rechercherPlusJeune(i, nbFiches);
+        compterFemmes(i);
+        reecriture(i);
     }
-    //afficherListeEtudiant();
 }
 
-int rechercherPlusJeune(unsigned int i)
+void reecriture(unsigned int i)
 {
-    unsigned int nbFiches = 0;
-        
-        if(fiches[i].sexe == 'f')
-        {
-            nbFemmes++;
-        }
-    
+    // Réécriture majuscule
+    fiches[i].nom[0] = toupper(fiches[i].nom[0]);
+    fiches[i].prenom[0] = toupper(fiches[i].prenom[0]);
+
+    // Réécriture minuscule
+    for(unsigned int j=1; fiches[i].nom[j] != CARACTERE_NUL ;j++)
+    {
+        fiches[i].nom[j] = tolower(fiches[i].nom[j]);
+        fiches[i].prenom[j] = tolower(fiches[i].prenom[j]);
+    }
+}
+
+void compterFemmes(unsigned int i)
+{
+    if((fiches[i].sexe == SEXE_FEMININ_MINUSCULE) || ( fiches[i].sexe == SEXE_FEMININ_MAJUSCULE))
+    {
+        nbFemmes++;
+    }
+}
+
+int rechercherPlusJeune(unsigned int i, unsigned int nbFiches)
+{
     unsigned int plusJeuneEleve = fiches[0].age;
             
     for(unsigned int i = 0; i < nbFiches;i++)
+    {
+        if(plusJeuneEleve > fiches[i].age)
         {
-            if(plusJeuneEleve > fiches[i].age)
-            {
-                plusJeuneEleve = fiches[i].age;
-                positionPlusJeuneEleve = i;
-            }
+            plusJeuneEleve = fiches[i].age;
+            positionPlusJeuneEleve = i;
         }
+    }
     return positionPlusJeuneEleve;
 }
 
@@ -71,7 +76,7 @@ void afficherListeEtudiant()
     cout << "Etudiant le plus jeune : " << fiches[positionPlusJeuneEleve].nom << " " << fiches[positionPlusJeuneEleve].prenom << " " << fiches[positionPlusJeuneEleve].age << " " << fiches[positionPlusJeuneEleve].sexe << endl;
     cout << "Liste des étudiants : " << endl;
     
-        for(unsigned int i=0;i<nbFiches;i++)
+    for(unsigned int i=0;i<nbFiches;i++)
     {
         cout << fiches[i].nom << " ";
         cout << fiches[i].prenom << " ";

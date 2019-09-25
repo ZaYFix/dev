@@ -3,6 +3,9 @@
 
 #define FICHES_MAX 500
 #define CHAR_MAX 50
+#define SEXE_FEMININ_MAJUSCULE 'F'
+#define SEXE_FEMININ_MINUSCULE 'f'
+#define CARACTERE_NUL '\0'
 
 using namespace std;
 
@@ -39,15 +42,18 @@ int main()
         cout << "Age : ";
         cin >> fiches[i].age;
         
+        // Réécriture majuscule
         fiches[i].nom[0] = toupper(fiches[i].nom[0]);
         fiches[i].prenom[0] = toupper(fiches[i].prenom[0]);
-        for(unsigned int j=1;j< CHAR_MAX;j++)
+
+        // Réécriture minuscule
+        for(unsigned int j=1; fiches[i].nom[j] != CARACTERE_NUL ;j++)
         {
             fiches[i].nom[j] = tolower(fiches[i].nom[j]);
             fiches[i].prenom[j] = tolower(fiches[i].prenom[j]);
         }
         
-        if(fiches[i].sexe == 'f')
+        if((fiches[i].sexe == SEXE_FEMININ_MINUSCULE) || ( fiches[i].sexe == SEXE_FEMININ_MAJUSCULE))
         {
             nbFemmes++;
         }
@@ -56,13 +62,13 @@ int main()
     unsigned int plusJeuneEleve = fiches[0].age;
             
     for(unsigned int i = 0; i < nbFiches;i++)
+    {
+        if(plusJeuneEleve > fiches[i].age)
         {
-            if(plusJeuneEleve > fiches[i].age)
-            {
-                plusJeuneEleve = fiches[i].age;
-                positionPlusJeuneEleve = i;
-            }
-        } 
+            plusJeuneEleve = fiches[i].age;
+            positionPlusJeuneEleve = i;
+        }
+    } 
     
     cout << "Nombre de femmes : " << nbFemmes << endl;
     cout << "Etudiant le plus jeune : " << fiches[positionPlusJeuneEleve].nom << " " << fiches[positionPlusJeuneEleve].prenom << " " << fiches[positionPlusJeuneEleve].age << " " << fiches[positionPlusJeuneEleve].sexe << endl;
