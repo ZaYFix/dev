@@ -57,7 +57,6 @@ int main()
    delete p3; // ne pas oublier de libérer la mémoire allouée pour cet objet
    p3 = NULL;
    cout << endl; 
-   
     
    /* Question 5 */
    
@@ -99,21 +98,21 @@ int main()
    
    
    /* Question 8 */
-   /*
-   cout << "Question 8 : calcul de la distance entre 2 points" << endl;   
+   
+   cout << "Question 8 : calcul de la distance entre 2 points" << endl;
    double distance = p1.distance(p2);
    cout << "La distance entre p1 et p2 est de " << distance << endl;
    cout << endl;
-   */
+   
    
    /* Question 9 */
-   /*
+   
    cout << "Question 9 : calcul le point milieu entre 2 points" << endl;   
    Point pointMilieu = p1.milieu(p2);   
    cout << "Le point milieu entre p1 et p2 est "; 
    pointMilieu.affiche();
    cout << endl;
-   */
+   
    
    /* Question 10 */
    

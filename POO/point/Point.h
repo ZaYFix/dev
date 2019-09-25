@@ -22,8 +22,8 @@ class Point
       void setX(double x);
       void setY(double y);
       
-      void distance();
-      void milieu();
+      double distance(const Point &PointA);
+      Point milieu(const Point &PointA);
       
       // Services
       void affiche() const;
