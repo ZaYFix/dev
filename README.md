@@ -33,6 +33,10 @@ git init
 git add "path"
 ```
 
+```
+git remote add origin git@github.com:yourname/name.git 
+```
+
 ## Commit and push
 
 ### git commit
