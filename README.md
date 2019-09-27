@@ -2,7 +2,7 @@
 
 ### Generate an ssh key
 ```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -o
 ```
 
 ### Start the ssh agent
@@ -17,7 +17,7 @@ ssh-add ~/.ssh/id_rsa
 
 ### Copy your ssh key
 ```
-gedit ~/.ssh/id_rsa
+gedit ~/.ssh/id_rsa.pub
 ```
 
 ### Add the ssh key to your Github account
