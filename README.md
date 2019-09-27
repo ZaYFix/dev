@@ -24,6 +24,11 @@ gedit ~/.ssh/id_rsa.pub
 [Check here](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account)
 
 ## Adding a repo
+
+```
+git init
+```
+
 ```
 git add "path"
 ```
