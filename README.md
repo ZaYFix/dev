@@ -1,6 +1,4 @@
-# dev
-
-#Prerequisites
+# Prerequisites
 
 ## Generate an ssh key
 ```
