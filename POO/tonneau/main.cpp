@@ -30,7 +30,6 @@ int main()
 
     /* Question 3 */
     cout << "Transvaser les tonneaux" << endl;
-
     tonneau5.remplir();
     tonneau3.remplir(tonneau5);
     tonneau3.vider();
@@ -51,7 +50,6 @@ int main()
     cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
     
     cout << "On transvase le tonneau 9 vers le tonneau 4." << endl;
-    
     tonneau4.remplir(tonneau9);
     
     cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
@@ -64,21 +62,18 @@ int main()
     cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
 
     cout << "On transvase le tonneau 9 vers le tonneau 4." << endl;
-
     tonneau4.remplir(tonneau9);
 
     cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
     cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
     
     cout << "On vide le tonneau 4." << endl;
-    
     tonneau4.vider();
     
     cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
     cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
     
     cout << "On transvase le tonneau 9 vers le tonneau 4." << endl;
-
     tonneau4.remplir(tonneau9);
     
     cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
@@ -91,14 +86,12 @@ int main()
     cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
     
     cout << "On transvase le tonneau 9 vers le tonneau 4." << endl;
-    
     tonneau4.remplir(tonneau9);
 
     cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
     cout << "Tonneau " << tonneau4.contenance() << "L : " << tonneau4.quantite() << " l" << endl;
     
     cout << "On vide le tonneau 4 " << endl;
-    
     tonneau4.vider();
     
     cout << "Tonneau " << tonneau9.contenance() << "L : " << tonneau9.quantite() << " l" << endl;
