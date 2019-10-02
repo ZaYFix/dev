@@ -1,5 +1,7 @@
 # Prerequisites
 
+## Use the script above or follow the manual installation below
+
 ### Generate an ssh key
 ```
 ssh-keygen -o
