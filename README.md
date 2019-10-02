@@ -7,11 +7,6 @@
 ssh-keygen -o
 ```
 
-### Start the ssh agent
-```
-eval "$(ssh-agent -s)"
-```
-
 ### Copy the ssh key in the ssh agent
 ```
 ssh-add ~/.ssh/id_rsa
