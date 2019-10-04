@@ -24,7 +24,6 @@ int main()
    
    cout << endl;
    
-   
    /* Question 2 */
    
    cout << "Question 2 : " << endl;
@@ -33,7 +32,6 @@ int main()
    cout << "Temps t3 : " << t3 << endl;
    cout << endl;
    
-
    /* Question 3 */
    
    cout << "Question 3 : " << endl; 
@@ -51,7 +49,6 @@ int main()
    }
    cout << endl;
    
-
    /* Question 4 */
    
    cout << "Question 4 : " << endl;  
@@ -76,16 +73,14 @@ int main()
    delete fichier; 
    cout << endl;
    
-
    /* Question 5 */
-   cout << "Question 5 : " << endl;   
+    cout << "Question 5 : " << endl;   
     ofstream resultats;
     resultats.open ("resultats.txt");
     resultats << t1 << "\n";
     resultats << t2 << "\n";
     resultats << t3 << "\n";
     resultats.close();
-
 
    /* Question 6 */
    
@@ -120,8 +115,8 @@ int main()
    cout << "Temps t3 - t2 : " << t1 << endl << endl; 
    cout << endl;
    
-   /* Bonnus Question 6 */
-   cout << " Question 6 Bonnus " << endl;
+   /* Question 6 Bonus */
+   cout << " Question 6 Bonus : " << endl;
    
    cout << t1 << endl;
    ++t1;
@@ -137,9 +132,9 @@ int main()
    cout << "Question 7 : " << endl;  
    Temps t5(1, 1, 10); // 01:01:10
       
-   //cout << "t2 : " << t2 << endl;
-   //cout << "t3 : " << t3 << endl;
-   //cout << "t5 : " << t5 << endl;
+   cout << "t2 : " << t2 << endl;
+   cout << "t3 : " << t3 << endl;
+   cout << "t5 : " << t5 << endl;
    
    if(t2 == t5) 
    {
@@ -158,14 +153,12 @@ int main()
        cout << "t3 égal à t5\n"; 
    }
    
-   
-   /* Question 8 :  */
+   /* Question 8 */
     cout << "Question 8 : " << endl; 
     
     cout << " t1 : " << t1 << endl;
     Temps t6 = t1;
     cout << " t6 : " << t6 << endl;
-      
       
    return 0;
 }

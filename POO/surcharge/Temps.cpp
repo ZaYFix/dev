@@ -2,29 +2,30 @@
 #include <iomanip>
 #include "Temps.h"
 
-#define PASSAGE_SECONDE_HEURE   3600
-#define PASSAGE_SECONDE_MINUTE  60 
-
 using namespace std;
 
-//constructeur
+// Constructeurs
 
 Temps::Temps():valeur(0)
 {
+    
 }
 Temps::Temps(long secondes): valeur(secondes)
 {
+    
 }
 
 Temps::Temps(int heure, int minute, int seconde): valeur((heure * PASSAGE_SECONDE_HEURE) + (minute * PASSAGE_SECONDE_MINUTE) +seconde)
 {
+    
 }
 
 Temps::Temps(const Temps &t): valeur(t.valeur)
 {
+    
 } 
 
-//Accesseur Mutateur
+// Accesseurs
 
 int  Temps::getSeconde() const
 {
@@ -49,7 +50,8 @@ long Temps::getValeur() const
     return valeur;
 }
 
-/*    surcharge =    */
+
+// Surcharge opérateur d'affectation
 
 Temps& Temps::operator =(const Temps &t)
 {
@@ -57,7 +59,7 @@ Temps& Temps::operator =(const Temps &t)
     return *this;
 }
 
-/*   surcharge ++ et --  */
+// Surcharges opérateurs arithmétiques
 
 Temps& Temps::operator ++()
 {
@@ -70,7 +72,41 @@ Temps& Temps::operator --()
     return *this;
 }
 
-/* surcharge == et != */
+Temps& Temps::operator += (const Temps &t)
+{
+    valeur += t.valeur;
+    return *this;   
+}
+
+Temps& Temps::operator += (const long nombre )
+{
+    valeur += nombre ;
+    return *this;
+}
+
+Temps& Temps::operator -= (const long nombre )
+{
+    valeur -= nombre ;
+    return *this;
+}
+
+Temps& Temps::operator -=(const Temps &t)
+{
+    valeur -= t.valeur;   
+    return *this;
+}
+
+Temps  operator +(const Temps &t2, const Temps &t3)
+{
+    return t2.valeur + t3.valeur;
+}
+
+Temps operator -(const Temps &t2 , const Temps &t3)
+{
+    return t2.valeur - t3.valeur;
+}
+
+// Surcharges opérateurs de comparaison
 
 bool Temps::operator ==(const Temps &t)
 {
@@ -95,45 +131,8 @@ bool Temps::operator !=(const Temps &t)
         return false;
     }    
 }
-//surchage +=
-Temps& Temps::operator += (const Temps &t)
-{
-    valeur += t.valeur;
-    return *this;   
-}
 
-Temps& Temps::operator += (const long nombre )
-{
-    valeur += nombre ;
-    return *this;
-}
-
-//surchage -=
-Temps& Temps::operator -= (const long nombre )
-{
-    valeur -= nombre ;
-    return *this;
-}
-
-Temps& Temps::operator -=(const Temps &t)
-{
-    valeur -= t.valeur;   
-    return *this;
-}
-
-/*  surcharge + et -  */
-
-Temps  operator +(const Temps &t2, const Temps &t3)
-{
-    return t2.valeur + t3.valeur;
-}
-
-Temps operator -(const Temps &t2 , const Temps &t3)
-{
-    return t2.valeur - t3.valeur;
-}
-
-//surcharge >> << 
+// Surcharge opérateurs de flux
 ostream & operator << ( ostream & sortie, const Temps &t)
 {
      sortie << setfill('0') << setw(2) << t.getHeure() << ":" << setfill('0') << setw(2) << t.getMinute() << ":" << setfill('0') << setw(2) << t.getSeconde();
