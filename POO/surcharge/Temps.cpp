@@ -1,40 +1,47 @@
-#include "Temps.h"
 #include <iostream>
 #include <iomanip>
+#include "Temps.h"
 
-#define HEURE_EN_SECONDE 3600
-#define MINUTE_EN_SECONDE 60
+#define PASSAGE_SECONDE_HEURE   3600
+#define PASSAGE_SECONDE_MINUTE  60 
 
 using namespace std;
 
-Temps::Temps()
+//constructeur
+
+Temps::Temps():valeur(0)
 {
-    
+}
+Temps::Temps(long secondes): valeur(secondes)
+{
 }
 
-Temps::Temps(long secondes):valeur(secondes)
+Temps::Temps(int heure, int minute, int seconde): valeur((heure * PASSAGE_SECONDE_HEURE) + (minute * PASSAGE_SECONDE_MINUTE) +seconde)
 {
-    
 }
 
-Temps::Temps(int heure, int minute, int seconde):valeur((heure*HEURE_EN_SECONDE)+(minute*MINUTE_EN_SECONDE)+seconde)
+Temps::Temps(const Temps &t): valeur(t.valeur)
 {
-    
-}
+} 
 
-int Temps::getSeconde() const
+//Accesseur Mutateur
+
+int  Temps::getSeconde() const
 {
-    return ((valeur % 3600) % 60);
+    int secondes = valeur % 60 ;
+    return secondes;
 }
 
 int  Temps::getMinute() const
 {
-    return ((valeur % 3600) / 60);
+    int minutes = (valeur/PASSAGE_SECONDE_MINUTE) % 60 ;
+    return minutes;
 }
 
 int  Temps::getHeure() const
 {
-    return (valeur / 3600);
+    int heures = (valeur/PASSAGE_SECONDE_HEURE) % 60 ;
+    return heures;
 }
 
 long Temps::getValeur() const
@@ -42,17 +49,128 @@ long Temps::getValeur() const
     return valeur;
 }
 
-ostream & operator << (ostream & sortie, const Temps &t)
+/*    surcharge =    */
+
+Temps& Temps::operator =(const Temps &t)
 {
-    sortie << setfill('0') << setw(2) << t.getHeure() << ":" << setfill('0') << setw(2) << t.getMinute() << ":" << setfill('0') << setw(2) << t.getSeconde();
-    return sortie ;
+    valeur = t.valeur;
+    return *this;
 }
-/*
-istream & operator >> (istream & entree, type_de_base & objet)
+
+/*   surcharge ++ et --  */
+
+Temps& Temps::operator ++()
 {
-// Lecture des informations correspondant aux différents membres de objet
-// en utilisant les possibilités classiques de >> pour les types de base
-// c’est-à-dire des instructions de la forme :
-// entree >> ..... ;
-return entree ;
-}*/
+    ++valeur ;
+    return *this;
+}
+Temps& Temps::operator --()
+{
+    --valeur;
+    return *this;
+}
+
+/* surcharge == et != */
+
+bool Temps::operator ==(const Temps &t)
+{
+    if (valeur == t.valeur)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }    
+}
+
+bool Temps::operator !=(const Temps &t)
+{
+    if (valeur != t.valeur)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }    
+}
+//surchage +=
+Temps& Temps::operator += (const Temps &t)
+{
+    valeur += t.valeur;
+    return *this;   
+}
+
+Temps& Temps::operator += (const long nombre )
+{
+    valeur += nombre ;
+    return *this;
+}
+
+//surchage -=
+Temps& Temps::operator -= (const long nombre )
+{
+    valeur -= nombre ;
+    return *this;
+}
+
+Temps& Temps::operator -=(const Temps &t)
+{
+    valeur -= t.valeur;   
+    return *this;
+}
+
+/*  surcharge + et -  */
+
+Temps  operator +(const Temps &t2, const Temps &t3)
+{
+    return t2.valeur + t3.valeur;
+}
+
+Temps operator -(const Temps &t2 , const Temps &t3)
+{
+    return t2.valeur - t3.valeur;
+}
+
+//surcharge >> << 
+ostream & operator << ( ostream & sortie, const Temps &t)
+{
+     sortie << setfill('0') << setw(2) << t.getHeure() << ":" << setfill('0') << setw(2) << t.getMinute() << ":" << setfill('0') << setw(2) << t.getSeconde();
+    
+    return sortie;
+}
+
+istream & operator >> ( istream & entree, Temps &t)
+{
+    char c;
+    long valeur = 0;
+    long minutes = 0;
+    long secondes = 0;
+    
+    entree >> valeur;
+
+    if ((c = entree.get()) != ':') 
+    {
+        t.valeur = valeur;
+        entree.putback(c);
+        return entree;
+    }
+    else
+    {
+        entree >> minutes;
+        t.valeur = (valeur * PASSAGE_SECONDE_HEURE) + (minutes * PASSAGE_SECONDE_MINUTE);
+        if((c = entree.get()) != ':')
+        {
+            entree.putback(c);
+            return entree;
+        }
+        else
+        {               
+             entree >> secondes;
+             t.valeur = ((valeur * PASSAGE_SECONDE_HEURE) + (minutes * PASSAGE_SECONDE_MINUTE) + secondes);
+             return entree; 
+            
+        }
+    }
+}

@@ -1,7 +1,7 @@
-#include "Temps.h"
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include "Temps.h"
 
 using namespace std;
 
@@ -35,7 +35,7 @@ int main()
    
 
    /* Question 3 */
-   /*
+   
    cout << "Question 3 : " << endl; 
    Temps t4;
    
@@ -50,10 +50,10 @@ int main()
       cout << "Temps t4 : " << t4 << endl;         
    }
    cout << endl;
-   */
+   
 
    /* Question 4 */
-   /*
+   
    cout << "Question 4 : " << endl;  
    fstream *fichier = NULL;
    string nom;
@@ -75,14 +75,20 @@ int main()
    fichier->close();
    delete fichier; 
    cout << endl;
-   */ 
+   
 
    /* Question 5 */
-   //cout << "Question 5 : " << endl;   
-   // TODO 
+   cout << "Question 5 : " << endl;   
+    ofstream resultats;
+    resultats.open ("resultats.txt");
+    resultats << t1 << "\n";
+    resultats << t2 << "\n";
+    resultats << t3 << "\n";
+    resultats.close();
+
 
    /* Question 6 */
-   /*
+   
    cout << "Question 6 : " << endl;  
 
    cout << "Temps t1 : " << t1 << endl;
@@ -112,10 +118,22 @@ int main()
    cout << "Temps t3 : " << t3 << endl;
    t1 = t3 - t2; 
    cout << "Temps t3 - t2 : " << t1 << endl << endl; 
-   */
+   cout << endl;
+   
+   /* Bonnus Question 6 */
+   cout << " Question 6 Bonnus " << endl;
+   
+   cout << t1 << endl;
+   ++t1;
+   cout << "Temps t1 : " << "++t1 : " << t1 << endl;
+   
+   cout << t1 << endl;
+   --t1;
+   cout << "Temps t1 : " << "--t1 : " << t1 << endl;
+   cout << endl;
    
    /* Question 7 */
-   /*
+   
    cout << "Question 7 : " << endl;  
    Temps t5(1, 1, 10); // 01:01:10
       
@@ -139,9 +157,15 @@ int main()
    {
        cout << "t3 égal à t5\n"; 
    }
-   */
    
-   /* Question 8 : TODO */
    
+   /* Question 8 :  */
+    cout << "Question 8 : " << endl; 
+    
+    cout << " t1 : " << t1 << endl;
+    Temps t6 = t1;
+    cout << " t6 : " << t6 << endl;
+      
+      
    return 0;
 }
