@@ -23,9 +23,9 @@ fi
 echo "Donnez un nombre : "
 read -r nombre
 
-while [ "$nombre" -ne "$nombreAleatoire" ]
+while [ $nombre -ne $nombreAleatoire ]
 do
-    if  [ "$nombre" -lt "$nombreAleatoire" ]
+    if  [ $nombre -lt $nombreAleatoire ]
     then
         echo "Trop petit !"
         ((++nbCoups))
