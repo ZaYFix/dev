@@ -1,45 +1,39 @@
 #!/bin/bash
 
-echo "Veuillez choisir une difficulté, 1 pour facile, 2 pour moyen, 3 pour difficile"
-read difficulte
+echo "Veuillez choisir une difficulté, 1 pour facile, 2 pour moyen, 3 pour difficile."
+read -r difficulte
 
-while test $difficulte -gt 3
+while [ $difficulte -gt 3 ] || [ -z $difficulte ]
 do
-    if test $difficulte -eq 1
-    then
-        nombreAleatoire=$(( $RANDOM % 51 ))
-        echo $nombreAleatoire
-        break
-    fi
-    if test $difficulte -eq 2
-    then
-        #nombreAleatoire= 1 + $RANDOM % 50
-        break
-    fi
-    if test $difficulte -eq 3
-    then
-        #nombreAleatoire= 1 + $RANDOM % 100
-        break
-    fi
-    echo "Valeur incorrecte, veuillez réessayer"
-    read difficulte
+    echo "Valeur incorrecte, veuillez réessayer."
+    read -r difficulte
 done
 
-echo "Donnez un nombre : "
-read nombre
+if  [ "$difficulte" -eq 1 ]
+    then
+        nombreAleatoire=$((1 + RANDOM % 10))
+elif [ "$difficulte" -eq 2 ]
+    then
+        nombreAleatoire=$((1 + RANDOM % 50))
+elif [ "$difficulte" -eq 3 ]
+    then
+        nombreAleatoire=$((1 + RANDOM % 100))
+fi
 
-while test "$nombre" != "$nombreAleatoire"
+echo "Donnez un nombre : "
+read -r nombre
+
+while [ "$nombre" -ne "$nombreAleatoire" ]
 do
-    if  test "$nombre" -lt "$nombreAleatoire"
+    if  [ "$nombre" -lt "$nombreAleatoire" ]
     then
         echo "Trop petit !"
-        let ++nbCoups
+        ((++nbCoups))
     else
         echo "Trop grand !"
-        let ++nbCoups
+        ((++nbCoups))
     fi
-    read nombre
-    echo $nombreAleatoire
+    read -r nombre
 done
 
 echo "Bravo vous avez decouvert le nombre mystere $nombreAleatoire en $nbCoups coups."
