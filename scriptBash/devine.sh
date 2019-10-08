@@ -23,6 +23,13 @@ fi
 echo "Donnez un nombre : "
 read -r nombre
 
+while [ -z $nombre ]
+do
+    echo "Caractère incorrect !"
+    echo "Donnez un nombre : "
+    read -r nombre
+done
+
 while [ $nombre -ne $nombreAleatoire ]
 do
     if  [ $nombre -lt $nombreAleatoire ]
