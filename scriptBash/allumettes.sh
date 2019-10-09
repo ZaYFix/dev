@@ -18,9 +18,8 @@ case $debutPartie in
         echo "J"
         while [ $nbAllumettes != "0" ]
         do
-        echo "
-il reste $nbAllumettes allumette(s)
-Nb allumettes (1, 2 ou 3) ?" #TODO BLOCK ALLUMETTES > 3 & ==0
+        echo "il reste $nbAllumettes allumette(s)"
+	echo "Nb allumettes (1, 2 ou 3) ?" #TODO BLOCK ALLUMETTES > 3 & ==0
             read -r nbAllumettesChoisis
             let "nbAllumettes = nbAllumettes - nbAllumettesChoisis"
             allumetteAleatoire=$((1 + RANDOM % 3))
