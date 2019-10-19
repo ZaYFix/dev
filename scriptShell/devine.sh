@@ -1,34 +1,40 @@
 #!/bin/bash
 
-echo "Veuillez choisir une difficulté, 1 pour facile, 2 pour moyen, 3 pour difficile."
+readonly MIN=1
+
+echo "Veuillez choisir une difficulté, 1 pour facile (1-10), 2 pour moyen (1-50), 3 pour difficile (1-100)."
 read -r difficulte
 
-while [ $difficulte -gt 3 ] || [ -z $difficulte ]
+while [ -z $difficulte ] || [ $difficulte -gt 3 ]
 do
     echo "Valeur incorrecte, veuillez réessayer."
     read -r difficulte
 done
 
-if  [ "$difficulte" -eq 1 ]
+if  [ $difficulte -eq 1 ]
     then
-        nombreAleatoire=$((1 + RANDOM % 10))
-elif [ "$difficulte" -eq 2 ]
+        readonly MAX=10
+elif [ $difficulte -eq 2 ]
     then
-        nombreAleatoire=$((1 + RANDOM % 50))
-elif [ "$difficulte" -eq 3 ]
+        readonly MAX=50
+elif [ $difficulte -eq 3 ]
     then
-        nombreAleatoire=$((1 + RANDOM % 100))
+        readonly MAX=100
 fi
+
+nombreAleatoire=$(($MIN + RANDOM % $MAX))
 
 echo "Donnez un nombre : "
 read -r nombre
 
 while [ -z $nombre ]
 do
-    echo "Caractère incorrect !"
+    echo "Valeur incorrecte, veuillez réessayer."
     echo "Donnez un nombre : "
     read -r nombre
 done
+
+((++nbCoups))
 
 while [ $nombre -ne $nombreAleatoire ]
 do
