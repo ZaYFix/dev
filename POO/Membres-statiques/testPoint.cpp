@@ -8,10 +8,10 @@ using namespace std;
 
 int main() 
 {
-   Point p0, p1(4, 0.0), p2(2.5, 2.5);   
+   Point p0, p1(4, 0.0), p2(2.5, 2.5);
    
    /* Question 1 */
-   /*
+   
    cout << "Question 1 : " << endl; 
    Point *pp = new Point(1,1);
    
@@ -21,10 +21,10 @@ int main()
    
    cout << "Il y a " << Point::compte() << " points\n";   
    cout << endl;
-   */
+   
    
    /* Question 2 */
-   /*
+   
    cout << "Question 2 : " << endl; 
    double distance = Point::distance(p1, p2);
    
@@ -37,7 +37,6 @@ int main()
    Point pointMilieu = Point::milieu(p1, p2);
    cout << "Le point milieu entre p1 et p2 est "; pointMilieu.affiche();
    cout << endl;
-   */
 
    return 0;
 }
