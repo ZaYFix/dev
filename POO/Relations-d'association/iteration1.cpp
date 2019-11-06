@@ -11,7 +11,7 @@ int main()
    cout << "Itération 1 : " << endl; 
  
    /* Question 1 */
-   /*
+   
    cout << "Question 1 : " << endl; 
    Article a1; // un article   
    a1.setTitre("Le Trone de fer, tome 14");
@@ -20,11 +20,11 @@ int main()
    cout << "Prix  de l'article : " << a1.getPrix() << endl;
    
    // un autre article
-   Article a2("A Game of Thrones - Le Trône de fer, tome 1", 13.29);
+   Article a2("A Game of Thrones - Le Trone de fer, tome 1", 13.29);
    cout << "Titre de l'article : " << a2.getTitre() << endl;
    cout << "Prix  de l'article : " << a2.getPrix() << endl;   
    cout << endl;
-   */
+   
    
    /*
     * Vous devez obtenir :
@@ -36,13 +36,13 @@ int main()
     */
 
    /* Question 2 */
-   /*
+   
    cout << "Question 2 : " << endl;
    Ligne l1; // une ligne vide   
    
    cout << "Quantité commandée pour cette ligne de commande : " << l1.getQuantite() << endl;
    cout << endl;
-   */
+   
    
    /*
     * Vous devez obtenir :
@@ -52,7 +52,7 @@ int main()
    
    
    /* Question 3 */  
-   /*
+   
    cout << "Question 3 : " << endl; 
    Ligne l2; // une autre ligne
    l2.setArticle(&a2);
@@ -62,14 +62,14 @@ int main()
    cout << "Prix  de l'article : " << l2.getArticle()->getPrix() << endl;
    cout << "Total pour cette ligne : " << l2.getMontant() << endl;
    
-   Article a3("Le Trône de fer, Tome 13 : Le Bûcher d'un roi", 17.96);       
+   Article a3("Le Trone de fer, Tome 13 : Le Bucher d'un roi", 17.96);       
    Ligne l3(&a3, 0);
    cout << "Quantité commandée pour cette ligne de commande : " << l3.getQuantite() << endl;
    cout << "Titre de l'article : " << l3.getArticle()->getTitre() << endl;
    cout << "Prix  de l'article : " << l3.getArticle()->getPrix() << endl;
    cout << "Total pour cette ligne : " << l3.getMontant() << endl;
    cout << endl;
-   */
+   
    
    /*
     * Vous devez obtenir :
@@ -86,7 +86,7 @@ int main()
    
    
    /* Question 4 */
-   /*
+   
    cout << "Question 4 : " << endl; 
 
    l1.setArticle(&a1);
@@ -106,7 +106,7 @@ int main()
    l3.afficher();
    cout << endl;
    cout << endl;
-   */
+   
    
    /*
     * Vous devez obtenir :

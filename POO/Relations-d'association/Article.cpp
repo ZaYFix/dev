@@ -4,26 +4,28 @@
 
 Article::Article(string titre/*=""*/, double prix/*=0.*/)
 {
+    this->titre = titre;
+    this->prix = prix;
 }
 
 string Article::getTitre() const
 {
-   
+   return titre;
 }
 
 double Article::getPrix() const
 {
-   
+   return prix;
 }
 
 void Article::setTitre(string titre)
 {
-   
+   this->titre = titre;
 }
 
 void Article::setPrix(double prix)
 {
-   
+   this->prix = prix;
 }
 
 #ifdef SAISIE_ARTICLE

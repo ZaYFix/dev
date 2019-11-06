@@ -3,21 +3,45 @@
 #include <limits>
 
 #include "Ligne.h"
+#include "Article.h"
 
 using namespace std;
 
-Ligne::Ligne() : quantite(0)
+Ligne::Ligne(Article *article/*=NULL*/, long quantite/*=0*/) : article(article), quantite(quantite)
 {   
 }
 
 long Ligne::getQuantite() const
 {
-    return 0;
+    return quantite;
 }
 
 void Ligne::setQuantite(long quantite)
 {
-   
+   this->quantite = quantite;
+}
+
+void Ligne::setArticle(Article *article)
+{
+    this->article = article;
+}
+
+Article * Ligne::getArticle() const
+{
+    return this->article;
+}
+
+double Ligne::getMontant() const
+{
+    return ( article->getPrix() * quantite );
+}
+
+void Ligne::afficher() const
+{
+   cout << setfill(' ') << setw(3) << quantite;
+   cout << "|" << setfill('.') << setw(50) << article->getTitre(); 
+   cout << "|" << setfill(' ') << setw(8) << article->getPrix(); 
+   cout << "|" << setfill(' ') << setw(9) << quantite*article->getPrix() << " euros";
 }
 
 #ifdef SAISIE_LIGNE
