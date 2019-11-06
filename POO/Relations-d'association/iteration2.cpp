@@ -12,7 +12,7 @@ int main()
    cout << "Itération 2 : " << endl;
    
    /* Question 5 */
-   /*
+   
    cout << "Question 5 : " << endl;   
    Commande c1; // une commande
    c1.setReference("A00001");
@@ -24,10 +24,10 @@ int main()
    cout << "Référence de la commande : " << c2.getReference() << endl;
    cout << "Date de la commande      : " << c2.getDate() << endl;   
    cout << endl;
-   */
+   
    
    /* Question 6 */
-   /*
+   
    cout << "Question 6 : " << endl; 
    // des articles
    Article gratuit("A Game of Thrones - Le Trone de fer, tome 1");   
@@ -43,15 +43,15 @@ int main()
    cout << "Quantité d'articles commandés pour cette commande : " << c3.getNbArticles() << endl;
    cout << "Montant de la commande : " << c3.getTotal() << endl;
    cout << endl;
-   */
+   
    
    /* Question 7 */
-   /*
+   
    cout << "Question 7 : " << endl; 
    
    c3.afficher();
    cout << endl;
-   */
+   
    
    return 0;
 }

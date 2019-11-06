@@ -1,8 +1,11 @@
 #include "Commande.h"
+#include "Ligne.h"
+#include "Article.h"
 
 #include <iomanip>
 #include <limits>
 #include <ctype.h>
+#include <vector>
 
 Commande::Commande(string reference/*=""*/, string date/*=*/) : reference(reference), date(date)
 {
@@ -26,6 +29,47 @@ string Commande::getDate() const
 void Commande::setDate(string date)
 {
    this->date = date;
+}
+
+int Commande::getNbLignes() const
+{
+    return lignes.size();
+}
+
+double Commande::getTotal() const
+{
+    double total = 0;
+    
+    for(unsigned int i=0;i < lignes.size() ; i++)
+    {
+        total += lignes[i].getMontant();
+    }
+    return total;
+}
+
+void Commande::ajouterLigneArticle(Article *article, long quantite)
+{
+    Ligne ligne1(article, quantite);
+    lignes.push_back(ligne1);
+}
+
+long Commande::getNbArticles() const
+{
+    unsigned int nbArticles = 0;
+    
+    for(unsigned int i=0;i < lignes.size() ; i++)
+    {
+        nbArticles += lignes[i].getQuantite();
+    }
+    return nbArticles;
+}
+
+void Commande::afficher() const
+{
+   cout << setfill(' ') << setw(3) << quantite;
+   cout << "|" << setfill('.') << setw(50) << article->getTitre(); 
+   cout << "|" << setfill(' ') << setw(8) << article->getPrix(); 
+   cout << "|" << setfill(' ') << setw(9) << quantite*article->getPrix() << " euros";
 }
 
 #ifdef SAISIE_COMMANDE
