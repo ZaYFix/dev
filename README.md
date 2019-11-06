@@ -31,7 +31,7 @@ git add "path"
 ```
 
 ```
-git remote add origin git@github.com:yourname/name.git 
+git remote add origin git@github.com:yourname/repo_name.git 
 ```
 
 ## Commit and push
