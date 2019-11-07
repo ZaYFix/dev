@@ -5,6 +5,8 @@
 #include "Ligne.h"
 #include "Article.h"
 
+#define SAISIE_LIGNE
+
 using namespace std;
 
 Ligne::Ligne(Article *article/*=NULL*/, long quantite/*=0*/) : article(article), quantite(quantite)

@@ -7,6 +7,8 @@
 #include <ctype.h>
 #include <vector>
 
+#define SAISIE_COMMANDE
+
 Commande::Commande(string reference/*=""*/, string date/*=*/) : reference(reference), date(date)
 {
 }
@@ -64,12 +66,34 @@ long Commande::getNbArticles() const
     return nbArticles;
 }
 
+void Commande::setClient(Client *client)
+{
+    this->client=client;
+}
+
 void Commande::afficher() const
 {
-   cout << setfill(' ') << setw(3) << quantite;
-   cout << "|" << setfill('.') << setw(50) << article->getTitre(); 
-   cout << "|" << setfill(' ') << setw(8) << article->getPrix(); 
-   cout << "|" << setfill(' ') << setw(9) << quantite*article->getPrix() << " euros";
+    cout << setfill('-') << setw(80) << "\n";
+    cout << "Client : " << client->getNom() << setfill(' ') << setw(62) << "Numéro : " << client->getNumero() << endl;
+    cout << setfill('-') << setw(80) << "\n";
+    cout << "Le " << this->getDate() << setfill(' ') << setw(60) << "Ref. : " << this->getReference() << endl;
+    cout << setfill('-') << setw(80) << "\n";
+
+    cout << setfill(' ') << setw(3) << "Qte"; 
+    cout << "|" << setfill(' ') << setw(50) << "Description"; 
+    cout << "|" << setfill(' ') << setw(8) << "Prix uni"; 
+    cout << "|" << setfill(' ') << setw(15) << "Total\n";
+    cout << setfill('-') << setw(80) << "\n"; 
+
+    for(unsigned int i =0;i<lignes.size();i++)
+    {
+        lignes[i].afficher();
+        cout << endl;
+    }
+
+    cout << setfill('-') << setw(80) << "\n";
+    cout << setfill(' ') << setw(73) << this->getTotal() << " euros" << endl;
+    cout << setfill('-') << setw(80) << "\n";
 }
 
 #ifdef SAISIE_COMMANDE
@@ -78,8 +102,8 @@ void Commande::saisir()
     string _date = "";
     char choix;
     
-    if(leClient != NULL)
-      leClient->saisir();
+    if(client != NULL)
+      client->saisir();
     
     do
     {

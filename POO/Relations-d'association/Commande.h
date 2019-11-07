@@ -4,16 +4,19 @@
 #include <iostream>
 #include <vector>
 #include "Ligne.h" // ici il faut un accès à la déclaration complète de la classe Ligne (3)
+#include "Client.h"
 using namespace std;
 
 class Ligne;
 class Article;
+class Client;
 
 class Commande
 {
     private:
         Ligne *quantite;
         Article *article;
+        Client *client;
     
         string reference;
         string date;
@@ -33,6 +36,10 @@ class Commande
         long getNbArticles() const;
         
         void afficher() const;
+
+        void setClient(Client *unClient);
+
+        void saisir();
 };
 
 #endif //COMMANDE_H

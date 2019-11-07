@@ -3,10 +3,36 @@
 #include <iomanip>
 #include <limits>
 
-Client::Client(string nom/*=""*/, int numero/*=0*/)
+#define SAISIE_CLIENT
+
+Client::Client(string nom/*=""*/, int numero/*=0*/): nom(nom), numero(numero)
 {   
 }
 
+void Client::setNom(string nom)
+{
+    this->nom = nom;
+}
+
+void Client::setNumero(int numero)
+{
+    this->numero = numero;
+}
+
+string Client::getNom() const
+{
+    return this->nom;
+}
+
+int Client::getNumero() const
+{
+    return this->numero;
+}
+
+void Client::setCommande(Commande *commande)
+{
+    this->commande=commande;
+}
 
 #ifdef SAISIE_CLIENT
 void Client::saisir()
