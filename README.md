@@ -1,44 +1,42 @@
-# Prerequisites
+# Prérequis
 
-## Use the script above or follow the manual installation below
-
-### Generate an ssh key
+### Générer une clé ssh
 ```
 ssh-keygen -o
 ```
 
-### Copy the ssh key in the ssh agent
+### Copie de la clé ssh dans l'agent ssh
 ```
 ssh-add ~/.ssh/id_rsa
 ```
 
-### Copy your ssh key
+### Copiez votre clé ssh
 ```
 gedit ~/.ssh/id_rsa.pub
 ```
 
-### Add the ssh key to your Github account
-[Check here](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account)
+### Ajoutez la clé ssh à votre compte Github
+[Lien](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account)
 
-## Adding a repo
+## Ajout d'un repo
 
 ```
 git init
 ```
 
 ```
-git add "path"
+git add "chemin_vers_le_dossier"
 ```
 
 ```
 git remote add origin git@github.com:yourname/repo_name.git 
 ```
 
-## Commit and push
+## Commit et push
 
 ### git commit
 ```
-git commit -a -m "this is a comment"
+git commit -a -m "un commentaire"
 ```
 
 ### git push
