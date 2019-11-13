@@ -13,7 +13,7 @@ int main()
    cout << "Itération 3 : " << endl; 
 
    /* Question 8 */
-   /*
+   
    cout << "Question 8 : " << endl; 
    Client unClient;
    
@@ -26,10 +26,9 @@ int main()
    cout << "Nom du client : " << unBonClient.getNom() << endl;
    cout << "Référence du client : " << unBonClient.getNumero() << endl;
    cout << endl;   
-   */
-
+   
    /* Question 9, 10 et 11 */
-   /*
+   
    cout << "Question 9, 10 et 11 : " << endl; 
    
    //unClient.afficher();
@@ -41,14 +40,13 @@ int main()
    commande.ajouterLigneArticle(&a3, 1);
    
    // réalise l'association dans le sens Client -> Commande   
-   unClient.passeUneCommande(&commande); 
+   unClient.setCommande(&commande); 
    
    // dans l'autre sens : Commande -> Client
-   commande.estPasseeParUnClient(&unClient);
+   commande.setClient(&unClient);
    
    commande.afficher();   
    cout << endl;
-   */
     
    return 0;
 }

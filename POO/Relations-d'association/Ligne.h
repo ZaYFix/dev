@@ -2,12 +2,14 @@
 #define LIGNE_H
 
 class Article;
+class Commande;
 
 class Ligne
 {
     private:
     
         Article *article; // l’agrégation
+        Commande *commande;
         long quantite;
         
     public:
@@ -23,6 +25,8 @@ class Ligne
         double getMontant() const;
         
         void afficher() const;
+
+        void saisir();
 };
 
 #endif //LIGNE_H

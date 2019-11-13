@@ -2,6 +2,8 @@
 
 #include <limits>
 
+#define SAISIE_ARTICLE
+
 Article::Article(string titre/*=""*/, double prix/*=0.*/)
 {
     this->titre = titre;

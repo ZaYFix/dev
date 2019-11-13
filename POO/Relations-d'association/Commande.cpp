@@ -16,7 +16,8 @@ int main()
    Commande uneCommande;   
    Client leClient;
    
-   leClient.passeUneCommande(&uneCommande);
+   leClient.setCommande(&uneCommande);
+   uneCommande.setClient(&leClient);
     
    uneCommande.saisir();
    
