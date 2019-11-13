@@ -1,0 +1,17 @@
+Pour la 1.0:
+- Implementer la classe Carte
+- Implementer la classe IHM
+- Faire les relations entre les classes
+- Permettre la saisie du nom du joueur
+- Pouvoir créer un paquet de cartes et le mélanger
+- Pouvoir jouer une manche simple
+- Pouvoir afficher le déroulement d'une manche
+
+Pour la 2.0:
+- Pouvoir faire une partie de plusieurs manches
+- Pouvoir afficher le déroulement d'une partie
+- Intégrer de nouveaux acteurs
+
+Pour la 3.0:
+- Pouvoir choisir le niveau de difficulté (durée d'affichage, nombre de cartes dans le paquet, etc)
+- Intégrer de nouveaux acteurs
