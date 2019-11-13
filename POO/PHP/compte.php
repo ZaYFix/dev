@@ -57,3 +57,5 @@ $compte2->affiche();
 
 $compte2->debiter(666000000);
 $compte2->getSolde();
+
+?>
