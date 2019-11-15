@@ -17,7 +17,6 @@ string Joueur::getNomJoueur() const
     return nomJoueur;
 }
 
-// mutateurs
 void Joueur::setNomJoueur(string nomJoueur)
 {
     this->nomJoueur = nomJoueur;

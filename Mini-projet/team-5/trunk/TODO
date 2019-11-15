@@ -1,11 +1,7 @@
 Pour la 1.0:
-- Implementer la classe Carte
-- Implementer la classe IHM
-- Faire les relations entre les classes
-- Permettre la saisie du nom du joueur
-- Pouvoir créer un paquet de cartes et le mélanger
-- Pouvoir jouer une manche simple
-- Pouvoir afficher le déroulement d'une manche
+- Faire le README
+- Mettre a jour le Changelog
+- Fonction Timer() dans la classe JPP
 
 Pour la 2.0:
 - Pouvoir faire une partie de plusieurs manches

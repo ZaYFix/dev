@@ -1,21 +1,26 @@
 #ifndef IHM_H
 #define IHM_H
 
-#include <iostream>
-using namespace std;
+typedef enum
+{
+    OEUF = 0,
+    POULE = 1,
+    RENARD = 2,
+    COQ = 3
+} TypeCarte;
 
 class IHM
 {
     private:
-       
+       TypeCarte typeCarte;
     public:
-        // constructeur et destructeur
+        // constructeur(s) et destructeur(s)
+        IHM(TypeCarte typeCarte);
         IHM();
-        ~IHM();
 
-        // accesseur(s)
-
-        // mutateur(s)
+        // méthode(s)
+        void afficherRegles() const;
+        void afficherCarte(TypeCarte typeCarte) const;
 };
 
 #endif // IHM_H

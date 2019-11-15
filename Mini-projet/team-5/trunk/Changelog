@@ -1,5 +1,17 @@
+## 15-11-2019
+- Pouvoir jouer une manche simple
+- Pouvoir afficher le déroulement d'une manche
+
+## 14-11-2019
+- Permettre la saisie du nom du joueur (Théo)
+- Faire les relations entre les classes (Servan)
+- Implementer la classe Carte (Théo)
+- Implementer la classe IHM (Servan)
+- Pouvoir créer un paquet de cartes (Servan)
+- Pouvoir mélanger la paquet de cartes (Théo)
+
 ## 13-11-2019
-- Création du diagramme de classe
-- Vérification du diagramme de classe
-- Implementation de la classe JeuPoulePoule
-- Implementation de la classe Joueur
+- Création du diagramme de classe (Servan)
+- Vérification du diagramme de classe 
+- Implementation de la classe JeuPoulePoule (Théo)
+- Implementation de la classe Joueur (Servan)
