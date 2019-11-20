@@ -2,8 +2,9 @@
 #include "Joueur.h"
 #include "IHM.h"
 
-#include <algorithm> // pour random_shuffle
-#include <iostream>
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
 
 // constructeur(s) et destructeur(s)
 JeuPoulePoule::JeuPoulePoule(unsigned int nbCarteOeuf, unsigned int nbCartePoule, unsigned int nbCarteRenard, unsigned int nbCarteCoq, unsigned int nbPoints,\
@@ -22,6 +23,7 @@ JeuPoulePoule::~JeuPoulePoule()
 // méthode(s)
 void JeuPoulePoule::demarrer()
 {
+    ihm->introduction();
     string nomJoueur = "\0";
     string reponseQuestion = "\0";
     ihm->afficherRegles();
@@ -136,13 +138,13 @@ void JeuPoulePoule::jouer()
                 cout << "Coq" << endl;
                 #endif
                 ihm->afficherCarte(COQ);
-                cout << "La manche est finie !" << endl;
                 cout << "Combien y'a t'il d'oeufs disponibles ?" << endl;
                 #ifdef DEBUG
                 cout << "nbOeufsDisponible : " << nbOeufsDisponible << endl;
                 cout << "nbPoulesQuiCouvent : " << nbPoulesQuiCouvent << endl;
                 #endif 
                 cin >> reponseJoueur;
+                cout << "La manche est finie !" << endl;
                 if(reponseJoueur == nbOeufsDisponible)
                 {
                     cout << "Bravo ! Vous avez gagné !" << endl;

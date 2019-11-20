@@ -1,6 +1,5 @@
 #include "IHM.h"
-#include <ctime> // pour avoir le temps
-#include <stdlib.h> // pour clear la fenêtre
+#include <stdlib.h>
 #include <iostream>
 
 #define NB_MAX_POUR_UN_CARACTERE_ESPACE 9
@@ -12,11 +11,25 @@ IHM::IHM(JeuPoulePoule *jeuPoulePoule): jeuPoulePoule(jeuPoulePoule)
 
 }
 
+void IHM::introduction() const
+{
+    cout << " `7MM```Mq.   .g8``8q. `7MMF'   `7MF'`7MMF'      `7MM```YMM      `7MM```Mq.   .g8``8q. `7MMF'   `7MF'`7MMF'      `7MM```YMM\n";
+    cout << "   MM   `MM..dP'    `YM. MM       M    MM          MM    `7        MM   `MM..dP'    `YM. MM       M    MM          MM    `7\n";
+    cout << "   MM   ,M9 dM'      `MM MM       M    MM          MM   d          MM   ,M9 dM'      `MM MM       M    MM          MM   d\n";
+    cout << "   MMmmdM9  MM        MM MM       M    MM          MMmmMM          MMmmdM9  MM        MM MM       M    MM          MMmmMM\n";
+    cout << "   MM       MM.      ,MP MM       M    MM      ,   MM   Y  ,       MM       MM.      ,MP MM       M    MM      ,   MM   Y  ,\n";
+    cout << "   MM       `Mb.    ,dP' YM.     ,M    MM     ,M   MM     ,M       MM       `Mb.    ,dP' YM.     ,M    MM     ,M   MM     ,M\n";
+    cout << " .JMML.       ``bmmd`'    `bmmmmd`'  .JMMmmmmMMM .JMMmmmmMMM     .JMML.       ``bmmd`'    `bmmmmd`'  .JMMmmmmMMM .JMMmmmmMMM\n";
+    cout << "                                                                                                                        v1.1\n";
+}
+
 void IHM::afficherRegles() const
 {
-    cout << "Tout d'abord, le Maître de Poule Poule (MPP) sera l'ordinateur durant toute la durée du jeu.\n";
+    cout << "Bonjour et bienvenue sur le Jeu « Poule Poule » !\n"; 
+    cout << "Tout d'abord, voici les règles : \n";
+    cout << "Le Maître de Poule Poule (MPP) sera l'ordinateur durant toute la durée du jeu.\n";
     cout << "Le MPP va empiler les cartes, une par une, les unes sur les autres au centre de la table.\n"; 
-    cout << "Une fois posées, ces cartes composeront le Film. Pendant ce temps, les joueurs devront juste \n";
+    cout << "Une fois posées, ces cartes composeront le Film. Pendant ce temps, le joueur devra juste \n";
     cout << "compter les Œufs !\n";
     cout << "Voici les cartes disponibles pour ce niveau 1 : 15 Œufs, 10 Poules et 10 Renards et un coq.\n";
     cout << endl;

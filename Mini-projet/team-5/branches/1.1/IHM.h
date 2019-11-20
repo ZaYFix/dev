@@ -16,6 +16,7 @@ class IHM
         ~IHM();
 
         // méthode(s)
+        void introduction() const;
         void afficherRegles() const;
         void afficherExemple();
         void effacerIHM() const;

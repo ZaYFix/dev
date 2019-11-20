@@ -71,29 +71,24 @@ void Commande::afficher() const
    cout << setfill(' ') << setw(3) << quantite;
    cout << "|" << setfill('.') << setw(50) << article->getTitre(); 
    cout << "|" << setfill(' ') << setw(8) << article->getPrix(); 
-   cout << "|" << setfill(' ') << setw(9) << quantite*article->getPrix() << " euros";
+   cout << "|" << setfill(' ') << setw(9) <<  quantite*article->getPrix() << " euros";
 }
-#include "Client.h"
-#include "Commande.h"
-#include "Ligne.h"
-#include "Article.h"
 
 #ifdef SAISIE_COMMANDE
 void Commande::saisir()
-int main() 
 {
     string _date = "";
     char choix;
-
+    
     if(leClient != NULL)
       leClient->saisir();
-
+    
     do
     {
         Ligne l;        
         l.saisir();
         ajouterLigneArticle(l.getArticle(), l.getQuantite());
-
+     
         do
         {    
             cout << "Un autre article à commander ? (o/n) ";
@@ -114,14 +109,7 @@ int main()
         while(choix != 'n' && choix != 'o');
     }
     while(choix != 'n');
-   /* Question 12 */
-   cout << "Question 12 : " << endl; 
-
-   Commande uneCommande;   
-   Client leClient;
-
-   leClient.passeUneCommande(&uneCommande);
-
+    
     // saisie très minimale d'une date !
     do
     {
@@ -137,13 +125,7 @@ int main()
         }
     }
     while(_date.length() == 0);
-   uneCommande.saisir();
-
-   uneCommande.afficher();   
-
-   cout << endl;
-
+    
     setDate(_date);
-   return 0;
 }
 #endif

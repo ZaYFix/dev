@@ -1,7 +1,7 @@
 #ifndef JOUEUR_H
 #define JOUEUR_H
 
-#include <string>
+#include <iostream>
 
 using namespace std;
 

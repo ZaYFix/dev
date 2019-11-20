@@ -1,6 +1,5 @@
 #include "IHM.h"
-#include <ctime> // pour avoir le temps
-#include <stdlib.h> // pour clear la fenêtre
+#include <stdlib.h>
 #include <iostream>
 
 #define NB_MAX_POUR_UN_CARACTERE_ESPACE 9

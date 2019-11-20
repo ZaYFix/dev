@@ -2,8 +2,9 @@
 #include "Joueur.h"
 #include "IHM.h"
 
-#include <algorithm> // pour random_shuffle
-#include <iostream>
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
 
 // constructeur(s) et destructeur(s)
 JeuPoulePoule::JeuPoulePoule(unsigned int nbCarteOeuf, unsigned int nbCartePoule, unsigned int nbCarteRenard, unsigned int nbCarteCoq, unsigned int nbPoints,\
