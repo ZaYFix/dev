@@ -1,5 +1,6 @@
 #include "IHM.h"
-#include <stdlib.h>
+#include <ctime> // pour avoir le temps
+#include <stdlib.h> // pour clear la fenêtre
 #include <iostream>
 
 #define NB_MAX_POUR_UN_CARACTERE_ESPACE 9
@@ -7,6 +8,11 @@
 using namespace std;
 
 IHM::IHM(JeuPoulePoule *jeuPoulePoule): jeuPoulePoule(jeuPoulePoule)
+{
+
+}
+
+IHM::~IHM()
 {
 
 }
@@ -20,12 +26,11 @@ void IHM::introduction() const
     cout << "   MM       MM.      ,MP MM       M    MM      ,   MM   Y  ,       MM       MM.      ,MP MM       M    MM      ,   MM   Y  ,\n";
     cout << "   MM       `Mb.    ,dP' YM.     ,M    MM     ,M   MM     ,M       MM       `Mb.    ,dP' YM.     ,M    MM     ,M   MM     ,M\n";
     cout << " .JMML.       ``bmmd`'    `bmmmmd`'  .JMMmmmmMMM .JMMmmmmMMM     .JMML.       ``bmmd`'    `bmmmmd`'  .JMMmmmmMMM .JMMmmmmMMM\n";
-    cout << "                                                                                                                        v1.1\n";
+    cout << "                                                                                                                        v"<<VERSION<<"\n";
 }
 
 void IHM::afficherRegles() const
 {
-    cout << "Bonjour et bienvenue sur le Jeu « Poule Poule » !\n"; 
     cout << "Tout d'abord, voici les règles : \n";
     cout << "Le Maître de Poule Poule (MPP) sera l'ordinateur durant toute la durée du jeu.\n";
     cout << "Le MPP va empiler les cartes, une par une, les unes sur les autres au centre de la table.\n"; 

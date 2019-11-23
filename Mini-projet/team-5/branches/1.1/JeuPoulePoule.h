@@ -1,7 +1,7 @@
 #ifndef JEU_POULE_POULE_H
 #define JEU_POULE_POULE_H
 
-#include <iostream>
+#include <string>
 #include <vector>
 
 //#define DEBUG

@@ -3,7 +3,10 @@
 #include "IHM.h"
 
 #include <algorithm> // pour random_shuffle
-#include <iostream>
+#include <iostream> // pour les cout des debug
+
+using namespace std;
+
 
 // constructeur(s) et destructeur(s)
 JeuPoulePoule::JeuPoulePoule(unsigned int nbCarteOeuf, unsigned int nbCartePoule, unsigned int nbCarteRenard, unsigned int nbCarteCoq, unsigned int nbPoints,\
@@ -16,24 +19,20 @@ nbCarteRenard(10),nbCarteCoq(1),nbPoints(0),nbManche(1),mancheFinie(false),nbOeu
 
 JeuPoulePoule::~JeuPoulePoule()
 {
-    
+    delete ihm;
+    delete joueur;
 }
 
 // méthode(s)
 void JeuPoulePoule::demarrer()
 {
-    string nomJoueur = "\0";
-    string reponseQuestion = "\0";
+    ihm->afficherNomJeu();
+    ihm->afficherBienvenue();
     ihm->afficherRegles();
-    cout << "Voulez-vous un exemple ? (o/n)" << endl;
-    cin >> reponseQuestion;
-    if (reponseQuestion == "o")
-    {
-        ihm->afficherExemple();
-    }
-    cout << "Veuillez saisir votre nom : ";
-    cin >> nomJoueur;
-    joueur->setNomJoueur(nomJoueur);
+    ihm->afficherQuestionExemple();
+    ihm->effacerIHM();
+    jouer();
+    finirManche();
 }
 
 void JeuPoulePoule::creerPaquet()
@@ -66,54 +65,27 @@ int chiffre_aleatoire(int i)
 
 void JeuPoulePoule::melanger() 
 {
-    #ifdef DEBUG
-    cout << "Cartes non mélangées" << endl;
-    for(vector<TypeCarte>::iterator it=cartes.begin(); it!=cartes.end(); ++it)
-    {
-        cout << *it;
-    }
-    cout << endl;
-    #endif
     srand ( unsigned ( time(0) ) );
-    random_shuffle ( this->cartes.begin(), this->cartes.end() );
     random_shuffle ( this->cartes.begin(), this->cartes.end(), chiffre_aleatoire);
-    #ifdef DEBUG
-    cout << "Cartes mélangées" << endl;
-    for(vector<TypeCarte>::iterator it=cartes.begin(); it!=cartes.end(); ++it)
-    {
-        cout << *it;
-    }
-    cout << endl;
-    #endif  
 }
 
 void JeuPoulePoule::jouer()
 {
     creerPaquet();
     melanger();
-    reponseJoueur = 0;
-    nbOeufsDisponible = 0;
-    nbPoulesQuiCouvent = 0;
-    reponseQuestion ='\0';
+    reinitialiserValeurs();
+    
     for(vector<TypeCarte>::iterator it=cartes.begin(); it!=cartes.end(); ++it)
     {
         ihm->effacerIHM();
         indenterNumCarte();
+        ihm->afficherCarte(*it);
         switch(*it)
         {
             case OEUF:
-                #ifdef DEBUG
-                cout << "Oeuf" << endl;
-                #endif
-                ihm->afficherCarte(OEUF);
                 nbOeufsDisponible++;
                 break;
             case POULE:
-                #ifdef DEBUG
-                cout << "Poule" << endl;
-                #endif
-                ihm->afficherCarte(POULE);
-
                 if(nbOeufsDisponible > 0)
                 {
                     nbOeufsDisponible--;
@@ -121,57 +93,114 @@ void JeuPoulePoule::jouer()
                 }
                 break;
             case RENARD:
-                #ifdef DEBUG
-                cout << "Renard" << endl;
-                #endif
-                ihm->afficherCarte(RENARD);
                 if(nbPoulesQuiCouvent > 0)
                 {
                     nbOeufsDisponible++;
                     nbPoulesQuiCouvent--;
                 }
                 break;
-            case COQ:
-                #ifdef DEBUG
-                cout << "Coq" << endl;
-                #endif
-                ihm->afficherCarte(COQ);
-                cout << "La manche est finie !" << endl;
-                cout << "Combien y'a t'il d'oeufs disponibles ?" << endl;
-                #ifdef DEBUG
-                cout << "nbOeufsDisponible : " << nbOeufsDisponible << endl;
-                cout << "nbPoulesQuiCouvent : " << nbPoulesQuiCouvent << endl;
-                #endif 
-                cin >> reponseJoueur;
-                if(reponseJoueur == nbOeufsDisponible)
-                {
-                    cout << "Bravo ! Vous avez gagné !" << endl;
-                    mancheFinie = true;
-                }
-                else
-                {
-                    cout << "Dommage ! Il y a " << nbOeufsDisponible << " et non pas " << reponseJoueur << " !" << endl;
-                    cout << "Voulez vous revoir la partie ? (o/n)" << endl;
-                    cin >> reponseQuestion;
-                    if (reponseQuestion == "o")
+            case COQ: 
+                mancheFinie = true;
+                break;
+        }
+        if(mancheFinie)
+        {
+            break;
+        }
+        //ihm->attendre(TEMPS_AFFICHAGE_CARTE);
+    }
+}
+
+void JeuPoulePoule::finirManche()
+{
+    #ifdef DEBUG
+        cout << "Nombre d'oeuf(s) disponible(s) : " << nbOeufsDisponible << endl;
+        cout << "Nombre d'oeuf(s) couvé(s) : " << nbPoulesQuiCouvent << endl;
+    #endif
+
+    ihm->afficherQuestionFinDeManche();
+    if(ihm->getReponseJoueurNbOeufs() == nbOeufsDisponible)
+    {
+        ++nbPoints;
+        if (nbPoints == 3)
+        {
+            gagnerManche();
+        }
+        ihm->afficherBravo();
+    }
+    else
+        revoirPartie();
+}
+
+void JeuPoulePoule::gagnerManche()
+{
+    ihm->afficherGagnerManche();
+    nbPoints = 0;
+    mancheFinie = false;
+}
+
+void JeuPoulePoule::revoirPartie()
+{
+    reinitialiserValeurs();
+    mancheFinie = false;
+    ihm->afficherMauvaiseReponse();
+    char reponseQuestion = '\0';
+    ihm->afficherRevoirPartie();
+    cin >> reponseQuestion;
+
+    if(reponseQuestion == 'o')
+    {
+        for(vector<TypeCarte>::iterator it=cartes.begin(); it!=cartes.end(); ++it)
+        {
+            indenterNumCarte();
+            switch(*it)
+            {
+                    case OEUF:
+                    ihm->afficherCarte(OEUF);
+                    nbOeufsDisponible++;
+                    break;
+                case POULE:
+                    ihm->afficherCarte(POULE);
+                    if(nbOeufsDisponible > 0)
                     {
-                        revoirPartie();
+                        nbOeufsDisponible--;
+                        nbPoulesQuiCouvent++;
                     }
+                    break;
+                case RENARD:
+                    ihm->afficherCarte(RENARD);
+                    if(nbPoulesQuiCouvent > 0)
+                    {
+                        nbOeufsDisponible++;
+                        nbPoulesQuiCouvent--;
+                    }
+                    break;
+                case COQ:
+                    ihm->afficherCarte(COQ);
                     mancheFinie = true;
-                }
-             
+                    break;
+            }
             if(mancheFinie)
             {
-                cout << "Fin" << endl;
-                exit(0);
-            }   
+                ihm->afficherNbTotalOeufs();
+                break;
+            }
+            ihm->afficherNbTotalOeufsActuel();
         }
-        #ifdef DEBUG
-        cout << "nbOeufsDisponible : " << nbOeufsDisponible << endl;
-        cout << "nbPoulesQuiCouvent : " << nbPoulesQuiCouvent << endl;
-        #endif
-        ihm->attendre();
     }
+}
+
+void JeuPoulePoule::indenterNumCarte()
+{
+    ++numCarte;
+}
+
+void JeuPoulePoule::reinitialiserValeurs()
+{
+    numCarte = 0;
+    reponseJoueur = 0;
+    nbOeufsDisponible = 0;          
+    nbPoulesQuiCouvent = 0;
 }
 
 // accesseur(s)
@@ -195,6 +224,11 @@ unsigned int JeuPoulePoule::getNumCarte() const
     return numCarte;
 }
 
+unsigned int JeuPoulePoule::getNbOeufsDisponible() const
+{
+    return nbOeufsDisponible;
+}
+
 // mutateur(s)
 void JeuPoulePoule::setNbOeufs(unsigned int nbOeufs)
 {
@@ -209,33 +243,4 @@ void JeuPoulePoule::setNbPoints(unsigned int nbPoints)
 void JeuPoulePoule::setNbManche(unsigned int nbManche)
 {
     this->nbManche = nbManche;
-}
-
-void JeuPoulePoule::revoirPartie()
-{
-    cout << "Replay de la partie" << endl;
-    for(vector<TypeCarte>::iterator it=cartes.begin(); it!=cartes.end(); ++it)
-    {
-        switch(*it)
-        {
-            case OEUF:
-                ihm->afficherCarte(OEUF);
-                break;
-            case POULE:
-                ihm->afficherCarte(POULE);
-                break;
-            case RENARD:
-                ihm->afficherCarte(RENARD);
-                break;
-            case COQ:
-                ihm->afficherCarte(COQ);
-        }
-    }
-    cout << "La manche est finie !" << endl;
-    cout << "Il y avait donc " << nbOeufsDisponible << " Oeuf(s)." << endl;
-}
-
-void JeuPoulePoule::indenterNumCarte()
-{
-    ++numCarte;
 }

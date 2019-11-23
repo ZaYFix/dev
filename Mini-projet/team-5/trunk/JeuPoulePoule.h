@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-//#define DEBUG
+#define DEBUG
 
 using namespace std;
 
@@ -36,7 +36,6 @@ class JeuPoulePoule
         unsigned int nbPoulesQuiCouvent;
         unsigned int numCarte;
         bool mancheFinie;
-        string reponseQuestion;
 
     public:
         // constructeur(s) et destructeur(s)
@@ -49,14 +48,18 @@ class JeuPoulePoule
         void creerPaquet();
         void melanger();
         void jouer();
+        void finirManche();
+        void gagnerManche();
         void revoirPartie();
         void indenterNumCarte();
+        void reinitialiserValeurs();
 
         // accesseur(s)
         unsigned int getNbOeufs() const;
         unsigned int getNbPoints() const;
         unsigned int getNbManche() const;
         unsigned int getNumCarte() const;
+        unsigned int getNbOeufsDisponible() const;
 
         // mutateur(s)
         void setNbOeufs(unsigned int nbOeufs);

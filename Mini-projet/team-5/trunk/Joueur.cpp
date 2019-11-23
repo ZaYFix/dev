@@ -1,9 +1,16 @@
 #include "Joueur.h"
+#include <iostream>
 
 // constructeur(s) et destructeur(s)
-Joueur::Joueur(string nomJoueur): nomJoueur("Joueur1")
+Joueur::Joueur(): nomJoueur("\0")
 {
-
+    if(nomJoueur == "\0")
+    {
+        cout << "Quel est votre nom ? ";
+        cin >> nomJoueur;
+        cout << endl;
+        setNomJoueur(nomJoueur);
+    }
 }
 
 Joueur::~Joueur()
@@ -14,9 +21,10 @@ Joueur::~Joueur()
 // accesseur(s)
 string Joueur::getNomJoueur() const
 {
-    return nomJoueur;
+    return this->nomJoueur;
 }
 
+// mutateur(s)
 void Joueur::setNomJoueur(string nomJoueur)
 {
     this->nomJoueur = nomJoueur;

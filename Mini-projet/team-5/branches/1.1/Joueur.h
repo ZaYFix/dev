@@ -1,7 +1,7 @@
 #ifndef JOUEUR_H
 #define JOUEUR_H
 
-#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -12,7 +12,7 @@ class Joueur
         
     public:
         // constructeur(s) et destructeur(s)
-        Joueur(string nomJoueur="Joueur1");
+        Joueur();
         ~Joueur();
 
         // accesseur(s)
