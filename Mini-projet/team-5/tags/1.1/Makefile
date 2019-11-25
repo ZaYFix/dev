@@ -2,7 +2,7 @@ CFLAGS=-Wall
 CXX=g++ -c
 LD=g++ -o
 
-TARGET=Poule-Poule
+TARGET=main
 
 FICHIER1=JeuPoulePoule
 FICHIER2=Joueur

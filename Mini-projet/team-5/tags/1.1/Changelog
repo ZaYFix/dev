@@ -1,12 +1,3 @@
-## 25-11-2019
-- Changement de nom de l'exécutable.
-- Bug d'affichage du numéro des cartes dans la fonction revoirPartie() corrigé.
-- Quelques corrections orthographiques.
-
-## 21-11-2019
-- Affichage du nom du logiciel ainsi que sa version
-- Fonction revoirPartie() modifié afin qu'elle affiche la position des cartes et le nombre d'oeufs.
-
 ## 20-11-2019
 - Affichage du numéro de la carte
 - Refactoring

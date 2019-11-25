@@ -4,7 +4,6 @@
 #include "JeuPoulePoule.h"
 
 #define TEMPS_AFFICHAGE_CARTE 2
-#define VERSION 1.2
 
 class IHM
 {

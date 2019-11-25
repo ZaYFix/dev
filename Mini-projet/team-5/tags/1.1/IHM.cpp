@@ -1,6 +1,5 @@
 #include "IHM.h"
-#include <ctime> // pour avoir le temps
-#include <stdlib.h> // pour clear la fenêtre
+#include <stdlib.h>
 #include <iostream>
 
 #define NB_MAX_POUR_UN_CARACTERE_ESPACE 9
@@ -8,11 +7,6 @@
 using namespace std;
 
 IHM::IHM(JeuPoulePoule *jeuPoulePoule): jeuPoulePoule(jeuPoulePoule)
-{
-
-}
-
-IHM::~IHM()
 {
 
 }
@@ -26,23 +20,24 @@ void IHM::introduction() const
     cout << "   MM       MM.      ,MP MM       M    MM      ,   MM   Y  ,       MM       MM.      ,MP MM       M    MM      ,   MM   Y  ,\n";
     cout << "   MM       `Mb.    ,dP' YM.     ,M    MM     ,M   MM     ,M       MM       `Mb.    ,dP' YM.     ,M    MM     ,M   MM     ,M\n";
     cout << " .JMML.       ``bmmd`'    `bmmmmd`'  .JMMmmmmMMM .JMMmmmmMMM     .JMML.       ``bmmd`'    `bmmmmd`'  .JMMmmmmMMM .JMMmmmmMMM\n";
-    cout << "                                                                                                                        v"<<VERSION<<"\n";
+    cout << "                                                                                                                        v1.1\n";
 }
 
 void IHM::afficherRegles() const
 {
-    cout << "Tout d'abord, voici les règles :" << endl;
-    cout << endl;
-    cout << "Le Maître de Poule Poule (MPP) sera l'ordinateur durant toute la durée du jeu." << endl;
-    cout << "Le MPP va empiler les cartes, une par une, les unes sur les autres au centre de la table." << endl; 
-    cout << "Une fois posées, ces cartes composeront le Film. Pendant ce temps, le joueur devra juste compter les Œufs." << endl;
-    cout << "Voici les cartes disponibles pour ce niveau 1 : 15 Œufs, 10 Poules et 10 Renards et un coq." << endl;
+    cout << "Bonjour et bienvenue sur le Jeu « Poule Poule » !\n"; 
+    cout << "Tout d'abord, voici les règles : \n";
+    cout << "Le Maître de Poule Poule (MPP) sera l'ordinateur durant toute la durée du jeu.\n";
+    cout << "Le MPP va empiler les cartes, une par une, les unes sur les autres au centre de la table.\n"; 
+    cout << "Une fois posées, ces cartes composeront le Film. Pendant ce temps, le joueur devra juste \n";
+    cout << "compter les Œufs !\n";
+    cout << "Voici les cartes disponibles pour ce niveau 1 : 15 Œufs, 10 Poules et 10 Renards et un coq.\n";
     cout << endl;
     cout << "Quand un oeuf arrive dans le film : c'est un oeuf disponible." << endl;
-    cout << "Quand une poule arrive et qu'un oeuf est disponible, l'oeuf devient indisponible." << endl;
-    cout << "Quand un renard arrive après une poule, il la chasse et l'oeuf redevient alors disponible." << endl;
-    cout << "Lorsqu'un coq arrive, la partie est finie, indiquez le nombre d'oeuf disponible." << endl;
-    cout << "Vous remportez 1 point par bonne réponse et gagnez la manche au bout de 3 points." << endl << endl;
+    cout << "Quand une poule arrive et qu'un oeuf est disponible, l'oeuf devient indisponible" << endl;
+    cout << "Quand un renard arrive après une poule, il la chasse et l'oeuf redevient alors disponible" << endl;
+    cout << "Lorsqu'un coq arrive, la partie est finie, indiquez le nombre d'oeuf disponible. \n";
+    cout << "Vous remportez 1 point par bonne réponse et gagnez la manche au bout de 3 points" << endl << endl;
 }
 
 void IHM::afficherCarte(TypeCarte typeCarte, bool exemple)

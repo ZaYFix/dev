@@ -2,8 +2,9 @@
 #include "Joueur.h"
 #include "IHM.h"
 
-#include <algorithm> // pour random_shuffle
-#include <iostream>
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
 
 // constructeur(s) et destructeur(s)
 JeuPoulePoule::JeuPoulePoule(unsigned int nbCarteOeuf, unsigned int nbCartePoule, unsigned int nbCarteRenard, unsigned int nbCarteCoq, unsigned int nbPoints,\
@@ -16,15 +17,14 @@ nbCarteRenard(10),nbCarteCoq(1),nbPoints(0),nbManche(1),mancheFinie(false),nbOeu
 
 JeuPoulePoule::~JeuPoulePoule()
 {
-    delete ihm;
-    delete joueur;
+    
 }
 
 // méthode(s)
 void JeuPoulePoule::demarrer()
 {
     ihm->introduction();
-    cout << "Bonjour et bienvenue ! ";
+    string nomJoueur = "\0";
     string reponseQuestion = "\0";
     ihm->afficherRegles();
     cout << "Voulez-vous un exemple ? (o/n)" << endl;
@@ -33,7 +33,9 @@ void JeuPoulePoule::demarrer()
     {
         ihm->afficherExemple();
     }
-    jouer();
+    cout << "Veuillez saisir votre nom : ";
+    cin >> nomJoueur;
+    joueur->setNomJoueur(nomJoueur);
 }
 
 void JeuPoulePoule::creerPaquet()
@@ -140,16 +142,17 @@ void JeuPoulePoule::jouer()
                 #ifdef DEBUG
                 cout << "nbOeufsDisponible : " << nbOeufsDisponible << endl;
                 cout << "nbPoulesQuiCouvent : " << nbPoulesQuiCouvent << endl;
-                #endif
+                #endif 
                 cin >> reponseJoueur;
+                cout << "La manche est finie !" << endl;
                 if(reponseJoueur == nbOeufsDisponible)
                 {
-                    cout << "Bravo "<< joueur->getNomJoueur() << "! Vous avez gagné !" << endl;
+                    cout << "Bravo ! Vous avez gagné !" << endl;
                     mancheFinie = true;
                 }
                 else
                 {
-                    cout << "Dommage ! Il y a " << nbOeufsDisponible << " Oeuf(s) et non pas " << reponseJoueur << " !" << endl;
+                    cout << "Dommage ! Il y a " << nbOeufsDisponible << " et non pas " << reponseJoueur << " !" << endl;
                     cout << "Voulez vous revoir la partie ? (o/n)" << endl;
                     cin >> reponseQuestion;
                     if (reponseQuestion == "o")
@@ -161,7 +164,7 @@ void JeuPoulePoule::jouer()
              
             if(mancheFinie)
             {
-                cout << "La manche est finie !" << endl;
+                cout << "Fin" << endl;
                 exit(0);
             }   
         }
@@ -212,47 +215,26 @@ void JeuPoulePoule::setNbManche(unsigned int nbManche)
 
 void JeuPoulePoule::revoirPartie()
 {
-    cout << "Revisualisation de la partie" << endl;
-    numCarte = 0;
-    nbOeufsDisponible = 0;
-    nbPoulesQuiCouvent = 0;
+    cout << "Replay de la partie" << endl;
     for(vector<TypeCarte>::iterator it=cartes.begin(); it!=cartes.end(); ++it)
     {
-        indenterNumCarte();
         switch(*it)
         {
-                case OEUF:
+            case OEUF:
                 ihm->afficherCarte(OEUF);
-                nbOeufsDisponible++;
                 break;
             case POULE:
                 ihm->afficherCarte(POULE);
-                if(nbOeufsDisponible > 0)
-                {
-                    nbOeufsDisponible--;
-                    nbPoulesQuiCouvent++;
-                }
                 break;
             case RENARD:
                 ihm->afficherCarte(RENARD);
-                if(nbPoulesQuiCouvent > 0)
-                {
-                    nbOeufsDisponible++;
-                    nbPoulesQuiCouvent--;
-                }
                 break;
             case COQ:
                 ihm->afficherCarte(COQ);
-                mancheFinie = true;
-                break;
         }
-        if(mancheFinie)
-        {
-            cout << "Donc il y a au total " << nbOeufsDisponible << " oeuf(s)." << endl;
-            break;
-        }
-        cout << "Il y a " << nbOeufsDisponible << " oeuf(s)." << endl;
     }
+    cout << "La manche est finie !" << endl;
+    cout << "Il y avait donc " << nbOeufsDisponible << " Oeuf(s)." << endl;
 }
 
 void JeuPoulePoule::indenterNumCarte()
