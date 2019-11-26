@@ -16,7 +16,9 @@ typedef enum
     OEUF = 0,
     POULE = 1,
     RENARD = 2,
-    COQ = 3
+    COQ = 3,
+    CHIEN = 4,
+    CANARD = 5
 } TypeCarte;
 
 class JeuPoulePoule
@@ -31,28 +33,45 @@ class JeuPoulePoule
         unsigned int nbCartePoule;
         unsigned int nbCarteRenard;
         unsigned int nbCarteCoq;
-        unsigned int reponseJoueur; 
+        unsigned int nbCarteChien;
+        unsigned int nbCarteCanard;
+
         unsigned int nbOeufsDisponible;
         unsigned int nbPoulesQuiCouvent;
+        unsigned int nbChienDansBasseCour;
         unsigned int numCarte;
         bool mancheFinie;
+        
 
     public:
         // constructeur(s) et destructeur(s)
-        JeuPoulePoule(unsigned int nbCarteOeuf=15,unsigned int nbCartePoule=10,unsigned int nbCarteRenard=10,unsigned int nbCarteCoq=1,unsigned int nbPoints=0,\
-        unsigned int nbManche=1, bool mancheFinie=false, unsigned int nbOeufsDisponible=0, unsigned int nbPoulesQuiCouvent=0, unsigned int numCarte=0);
+        JeuPoulePoule(unsigned int nbCarteOeuf=15,unsigned int nbCartePoule=10,unsigned int nbCarteRenard=10,unsigned int nbCarteCoq=1,unsigned int nbCarteChien=2, \
+        unsigned int nbCarteCanard=2, unsigned int nbPoints=0, unsigned int nbManche=1, bool mancheFinie=false, unsigned int nbOeufsDisponible=0, \
+        unsigned int nbPoulesQuiCouvent=0, unsigned int nbChienDansBasseCour=0, unsigned int numCarte=0);
         ~JeuPoulePoule();
 
         // méthode(s)
         void demarrer();
-        void creerPaquet();
-        void melanger();
         void jouer();
+        void rejouer();
         void finirManche();
         void gagnerManche();
+        void gagnerPartie();
         void revoirPartie();
         void indenterNumCarte();
         void reinitialiserValeurs();
+        void viderVecteur();
+
+        // Création d'un paquet de cartes
+        void creerPaquet();
+        void ajouterCarteOeuf();
+        void ajouterCartePoule();
+        void ajouterCarteRenard();
+        void ajouterCarteCoq();
+        void ajouterCarteChien();
+        void ajouterCarteCanard();
+
+        void melanger();
 
         // accesseur(s)
         unsigned int getNbOeufs() const;

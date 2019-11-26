@@ -9,9 +9,10 @@ using namespace std;
 
 
 // constructeur(s) et destructeur(s)
-JeuPoulePoule::JeuPoulePoule(unsigned int nbCarteOeuf, unsigned int nbCartePoule, unsigned int nbCarteRenard, unsigned int nbCarteCoq, unsigned int nbPoints,\
-unsigned int nbManche, bool mancheFinie, unsigned int nbOeufsDisponible, unsigned int nbPoulesQuiCouvent, unsigned int numCarte):nbCarteOeuf(15),nbCartePoule(10),\
-nbCarteRenard(10),nbCarteCoq(1),nbPoints(0),nbManche(1),mancheFinie(false),nbOeufsDisponible(0),nbPoulesQuiCouvent(0),numCarte(0)
+JeuPoulePoule::JeuPoulePoule(unsigned int nbCarteOeuf, unsigned int nbCartePoule, unsigned int nbCarteRenard, unsigned int nbCarteCoq, unsigned int nbCarteChien, \
+unsigned int nbCarteCanard,unsigned int nbPoints,unsigned int nbManche, bool mancheFinie, unsigned int nbOeufsDisponible, unsigned int nbPoulesQuiCouvent, \
+unsigned int nbChienDansBasseCour, unsigned int numCarte):nbCarteOeuf(15),nbCartePoule(10),nbCarteRenard(10),nbCarteCoq(1),nbCarteCanard(2),nbCarteChien(2), \
+nbPoints(0),nbManche(1),mancheFinie(false),nbOeufsDisponible(0), nbPoulesQuiCouvent(0),nbChienDansBasseCour(0),numCarte(0)
 {
     ihm = new IHM(this);
     joueur = new Joueur;
@@ -30,6 +31,7 @@ void JeuPoulePoule::demarrer()
     ihm->afficherBienvenue();
     ihm->afficherRegles();
     ihm->afficherQuestionExemple();
+    ihm->demanderNom();
     ihm->effacerIHM();
     jouer();
     finirManche();
@@ -37,24 +39,60 @@ void JeuPoulePoule::demarrer()
 
 void JeuPoulePoule::creerPaquet()
 {
+    ajouterCarteOeuf();
+    ajouterCartePoule();
+    ajouterCarteRenard();
+    ajouterCarteCoq();
+    ajouterCarteChien();
+    ajouterCarteCanard();
+    cout << cartes.size() << endl;
+}
+
+void JeuPoulePoule::ajouterCarteOeuf()
+{
     for (int i = 0; i < nbCarteOeuf; ++i)
     {
         cartes.push_back(OEUF);
     }
+}
 
+void JeuPoulePoule::ajouterCartePoule()
+{
     for (int i = 0; i < nbCartePoule; ++i)
     {
         cartes.push_back(POULE);
     }
+}
 
+void JeuPoulePoule::ajouterCarteRenard()
+{
     for (int i = 0; i < nbCarteRenard; ++i)
     {
         cartes.push_back(RENARD);
     }
-    
+}
+
+void JeuPoulePoule::ajouterCarteCoq()
+{
     for (int i = 0; i < nbCarteCoq; ++i)
     {
         cartes.push_back(COQ);
+    }
+}
+
+void JeuPoulePoule::ajouterCarteChien()
+{
+    for (int i = 0; i < nbCarteChien; ++i)
+    {
+        cartes.push_back(CHIEN);
+    }
+}
+
+void JeuPoulePoule::ajouterCarteCanard()
+{
+    for(int i = 0; i < nbCarteCanard; ++i)
+    {
+        cartes.push_back(CANARD);
     }  
 }
 
@@ -67,6 +105,14 @@ void JeuPoulePoule::melanger()
 {
     srand ( unsigned ( time(0) ) );
     random_shuffle ( this->cartes.begin(), this->cartes.end(), chiffre_aleatoire);
+    #ifdef DEBUG
+    cout << "Cartes:" << endl;
+    for(vector<TypeCarte>::iterator it=cartes.begin(); it!=cartes.end(); ++it)
+    {
+        cout << *it;
+    }
+    cout << endl;
+    #endif
 }
 
 void JeuPoulePoule::jouer()
@@ -93,40 +139,59 @@ void JeuPoulePoule::jouer()
                 }
                 break;
             case RENARD:
+                if(nbChienDansBasseCour > 0)
+                {
+                    nbChienDansBasseCour--;
+                    break;
+                }
                 if(nbPoulesQuiCouvent > 0)
                 {
                     nbOeufsDisponible++;
                     nbPoulesQuiCouvent--;
                 }
                 break;
+            case CHIEN:
+                nbChienDansBasseCour++;
+                break;
+            case CANARD:
+                break;
             case COQ: 
                 mancheFinie = true;
                 break;
         }
+        #ifdef DEBUG
+            cout << "Nombre d'oeuf(s) disponible(s) : " << nbOeufsDisponible << endl;
+            cout << "Nombre d'oeuf(s) couvé(s) : " << nbPoulesQuiCouvent << endl;
+            cout << "Nombre de chien(s) dans la basse cour : " << nbChienDansBasseCour << endl;
+        #endif
         if(mancheFinie)
         {
             break;
         }
-        //ihm->attendre(TEMPS_AFFICHAGE_CARTE);
+        #ifndef DEBUG
+        ihm->attendre(TEMPS_AFFICHAGE_CARTE);
+        #endif
     }
+}
+
+void JeuPoulePoule::rejouer()
+{
+    jouer();
+    finirManche();
 }
 
 void JeuPoulePoule::finirManche()
 {
-    #ifdef DEBUG
-        cout << "Nombre d'oeuf(s) disponible(s) : " << nbOeufsDisponible << endl;
-        cout << "Nombre d'oeuf(s) couvé(s) : " << nbPoulesQuiCouvent << endl;
-    #endif
-
     ihm->afficherQuestionFinDeManche();
     if(ihm->getReponseJoueurNbOeufs() == nbOeufsDisponible)
     {
         ++nbPoints;
-        if (nbPoints == 3)
+        if (nbPoints == NOMBRE_DE_MANCHE)
         {
-            gagnerManche();
+            gagnerPartie();
+            exit(0);
         }
-        ihm->afficherBravo();
+        gagnerManche();
     }
     else
         revoirPartie();
@@ -134,15 +199,22 @@ void JeuPoulePoule::finirManche()
 
 void JeuPoulePoule::gagnerManche()
 {
-    ihm->afficherGagnerManche();
+    ihm->afficherBravoManche();
+    reinitialiserValeurs();
+    viderVecteur();
+    rejouer();
+}
+
+void JeuPoulePoule::gagnerPartie()
+{
+    ihm->afficherGagnerPartie();
     nbPoints = 0;
-    mancheFinie = false;
+    reinitialiserValeurs();
 }
 
 void JeuPoulePoule::revoirPartie()
 {
     reinitialiserValeurs();
-    mancheFinie = false;
     ihm->afficherMauvaiseReponse();
     char reponseQuestion = '\0';
     ihm->afficherRevoirPartie();
@@ -198,9 +270,15 @@ void JeuPoulePoule::indenterNumCarte()
 void JeuPoulePoule::reinitialiserValeurs()
 {
     numCarte = 0;
-    reponseJoueur = 0;
-    nbOeufsDisponible = 0;          
+    nbOeufsDisponible = 0;
     nbPoulesQuiCouvent = 0;
+    nbChienDansBasseCour = 0;
+    mancheFinie = false;
+}
+
+void JeuPoulePoule::viderVecteur()
+{
+    cartes.clear();
 }
 
 // accesseur(s)

@@ -2,16 +2,24 @@
 #define IHM_H
 
 #include "JeuPoulePoule.h"
+#include "Joueur.h"
 
 #define TEMPS_AFFICHAGE_EXEMPLE 2
 #define TEMPS_AFFICHAGE_CARTE 2
+#define TEMPS_AFFICHAGE_TEXTE 4
+
 #define VERSION 2.0
+
 #define NB_MAX_POUR_UN_CARACTERE_ESPACE 9
+#define NOMBRE_DE_MANCHE 3
+
+class Joueur;
 
 class IHM
 {
     private:
         JeuPoulePoule *jeuPoulePoule;
+        Joueur *joueur;
         unsigned int reponseJoueurNbOeufs;
         char reponseQuestion;
        
@@ -28,8 +36,8 @@ class IHM
         void attendre(unsigned int tempsAffichageDefini) const;
         void afficherCarte(TypeCarte typeCarte, bool afficheNumeroCarte=false) const;
         void afficherQuestionFinDeManche();
-        void afficherBravo() const;
-        void afficherGagnerManche() const;
+        void afficherBravoManche() const;
+        void afficherGagnerPartie() const;
         void afficherBienvenue() const;
         void afficherQuestionExemple();
         void afficherMauvaiseReponse() const;
@@ -37,6 +45,7 @@ class IHM
         void afficherNbTotalOeufs() const;
         void afficherNbTotalOeufsActuel() const;
         void afficherValeurIncorrecte() const;
+        void demanderNom();
 
         // accesseur(s)
         unsigned int getReponseJoueurNbOeufs() const;

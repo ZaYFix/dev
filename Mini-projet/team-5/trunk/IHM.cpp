@@ -7,16 +7,17 @@ using namespace std;
 
 IHM::IHM(JeuPoulePoule *jeuPoulePoule): jeuPoulePoule(jeuPoulePoule), reponseJoueurNbOeufs(0), reponseQuestion('\0')
 {
-
+    joueur = new Joueur;
 }
 
 IHM::~IHM()
 {
-
+    delete joueur;
 }
 
 void IHM::afficherNomJeu() const
 {
+    cout << endl;
     cout << " `7MM```Mq.   .g8``8q. `7MMF'   `7MF'`7MMF'      `7MM```YMM      `7MM```Mq.   .g8``8q. `7MMF'   `7MF'`7MMF'      `7MM```YMM\n";
     cout << "   MM   `MM..dP'    `YM. MM       M    MM          MM    `7        MM   `MM..dP'    `YM. MM       M    MM          MM    `7\n";
     cout << "   MM   ,M9 dM'      `MM MM       M    MM          MM   d          MM   ,M9 dM'      `MM MM       M    MM          MM   d\n";
@@ -39,8 +40,8 @@ void IHM::afficherRegles() const
     cout << "Quand un oeuf arrive dans le film : c'est un oeuf disponible." << endl;
     cout << "Quand une poule arrive et qu'un oeuf est disponible, l'oeuf devient indisponible." << endl;
     cout << "Quand un renard arrive après une poule, il la chasse et l'oeuf redevient alors disponible." << endl;
-    cout << "Lorsqu'un coq arrive, la partie est finie, indiquez le nombre d'oeuf disponible. \n";
-    cout << "Vous remportez 1 point par bonne réponse et gagnez la manche au bout de 3 points." << endl << endl;
+    cout << "Lorsqu'un coq arrive, la manche est finie, indiquez le nombre d'oeuf disponible. \n";
+    cout << "Vous remportez 1 point par bonne réponse et gagnez la partie au bout de 3 points." << endl << endl;
 }
 
 void IHM::afficherCarte(TypeCarte typeCarte, bool afficheNumeroCarte) const
@@ -126,6 +127,14 @@ void IHM::afficherCarte(TypeCarte typeCarte, bool afficheNumeroCarte) const
         cout << " *                                           *\n"; 
         cout << " *                                           *\n"; 
         break;
+    case CHIEN:
+        cout << "Chien" << endl;
+        // TODO ASCII CHIEN
+        break;
+    case CANARD:
+        cout << "Canard" << endl;
+        //TODO ASCII CANARD
+        break;
     default:
         break;
     }
@@ -151,7 +160,9 @@ void IHM::afficherCarte(TypeCarte typeCarte, bool afficheNumeroCarte) const
 
 void IHM::effacerIHM() const
 {
+    #ifndef DEBUG
     system("clear");
+    #endif
 }
 
 void IHM::afficherExemple()
@@ -210,43 +221,50 @@ void IHM::afficherBienvenue() const
     cout << "Bonjour et bienvenue ! ";
 }
 
+void IHM::demanderNom()
+{
+    string nomJoueur = "\0";
+    cout << "Quel est votre nom ? ";
+    cin >> nomJoueur;
+    cout << endl;
+    joueur->setNomJoueur(nomJoueur);
+}
+
 void IHM::afficherQuestionExemple()
 {
     cout << "Voulez-vous un exemple ? (o/n)" << endl;
     this->setReponseQuestion();
-    while(!(reponseQuestion == 'o' ) || !(reponseQuestion == 'n' ))
+    switch(reponseQuestion)
     {
-        if (reponseQuestion == 'o')
-        {
+        case 'o':
             afficherExemple();
             break;
-        }
-        if (reponseQuestion == 'n')
-        {
+        case 'n':
             break;
-        }
-        else
-        {
+        default:
             afficherValeurIncorrecte();
             afficherQuestionExemple();
-        }       
     }
 }
 
-void IHM::afficherGagnerManche() const
+void IHM::afficherGagnerPartie() const
 {
-    cout << "Bravo "/*TODO << joueur->getNomJoueur()*/ << " ! Vous avez comptabilité 3 points, vous avez donc gagné une manche !" << endl;
+    cout << endl;
+    cout << "Bravo " << joueur->getNomJoueur() << " ! Vous avez comptabilité 3 points, vous avez donc gagné la partie !" << endl;
 }
 
 void IHM::afficherQuestionFinDeManche()
 {
-    cout << "Combien y'a t'il d'oeuf(s) disponible(s) ?" << endl;
+    cout << "Combien y'a t'il d'oeuf(s) disponible(s) ? ";
     cin >> reponseJoueurNbOeufs;
 }
 
-void IHM::afficherBravo() const
+void IHM::afficherBravoManche() const
 {
-    cout << "Bravo " /*TODO<< jeuPoulePoule->getNomJoueur()*/ << " vous avez gagné !" << endl;
+    cout << endl;
+    cout << "Bravo " << joueur->getNomJoueur() << " vous avez gagné une manche !" << endl;
+    cout << "Il ne vous reste plus que " << NOMBRE_DE_MANCHE - jeuPoulePoule->getNbPoints() << " manche(s) pour gagner la partie !" << endl;
+    attendre(TEMPS_AFFICHAGE_TEXTE);
 }
 
 void IHM::afficherMauvaiseReponse() const
@@ -256,7 +274,7 @@ void IHM::afficherMauvaiseReponse() const
 
 void IHM::afficherRevoirPartie() const
 {
-    cout << "Voulez vous revoir la partie "/*TODO << joueur->getNomJoueur()*/" ? (o/n)" << endl;
+    cout << "Voulez vous revoir la partie " << joueur->getNomJoueur() << " ? (o/n)" << endl;
 }
 
 void IHM::afficherNbTotalOeufs() const
@@ -274,7 +292,9 @@ void IHM::afficherNbTotalOeufsActuel() const
 
 void IHM::afficherValeurIncorrecte() const
 {
+    cout << endl;
     cout << "Valeur incorrecte ! Veuillez réessayer." << endl;
+    cout << endl;
 }
 
 // accesseur(s)

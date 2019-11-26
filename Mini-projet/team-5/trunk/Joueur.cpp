@@ -4,13 +4,13 @@
 // constructeur(s) et destructeur(s)
 Joueur::Joueur(): nomJoueur("\0")
 {
-    if(nomJoueur == "\0")
-    {
-        cout << "Quel est votre nom ? ";
-        cin >> nomJoueur;
-        cout << endl;
-        setNomJoueur(nomJoueur);
-    }
+    // if(nomJoueur == "\0")
+    // {
+    //     cout << "Quel est votre nom ? ";
+    //     cin >> nomJoueur;
+    //     cout << endl;
+    //     setNomJoueur(nomJoueur);
+    // }
 }
 
 Joueur::~Joueur()
