@@ -2,12 +2,11 @@
 #include "Ligne.h"
 #include "Article.h"
 
+#include <iostream>
 #include <iomanip>
 #include <limits>
 #include <ctype.h>
 #include <vector>
-
-#define SAISIE_COMMANDE
 
 Commande::Commande(string reference/*=""*/, string date/*=*/) : reference(reference), date(date)
 {
@@ -27,6 +26,7 @@ string Commande::getDate() const
 {
    return date;
 }
+using namespace std;
 
 void Commande::setDate(string date)
 {
@@ -41,7 +41,7 @@ int Commande::getNbLignes() const
 double Commande::getTotal() const
 {
     double total = 0;
-    
+
     for(unsigned int i=0;i < lignes.size() ; i++)
     {
         total += lignes[i].getMontant();
@@ -58,7 +58,7 @@ void Commande::ajouterLigneArticle(Article *article, long quantite)
 long Commande::getNbArticles() const
 {
     unsigned int nbArticles = 0;
-    
+
     for(unsigned int i=0;i < lignes.size() ; i++)
     {
         nbArticles += lignes[i].getQuantite();
@@ -66,34 +66,12 @@ long Commande::getNbArticles() const
     return nbArticles;
 }
 
-void Commande::setClient(Client *client)
-{
-    this->client=client;
-}
-
 void Commande::afficher() const
 {
-    cout << setfill('-') << setw(80) << "\n";
-    cout << "Client : " << client->getNom() << setfill(' ') << setw(62) << "Numéro : " << client->getNumero() << endl;
-    cout << setfill('-') << setw(80) << "\n";
-    cout << "Le " << this->getDate() << setfill(' ') << setw(60) << "Ref. : " << this->getReference() << endl;
-    cout << setfill('-') << setw(80) << "\n";
-
-    cout << setfill(' ') << setw(3) << "Qte"; 
-    cout << "|" << setfill(' ') << setw(50) << "Description"; 
-    cout << "|" << setfill(' ') << setw(8) << "Prix uni"; 
-    cout << "|" << setfill(' ') << setw(15) << "Total\n";
-    cout << setfill('-') << setw(80) << "\n"; 
-
-    for(unsigned int i =0;i<lignes.size();i++)
-    {
-        lignes[i].afficher();
-        cout << endl;
-    }
-
-    cout << setfill('-') << setw(80) << "\n";
-    cout << setfill(' ') << setw(73) << this->getTotal() << " euros" << endl;
-    cout << setfill('-') << setw(80) << "\n";
+   cout << setfill(' ') << setw(3) << quantite;
+   cout << "|" << setfill('.') << setw(50) << article->getTitre(); 
+   cout << "|" << setfill(' ') << setw(8) << article->getPrix(); 
+   cout << "|" << setfill(' ') << setw(9) <<  quantite*article->getPrix() << " euros";
 }
 
 #ifdef SAISIE_COMMANDE
@@ -102,8 +80,8 @@ void Commande::saisir()
     string _date = "";
     char choix;
     
-    if(client != NULL)
-      client->saisir();
+    if(leClient != NULL)
+      leClient->saisir();
     
     do
     {
