@@ -53,16 +53,16 @@ int main()
    cout << "Volume = "    << cube.volume() << endl << endl;
    
    Parallelepipede parallelepipede(5, 4, 9); // largeur, longueur, hauteur
-   //cout << "Parallelepipede : " << endl;  
+   cout << "Parallelepipede : " << endl;  
    cout << "Périmetre = " << parallelepipede.perimetre() << endl;
    cout << "Aire = "      << parallelepipede.aire() << endl;
    cout << "Volume = "    << parallelepipede.volume() << endl << endl;
    
-//    Sphere          sphere(3); // rayon
-//    //cout << "Sphere : " << endl;  
-//    cout << "Périmetre = " << sphere.perimetre() << endl;
-//    cout << "Aire = "      << sphere.aire() << endl;
-//    cout << "Volume = "    << sphere.volume() << endl << endl;
+   Sphere          sphere(3); // rayon
+   cout << "Sphere : " << endl;  
+   cout << "Périmetre = " << sphere.perimetre() << endl;
+   cout << "Aire = "      << sphere.aire() << endl;
+   cout << "Volume = "    << sphere.volume() << endl << endl;
    
    Figure          *fig;
    list<Figure *>  liste;

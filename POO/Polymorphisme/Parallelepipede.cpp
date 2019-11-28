@@ -5,7 +5,7 @@
 
 using namespace std;
 
-string Parallepepide::toString() 
+string Parallelepipede::toString() 
 {
    ostringstream oss;
    oss << largeur;
