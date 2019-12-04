@@ -5,7 +5,8 @@
 
 using namespace std;
 
-IHM::IHM(JeuPoulePoule *jeuPoulePoule): jeuPoulePoule(jeuPoulePoule), reponseJoueurNbOeufs(0), reponseQuestion('\0'), reponseRelancerManche('\0'), reponseQuestionFinDePartie('\0')
+IHM::IHM(JeuPoulePoule *jeuPoulePoule): jeuPoulePoule(jeuPoulePoule), reponseJoueurNbOeufs(0), reponseQuestion('\0'), \
+reponseRelancerManche('\0'), reponseQuestionFinDePartie('\0')
 {
     joueur = new Joueur;
 }
@@ -76,15 +77,6 @@ void IHM::afficherCarte(TypeCarte typeCarte, bool afficheNumeroCarte) const
         break;
     case VER:
         afficherCarteVer();
-        break;
-    case FERMIER:
-        afficherCarteFermier();
-        break;
-    case OEUF_AUTRUCHE:
-        afficherCarteOeufAutruche();
-        break;
-    case RENARD_EN_POULE:
-        afficherCarteRenardEnPoule();
     default:
         break;
     }
@@ -111,22 +103,22 @@ void IHM::afficherCarte(TypeCarte typeCarte, bool afficheNumeroCarte) const
 
 void IHM::afficherCarteOeuf() const
 {
-    cout << " *                                           *\n";
-    cout << " *                                           *\n";
-    cout << " *                                           *\n";
-    cout << " *                                           *\n";
-    cout << " *                  ███████                  *\n";
-    cout << " *                ██       ██                *\n";
-    cout << " *               ██         ██               *\n";
-    cout << " *               ██         ██               *\n";
-    cout << " *              ██           ██              *\n";
-    cout << " *              ██           ██              *\n";
-    cout << " *              ██           ██              *\n";
-    cout << " *              ██           ██              *\n";
-    cout << " *                ██       ██                *\n";
-    cout << " *                  ███████                  *\n";
-    cout << " *                                           *\n";
-    cout << " *                                           *\n";
+    cout << " *                  ████████                 *\n";
+    cout << " *                ██        ██               *\n";
+    cout << " *              ██            ██             *\n";
+    cout << " *            ██                ██           *\n";
+    cout << " *            ██                ██           *\n";
+    cout << " *          ██                    ██         *\n";
+    cout << " *          ██                    ██         *\n";
+    cout << " *        ██                        ██       *\n";
+    cout << " *        ██                        ██       *\n";
+    cout << " *        ██                        ██       *\n";
+    cout << " *        ██                        ██       *\n";
+    cout << " *          ██                    ██         *\n";
+    cout << " *          ██                    ██         *\n";
+    cout << " *            ██                ██           *\n";
+    cout << " *              ████        ████             *\n";
+    cout << " *                  ████████                 *\n";
     cout << " *                                           *\n";
 }
 
@@ -173,24 +165,24 @@ void IHM::afficherCarteRenard() const
 }
 
 void IHM::afficherCarteCoq() const
-{                           
-    cout << " *         _.-~-._                           *\n";
-    cout << " *        (._.--.-;             _.-=-.       *\n";
-    cout << " *      .-'`.o )  \\          .-`  -'  '.     *\n";
-    cout << " *      `;---) \\   ;        /  .-_.--'  `\\   *\n";
-    cout << " *        (` ) ;    \\       | .' ` '.-'-\\`   *\n";
-    cout << " *         /_./\\_.|\\_\\      ;  ' .'-'.-.     *\n";
-    cout << " *         /         '-._    \\` /  _;-,      *\n";
-    cout << " *        |         .-=-.;-._ \\  -'-,        *\n";
-    cout << " *        \\        /      ` ; -  -'`)        *\n";
-    cout << " *         \\       \\     '-- `\\.\\            *\n";
-    cout << " *          '.      '._ '-- '--'/            *\n";
-    cout << " *            `-._     `'----'`;             *\n";
-    cout << " *                `   --.____,/              *\n";
-    cout << " *                       \\\\  \\               *\n";
-    cout << " *                       / /`                *\n";
-    cout << " *                   ___/ / __               *\n";
-    cout << " *                 (`(`(--- - )              *\n";
+{
+    cout << " *                                           *\n"; 
+    cout << " *                                           *\n"; 
+    cout << " *                                           *\n"; 
+    cout << " *         ___//             ________        *\n";
+    cout << " *        /@_ \\            / / / _/ \\        *\n";
+    cout << " *        ~ O\\ \\_         | /_/_/ _//\\       *\n";
+    cout << " *          o \\  \\________/// / //__/'''     *\n";
+    cout << " *             |  \\           ___/           *\n";
+    cout << " *             \\_ \\___________/              *\n";
+    cout << " *                 \\___    __/               *\n";
+    cout << " *                     \\  /                  *\n";
+    cout << " *                     || |                  *\n";
+    cout << " *                     || |                  *\n";
+    cout << " *                   _/_/|\\_                 *\n";
+    cout << " *                                           *\n"; 
+    cout << " *                                           *\n"; 
+    cout << " *                                           *\n"; 
 }
 
 void IHM::afficherCarteChien() const
@@ -258,67 +250,11 @@ void IHM::afficherCarteVer() const
     cout << " *                                           *\n";
 }
 
-void IHM::afficherCarteFermier() const
+void IHM::effacerIHM() const
 {
-    cout << " *                                           *\n";
-    cout << " *                 _____   _____             *\n";
-    cout << " *                /     `./     \\            *\n";
-    cout << " *               |               |           *\n";
-    cout << " *               |               |           *\n";
-    cout << " *            ___|_______________|___        *\n";
-    cout << " *            ===========.===========        *\n";
-    cout << " *              / ~~~~~     ~~~~~ \\          *\n";
-    cout << " *             /|  OO |     | OO  |\\         *\n";
-    cout << " *             W   ---  / \\  ---   W         *\n";
-    cout << " *             \\.      |o o|      ./         *\n";
-    cout << " *              \\                 /          *\n";
-    cout << " *               \\    \\=====/    /           *\n";
-    cout << " *                \\__    v    __/            *\n";
-    cout << " *                   ~-_____-~               *\n";
-    cout << " *                                           *\n";
-    cout << " *                                           *\n";
-}
-
-void IHM::afficherCarteOeufAutruche() const
-{
-    cout << " *                  ████████                 *\n";
-    cout << " *                ██        ██               *\n";
-    cout << " *              ██            ██             *\n";
-    cout << " *            ██                ██           *\n";
-    cout << " *            ██                ██           *\n";
-    cout << " *          ██                    ██         *\n";
-    cout << " *          ██                    ██         *\n";
-    cout << " *        ██                        ██       *\n";
-    cout << " *        ██                        ██       *\n";
-    cout << " *        ██                        ██       *\n";
-    cout << " *        ██                        ██       *\n";
-    cout << " *          ██                    ██         *\n";
-    cout << " *          ██                    ██         *\n";
-    cout << " *            ██                ██           *\n";
-    cout << " *              ████        ████             *\n";
-    cout << " *                  ████████                 *\n";
-    cout << " *                                           *\n";
-}
-
-void IHM::afficherCarteRenardEnPoule() const
-{
-    cout << " *     ,-.      .-,                          *\n";
-    cout << " *     |-.\\ __ /.-|                          *\n";
-    cout << " *     \\  `    `  /              ,')         *\n";
-    cout << " *     / _     _  \\__         ,',')~,        *\n";
-    cout << " *     | _`q  p _ |    `-.__,==' ' ' '}      *\n";
-    cout << " *     '._=/  \\=_.'                /)        *\n";
-    cout << " *        `\\()/,                    )        *\n";
-    cout << " *           |  \\       `~.         /        *\n";
-    cout << " *           \\   `._        \\      /         *\n";
-    cout << " *            \\     `._____,'    ,'          *\n";
-    cout << " *             `-.             ,'            *\n";
-    cout << " *                `-._     _,-'              *\n";
-    cout << " *                    77jj'                  *\n";
-    cout << " *                   //_||                   *\n";
-    cout << " *                __//--'/`                  *\n";
-    cout << " *              ,--'/`  '                    *\n";
-    cout << " *                                           *\n";
+    #ifndef DEBUG
+    system("clear");
+    #endif
 }
 
 void IHM::afficherExemple()
@@ -390,46 +326,13 @@ void IHM::afficherExemple()
     this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
     this->effacerIHM();
 
-    this->afficherCarte(RENARD_EN_POULE, true);
-    cout << endl << "Un renard déguisé en poule arrive, il y a un chien, mais il peut chasser une poule." << endl;
-    cout << "Il y a une poule, le renard la chasse, 2 oeufs sont disponible." << endl << endl;
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->effacerIHM();
-
     this->afficherCarte(CANARD, true);
     cout << endl << "Rien ne se passe le canard est juste là pour vous perturber." << endl << endl;
     this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
     this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
     this->effacerIHM();
 
-    this->afficherCarte(FERMIER, true);
-    cout << endl << "Un fermier passe par là, il ramasse tous les oeufs" << endl << endl;
-    cout << "Il y a donc 0 oeufs disponibles." << endl << endl;
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->effacerIHM();
-
-    this->afficherCarte(OEUF_AUTRUCHE, true);
-    cout << endl << "Un oeuf d'autruche compte double, ne peut pas être couvé par une poule" << endl << endl;
-    cout << "Mais peut être ramassé par le fermier" << endl << endl;
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->effacerIHM();
-
-    this->afficherCarte(POULE, true);
-    cout << endl << "Une poule arrive, il n'y a pas d'oeuf a couver" << endl << endl;
-    cout << "Mais peut être ramassé par le fermier" << endl << endl;
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->attendre(TEMPS_AFFICHAGE_EXEMPLE);
-    this->effacerIHM();
-
-
-    cout << "Il y a donc 2 oeufs disponiblent (1 oeuf d'autruche = 2 oeufs)" << endl;
+    cout << "Il y a donc 1 oeuf disponible." << endl;
 
     fairePartieDemonstration();
 }
@@ -449,37 +352,31 @@ void IHM::fairePartieDemonstration()
             this->jeuPoulePoule->setNbOeufs(1);
             afficherQuestionPartieDemo();
             
-        
             this->afficherCarte(POULE, true);
             this->jeuPoulePoule->setNbOeufs(0);
             afficherQuestionPartieDemo();
             
-
             this->afficherCarte(CHIEN);
             this->jeuPoulePoule->setNbOeufs(0);
             afficherQuestionPartieDemo();
 
-            this->afficherCarte(RENARD_EN_POULE, true);
-            this->jeuPoulePoule->setNbOeufs(1);
-            afficherQuestionPartieDemo();
-
             this->afficherCarte(POULE, true);
-            this->jeuPoulePoule->setNbOeufs(1);
+            this->jeuPoulePoule->setNbOeufs(0);
             afficherQuestionPartieDemo();
 
             this->afficherCarte(RENARD, true);
             this->jeuPoulePoule->setNbOeufs(0);
             afficherQuestionPartieDemo();
 
-            this->afficherCarte(FERMIER, true);
-            this->jeuPoulePoule->setNbOeufs(0);
+            this->afficherCarte(RENARD, true);
+            this->jeuPoulePoule->setNbOeufs(1);
             afficherQuestionPartieDemo();
             
             this->afficherCarte(CANARD, true);
-            this->jeuPoulePoule->setNbOeufs(0);
+            this->jeuPoulePoule->setNbOeufs(1);
             afficherQuestionPartieDemo();
 
-            this->afficherCarte(OEUF_AUTRUCHE, true);
+            this->afficherCarte(OEUF, true);
             this->jeuPoulePoule->setNbOeufs(2);
             afficherQuestionPartieDemo();
 
@@ -488,11 +385,7 @@ void IHM::fairePartieDemonstration()
             afficherQuestionPartieDemo();
 
             this->afficherCarte(POULE, true);
-            this->jeuPoulePoule->setNbOeufs(2);
-            afficherQuestionPartieDemo();
-
-            this->afficherCarte(POULE, true);
-            this->jeuPoulePoule->setNbOeufs(2);
+            this->jeuPoulePoule->setNbOeufs(1);
             afficherQuestionPartieDemo();
 
             afficherNbTotalOeufs();
@@ -506,24 +399,6 @@ void IHM::afficherQuestionPartieDemo()
     {
         cout << "Non il y en a " << this->jeuPoulePoule->getNbOeufsDisponible() << endl;
     }
-}
-
-void IHM::effacerIHM() const
-{
-    #ifndef DEBUG
-    system("clear");
-    #endif
-}
-
-void IHM::afficherDebug() const
-{
-    #ifdef DEBUG
-    cout << "Nombre d'oeuf(s) disponible(s) : " << jeuPoulePoule->getNbOeufsDisponible() << endl;
-    cout << "Nombre d'oeuf(s) intouchable(s) : " << jeuPoulePoule->getNbOeufsIntouchable() << endl;
-    cout << "Nombre d'oeuf(s) couvé(s) : " << jeuPoulePoule->getNbPoulesQuiCouvent() << endl;
-    cout << "Nombre de chien(s) dans la basse cour : " << jeuPoulePoule->getNbChienDansBasseCour() << endl;
-    cout << "Nombre de ver de terre dans la basse cour : " << jeuPoulePoule->getNbVerDansBasseCour() << endl;
-    #endif
 }
 
 void IHM::attendre(unsigned int tempsAffichageDefini) const
@@ -545,7 +420,7 @@ void IHM::afficherBienvenue() const
 void IHM::demanderNom()
 {
     string nomJoueur = "\0";
-    cout << "Quel est votre nom ? " << endl;
+    cout << "Quel est votre nom ? ";
     cin >> nomJoueur;
     cout << endl;
     joueur->setNomJoueur(nomJoueur);

@@ -13,7 +13,6 @@
 #define NB_MAX_POUR_UN_CARACTERE_ESPACE 9
 #define NOMBRE_DE_MANCHE 3
 
-class JeuPoulePoule;
 class Joueur;
 
 class IHM
@@ -21,7 +20,6 @@ class IHM
     private:
         JeuPoulePoule *jeuPoulePoule;
         Joueur *joueur;
-
         unsigned int reponseJoueurNbOeufs;
         char reponseQuestion;
         char reponseRelancerManche;
@@ -46,10 +44,6 @@ class IHM
         void afficherCarteChien() const;
         void afficherCarteCanard() const;
         void afficherCarteVer() const;
-        void afficherCarteFermier() const;
-        void afficherCarteOeufAutruche() const;
-        void afficherCarteRenardEnPoule() const;
-
         void afficherQuestionFinDeManche();
         void afficherBravoManche();
         void afficherGagnerPartie();
@@ -64,8 +58,6 @@ class IHM
         void afficherValeurIncorrecte() const;
         void afficherRelancerManche();
         void afficherQuestionPartieDemo();
-        //void afficherChoisirDifficulte();
-        void afficherDebug() const;
         void fairePartieDemonstration();
         void demanderNom();
 

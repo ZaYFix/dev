@@ -20,24 +20,13 @@ typedef enum
     CHIEN = 4,
     CANARD = 5,
     VER = 6,
-    FERMIER = 7,
-    OEUF_AUTRUCHE = 8,
-    RENARD_EN_POULE = 9
 } TypeCarte;
-
-typedef enum
-{
-    FACILE = 0,
-    MOYEN = 1,
-    DIFFICLE = 2
-} NiveauDifficulte;
 
 class JeuPoulePoule
 {
     private:        
         IHM *ihm;
         Joueur *joueur;
-        
         vector<TypeCarte> cartes;
         unsigned int nbPoints;
         unsigned int nbManche;
@@ -48,8 +37,8 @@ class JeuPoulePoule
         unsigned int nbCarteChien;
         unsigned int nbCarteCanard;
         unsigned int nbCarteVer;
+
         unsigned int nbOeufsDisponible;
-        unsigned int nbOeufsIntouchable;
         unsigned int nbPoulesQuiCouvent;
         unsigned int nbChienDansBasseCour;
         unsigned int nbVerDansBasseCour;
@@ -61,7 +50,7 @@ class JeuPoulePoule
         // constructeur(s) et destructeur(s)
         JeuPoulePoule(unsigned int nbCarteOeuf=15,unsigned int nbCartePoule=10,unsigned int nbCarteRenard=10,unsigned int nbCarteCoq=1,unsigned int nbCarteChien=2,\
         unsigned int nbCarteCanard=2,unsigned int nbCarteVer=2,unsigned int nbPoints=0, unsigned int nbManche=1, bool mancheFinie=false, \
-        unsigned int nbOeufsDisponible=0, unsigned int nbOeufsIntouchable=0, unsigned int nbPoulesQuiCouvent=0, unsigned int nbChienDansBasseCour=0, unsigned int numCarte=0);
+        unsigned int nbOeufsDisponible=0, unsigned int nbPoulesQuiCouvent=0, unsigned int nbChienDansBasseCour=0, unsigned int numCarte=0);
         ~JeuPoulePoule();
 
         // méthode(s)
@@ -94,10 +83,6 @@ class JeuPoulePoule
         unsigned int getNbManche() const;
         unsigned int getNumCarte() const;
         unsigned int getNbOeufsDisponible() const;
-        unsigned int getNbOeufsIntouchable() const;
-        unsigned int getNbPoulesQuiCouvent() const;
-        unsigned int getNbChienDansBasseCour() const;
-        unsigned int getNbVerDansBasseCour() const;
 
         // mutateur(s)
         void setNbOeufs(unsigned int nbOeufs);

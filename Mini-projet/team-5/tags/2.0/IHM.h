@@ -8,12 +8,11 @@
 #define TEMPS_AFFICHAGE_CARTE 2
 #define TEMPS_AFFICHAGE_TEXTE 4
 
-#define VERSION 2.1
+#define VERSION 2.0
 
 #define NB_MAX_POUR_UN_CARACTERE_ESPACE 9
 #define NOMBRE_DE_MANCHE 3
 
-class JeuPoulePoule;
 class Joueur;
 
 class IHM
@@ -21,11 +20,8 @@ class IHM
     private:
         JeuPoulePoule *jeuPoulePoule;
         Joueur *joueur;
-
         unsigned int reponseJoueurNbOeufs;
         char reponseQuestion;
-        char reponseRelancerManche;
-        char reponseQuestionFinDePartie;
        
     public:
         // constructeur(s) et destructeur(s)
@@ -46,27 +42,16 @@ class IHM
         void afficherCarteChien() const;
         void afficherCarteCanard() const;
         void afficherCarteVer() const;
-        void afficherCarteFermier() const;
-        void afficherCarteOeufAutruche() const;
-        void afficherCarteRenardEnPoule() const;
-
         void afficherQuestionFinDeManche();
-        void afficherBravoManche();
-        void afficherGagnerPartie();
-        void afficherQuestionFinDePartie();
+        void afficherBravoManche() const;
+        void afficherGagnerPartie() const;
         void afficherBienvenue() const;
-        void afficherMauvaiseReponse();
         void afficherQuestionExemple();
         void afficherMauvaiseReponse() const;
         void afficherRevoirPartie() const;
         void afficherNbTotalOeufs() const;
         void afficherNbTotalOeufsActuel() const;
         void afficherValeurIncorrecte() const;
-        void afficherRelancerManche();
-        void afficherQuestionPartieDemo();
-        //void afficherChoisirDifficulte();
-        void afficherDebug() const;
-        void fairePartieDemonstration();
         void demanderNom();
 
         // accesseur(s)
@@ -75,7 +60,6 @@ class IHM
         
         //mutateur(s)
         void setReponseQuestion();
-        void setReponseJoueurNbOeufs();
 };
 
 #endif // IHM_H

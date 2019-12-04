@@ -11,9 +11,9 @@ using namespace std;
 // constructeur(s) et destructeur(s)
 JeuPoulePoule::JeuPoulePoule(unsigned int nbCarteOeuf, unsigned int nbCartePoule, unsigned int nbCarteRenard, unsigned int nbCarteCoq, unsigned int nbCarteChien, \
 unsigned int nbCarteCanard,unsigned int nbCarteVer,unsigned int nbPoints,unsigned int nbManche, bool mancheFinie, unsigned int nbOeufsDisponible, \
-unsigned int nbOeufsIntouchable, unsigned int nbPoulesQuiCouvent, unsigned int nbChienDansBasseCour, unsigned int numCarte):nbCarteOeuf(15), \
-nbCartePoule(10),nbCarteRenard(10), nbCarteCoq(1),nbCarteCanard(2),nbCarteChien(2),nbCarteVer(2),nbPoints(0),nbManche(1),mancheFinie(false), \
-nbOeufsDisponible(0), nbOeufsIntouchable(0), nbPoulesQuiCouvent(0), nbChienDansBasseCour(0),nbVerDansBasseCour(0),numCarte(0)
+unsigned int nbPoulesQuiCouvent, unsigned int nbChienDansBasseCour, unsigned int numCarte):nbCarteOeuf(15),nbCartePoule(10),nbCarteRenard(10), \
+nbCarteCoq(1),nbCarteCanard(2),nbCarteChien(2),nbCarteVer(2),nbPoints(0),nbManche(1),mancheFinie(false),nbOeufsDisponible(0), nbPoulesQuiCouvent(0), \
+nbChienDansBasseCour(0),nbVerDansBasseCour(0),numCarte(0)
 {
     ihm = new IHM(this);
     joueur = new Joueur;
@@ -32,7 +32,6 @@ void JeuPoulePoule::demarrer()
     ihm->afficherBienvenue();
     ihm->afficherRegles();
     ihm->afficherQuestionExemple();
-    //ihm->afficherChoisirDifficulte();
     ihm->demanderNom();
     ihm->effacerIHM();
     jouer();
@@ -115,6 +114,14 @@ void JeuPoulePoule::melanger()
 {
     srand ( unsigned ( time(0) ) );
     random_shuffle ( this->cartes.begin(), this->cartes.end(), chiffre_aleatoire);
+    #ifdef DEBUG
+    cout << "Cartes:" << endl;
+    for(vector<TypeCarte>::iterator it=cartes.begin(); it!=cartes.end(); ++it)
+    {
+        cout << *it;
+    }
+    cout << endl;
+    #endif
 }
 
 void JeuPoulePoule::jouer()
@@ -168,22 +175,13 @@ void JeuPoulePoule::jouer()
             case VER:
                 nbVerDansBasseCour++;
                 break;
-            case FERMIER:
-                nbOeufsDisponible = 0;
-                nbOeufsIntouchable = 0;
-                break;
-            case OEUF_AUTRUCHE:
-                nbOeufsIntouchable = nbOeufsIntouchable + 2;
-                break;
-            case RENARD_EN_POULE:
-                if(nbPoulesQuiCouvent > 0)
-                    {
-                        nbOeufsDisponible++;
-                        nbPoulesQuiCouvent--;
-                    }
-                break;
         }
-        ihm->afficherDebug();
+        #ifdef DEBUG
+            cout << "Nombre d'oeuf(s) disponible(s) : " << nbOeufsDisponible << endl;
+            cout << "Nombre d'oeuf(s) couvé(s) : " << nbPoulesQuiCouvent << endl;
+            cout << "Nombre de chien(s) dans la basse cour : " << nbChienDansBasseCour << endl;
+            cout << "Nombre de ver de terre dans la basse cour : " << nbVerDansBasseCour << endl;
+        #endif
         if(mancheFinie)
         {
             break;
@@ -287,22 +285,7 @@ void JeuPoulePoule::revoirPartie()
                 case VER:
                     nbVerDansBasseCour++;
                     break;
-                case FERMIER:
-                    nbOeufsDisponible = 0;
-                    nbOeufsIntouchable = 0;
-                    break;
-                case OEUF_AUTRUCHE:
-                    nbOeufsIntouchable++;
-                    break;
-                case RENARD_EN_POULE:
-                    if(nbPoulesQuiCouvent > 0)
-                        {
-                            nbOeufsDisponible++;
-                            nbPoulesQuiCouvent--;
-                        }
-                break;
             }
-            ihm->afficherDebug();
             if(mancheFinie)
             {
                 ihm->afficherNbTotalOeufs();
@@ -356,27 +339,7 @@ unsigned int JeuPoulePoule::getNumCarte() const
 
 unsigned int JeuPoulePoule::getNbOeufsDisponible() const
 {
-    return (nbOeufsDisponible + (nbOeufsIntouchable * 2));
-}
-
-unsigned int JeuPoulePoule::getNbOeufsIntouchable() const
-{
-    return nbOeufsIntouchable;
-}
-
-unsigned int JeuPoulePoule::getNbPoulesQuiCouvent() const
-{
-    return nbPoulesQuiCouvent;
-}
-
-unsigned int JeuPoulePoule::getNbChienDansBasseCour() const
-{
-    return nbChienDansBasseCour;
-}
-
-unsigned int JeuPoulePoule::getNbVerDansBasseCour() const
-{
-    return nbVerDansBasseCour;
+    return nbOeufsDisponible;
 }
 
 // mutateur(s)
