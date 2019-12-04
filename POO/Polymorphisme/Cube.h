@@ -16,9 +16,10 @@ class Cube : public Carre
       Cube(double largeur, double x = 0, double y = 0)
       : Carre(x, y, 0), largeur(largeur) {}
       ~Cube() {}
-      double perimetre()    { return Figure::perimetre(); }
+      double perimetre()    { return 0; }
       double aire()         { return 6*(largeur * largeur); }
       double volume()       { return pow(largeur,3); }
+      string description(t_desc type);
       string toString();
 };
 

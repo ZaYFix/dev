@@ -10,8 +10,7 @@ using namespace std;
 class Rectangle : public Carre
 {
    protected:
-      double largeur;
-      double longueur;
+      double largeur, longueur;
       
    public:
       Rectangle(double largeur, double longueur, double x = 0, double y = 0) 
@@ -19,6 +18,7 @@ class Rectangle : public Carre
       ~Rectangle() {}
       double perimetre()   { return 2*(largeur+longueur); }
       double aire()        { return largeur * longueur; }
+      string description(t_desc type);
       string toString();
 };
 

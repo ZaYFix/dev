@@ -35,31 +35,41 @@ int main()
    cout << "Volume = "    << carre.volume() << endl << endl;
 
    Rectangle       rectangle(5, 4); // largeur, longueur
-   cout << "Rectangle : " << endl;
+   //cout << "Rectangle : " << endl;
+   cout << "Je suis un " << rectangle.description(courte) << endl;  
+   cout << rectangle.description(longue);
    cout << "Périmetre = " << rectangle.perimetre() << endl;
    cout << "Aire = "      << rectangle.aire() << endl;
    cout << "Volume = "    << rectangle.volume() << endl << endl;
    
    Cercle          cercle(2); // rayon
-   cout << "Cercle : " << endl;  
+   //cout << "Cercle : " << endl;
+   cout << "Je suis un " << cercle.description(courte) << endl;  
+   cout << cercle.description(longue);    
    cout << "Périmetre = " << cercle.perimetre() << endl;
    cout << "Aire = "      << cercle.aire() << endl;
    cout << "Volume = "    << cercle.volume() << endl << endl;
    
    Cube            cube(6); // largeur
-   cout << "Cube : " << endl;  
+   //cout << "Cube : " << endl;
+   cout << "Je suis un " << cube.description(courte) << endl;  
+   cout << cube.description(longue);  
    cout << "Périmetre = " << cube.perimetre() << endl;
    cout << "Aire = "      << cube.aire() << endl;
    cout << "Volume = "    << cube.volume() << endl << endl;
    
    Parallelepipede parallelepipede(5, 4, 9); // largeur, longueur, hauteur
-   cout << "Parallelepipede : " << endl;  
+   //cout << "Parallelepipede : " << endl;  
+   cout << "Je suis un " << parallelepipede.description(courte) << endl;  
+   cout << parallelepipede.description(longue); 
    cout << "Périmetre = " << parallelepipede.perimetre() << endl;
    cout << "Aire = "      << parallelepipede.aire() << endl;
    cout << "Volume = "    << parallelepipede.volume() << endl << endl;
    
    Sphere          sphere(3); // rayon
-   cout << "Sphere : " << endl;  
+   //cout << "Sphere : " << endl;
+   cout << "Je suis un " << sphere.description(courte) << endl;  
+   cout << sphere.description(longue);  
    cout << "Périmetre = " << sphere.perimetre() << endl;
    cout << "Aire = "      << sphere.aire() << endl;
    cout << "Volume = "    << sphere.volume() << endl << endl;
@@ -69,16 +79,16 @@ int main()
    list<Figure *>::iterator iL;   
    fstream *fichier = NULL;
    string  figure;
-   int     x, y, z;
-   double  base, hauteur, largeur;
+   int     x, y, z, dx, dy;
+   double  base, hauteur, largeur, longueur, rayon;
    
    liste.push_back(&triangle);
    liste.push_back(&carre);
-//   liste.push_back(&rectangle);
-//   liste.push_back(&cercle);
-//   liste.push_back(&cube);
-//   liste.push_back(&parallelepipede);
-//   liste.push_back(&sphere);
+   liste.push_back(&rectangle);
+   liste.push_back(&cercle);
+   liste.push_back(&cube);
+   liste.push_back(&parallelepipede);
+   liste.push_back(&sphere);
    
    fichier = new fstream("Figures.txt", fstream::out);
    for (iL = liste.begin(); iL != liste.end(); iL++) 
@@ -108,31 +118,31 @@ int main()
          *fichier >> largeur;
          cout << " " << largeur << endl;
       }      
-      // if (figure == "Rectangle") 
-      // {
-      //    *fichier >> largeur >> longueur;
-      //    cout << largeur << longueur << endl;
-      // }
-//       if (figure == "Cercle") 
-//       {
-//          *fichier >> rayon;
-//          cout << rayon << endl;
-//       }
-//       if (figure == "Cube") 
-//       {
-//          *fichier >> largeur;
-//          cout << largeur << endl;
-//       }
-//       if (figure == "Parallélépipède") 
-//       {
-//          *fichier >> largeur >> longueur >> hauteur >> dx >> dy;
-//          cout << largeur << longueur << hauteur << dx << dy << endl;
-//       }
-//       if (figure == "Sphère") 
-//       {
-//          *fichier >> rayon ;
-//          cout << rayon << endl;
-//       }
+      if (figure == "Rectangle") 
+      {
+         *fichier >> largeur >> longueur;
+         cout << " " <<largeur << " " << longueur << " " <<endl;
+      }
+      if (figure == "Cercle") 
+      {
+         *fichier >> rayon;
+         cout << " " << rayon << endl;
+      }
+      if (figure == "Cube") 
+      {
+         *fichier >> largeur;
+         cout << " " << largeur << endl;
+      }
+      if (figure == "Parallélépipède") 
+      {
+         *fichier >> largeur >> longueur >> hauteur >> dx >> dy;
+         cout << " " << largeur << " " << longueur << " " << hauteur << " " << dx << " " << dy << endl;
+      }
+      if (figure == "Sphère") 
+      {
+         *fichier >> rayon ;
+         cout << " " << rayon << endl;
+      }
       while (fichier->get() != '\n');
       *fichier >> figure;
    }   

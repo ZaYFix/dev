@@ -18,6 +18,8 @@ class Cercle : public Figure
       ~Cercle() {}
       double perimetre()    { return (2*M_PI*rayon); }
       double aire()         { return (pow(rayon,2)*M_PI); }
+      double volume()       { return 0;}
+      string description(t_desc type);
       string toString();
 };
 

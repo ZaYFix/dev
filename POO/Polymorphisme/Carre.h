@@ -18,6 +18,7 @@ class Carre : public Figure
       ~Carre() {}
       double perimetre()   { return largeur * 4; }
       double aire()        { return largeur * largeur; }
+      double volume()      { return 0;}
       string description(t_desc type);
       string toString();
 };

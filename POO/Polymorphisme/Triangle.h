@@ -18,6 +18,7 @@ class Triangle : public Figure
       ~Triangle() {}
       double perimetre()   { return sqrt(base * base + hauteur * hauteur) + base + hauteur; }
       double aire()        { return base * hauteur / 2; }
+      double volume()      { return 0;}
       string description(t_desc type);
       string toString();
 };

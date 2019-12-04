@@ -14,10 +14,12 @@ class Sphere : public Cercle
       
    public:
       Sphere(int rayon, double x = 0, double y = 0)
-      : Figure(x, y, 0), rayon(rayon) {}
+      : Cercle(x, y, 0), rayon(rayon) {}
       ~Sphere() {}
-      double perimetre()    { return Figure::perimetre(); }
-      double aire()         { return (pow(rayon,2)*M_PI); }
+      double perimetre()    { return 0; }
+      double aire()         { return (4*M_PI*pow(rayon,2)); }
+      double volume()       { return ((4*M_PI*pow(rayon,3))/3); }
+      string description(t_desc type);
       string toString();
 };
 
