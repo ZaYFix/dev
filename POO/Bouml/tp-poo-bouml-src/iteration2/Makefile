@@ -1,69 +1,23 @@
-########################################################################
-####################### Makefile Template ##############################
-########################################################################
+CXX=g++
 
-# Compiler settings - Can be customized.
-CC = g++
-CXXFLAGS = -std=c++11 -Wall
-LDFLAGS = 
+GENERIC_CFLAGS := 
+GENERIC_LIBS := 
 
-# Makefile settings - Can be customized.
-APPNAME = de
-EXT = .cpp
-SRCDIR = .
-OBJDIR = .
+TARGET=jeu_de_des
 
-############## Do not change anything from here downwards! #############
-SRC = $(wildcard $(SRCDIR)/*$(EXT))
-OBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)/%.o)
-DEP = $(OBJ:$(OBJDIR)/%.o=%.d)
-# UNIX-based OS variables & settings
-RM = rm
-DELOBJ = $(OBJ)
-# Windows OS variables & settings
-DEL = del
-EXE = .exe
-WDELOBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)\\%.o)
+HEADERFILES	:= $(wildcard *.h)
+SRCFILES	:= $(wildcard *.cpp)
+OBJFILES	:= $(patsubst %.cpp, %.o, $(SRCFILES))
 
-########################################################################
-####################### Targets beginning here #########################
-########################################################################
+.PHONY: clean $(TARGET)
 
-all: $(APPNAME)
+all: $(TARGET)
 
-# Builds the app
-$(APPNAME): $(OBJ)
-	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+%.o: %.cpp %.h
+	$(CXX) -c $< $(GENERIC_CFLAGS) -o $@
 
-# Creates the dependecy rules
-%.d: $(SRCDIR)/%$(EXT)
-	@$(CPP) $(CFLAGS) $< -MM -MT $(@:%.d=$(OBJDIR)/%.o) >$@
+$(TARGET): $(OBJFILES)
+	$(CXX) $(GENERIC_CFLAGS) $(GENERIC_LIBS) -o $(TARGET) $^
 
-# Includes all .h files
--include $(DEP)
-
-# Building rule for .o files and its .c/.cpp in combination with all .h
-$(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
-	$(CC) $(CXXFLAGS) -o $@ -c $<
-
-################### Cleaning rules for Unix-based OS ###################
-# Cleans complete project
-.PHONY: clean
-clean:
-	$(RM) $(DELOBJ) $(DEP) $(APPNAME)
-
-# Cleans only all files with the extension .d
-.PHONY: cleandep
-cleandep:
-	$(RM) $(DEP)
-
-#################### Cleaning rules for Windows OS #####################
-# Cleans complete project
-.PHONY: cleanw
-cleanw:
-	$(DEL) $(WDELOBJ) $(DEP) $(APPNAME)$(EXE)
-
-# Cleans only all files with the extension .d
-.PHONY: cleandepw
-cleandepw:
-	$(DEL) $(DEP)
+clean: 
+	rm -f $(TARGET) $(OBJFILES) *~

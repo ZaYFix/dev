@@ -1,37 +1,24 @@
-#include "de.h"
 
-De::De(): de1(0), de2(0)
-{
+#include "De.h"
+#include <iostream>
+
+De::De(){
 }
 
-De::~De()
-{
+De::De(int nbFaces){
 }
 
-void De::jouer()
-{
-    lancerDes();
-    afficherDes();
-    calculerDes();
+De::~De(){
 }
 
-void De::lancerDes()
-{
+//Accesseur qui retourne la valeur du D�
+int De::getValeur() {
+    return valeur;
+}
+
+//Lance le d� !
+void De::lancer() {
     srand (time(NULL));
-    de1 = rand() % 6;
-    de2 = rand() % 6;
+    valeur = rand() % nbFaces;
 }
 
-void De::afficherDes()
-{
-    cout << de1 << endl;
-    cout << de2 << endl;
-}
-
-void De::calculerDes()
-{
-    if(de1 == de2)
-    {
-        cout << "C'est un double !" << endl;
-    }
-}

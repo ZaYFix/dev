@@ -1,21 +1,32 @@
-#ifndef JOUEUR_H
-#define JOUEUR_H
+#ifndef _JOUEUR_H
+#define _JOUEUR_H
 
-#include <iostream>
 
+#include <string>
+using namespace std;
+#include <vector>
 using namespace std;
 
-class Joueur
+class De;
+
+class Joueur 
 {
-    public:
-        Joueur(string nom);
-        ~Joueur();        
+  public:
+    Joueur(string nom);
 
-        string getNom() const;
-        void setNom(string nom);
+    ~Joueur();
 
-    private:
-        string nom;
+    string getNom() const;
+
+    void setNom(string nom);
+
+    void jouerAuxDes();
+
+
+  private:
+    string nom;
+
+    vector<De*> des;
+
 };
-
 #endif

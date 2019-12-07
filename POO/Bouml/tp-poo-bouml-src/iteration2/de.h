@@ -1,25 +1,29 @@
-#ifndef DE_H
-#define DE_H
+#ifndef _DE_H
+#define _DE_H
 
-#include <iostream>
 
-using namespace std;
-
-class De
+class De 
 {
-    public:
-        De();
-        ~De();       
+  private:
+    //Le nombre maximal de faces pour un dé
+    const int nbFaces=  6;
 
-        void jouer();
-        void lancerDes();
-        void afficherDes() 
-        void calculerDes();
+    //un entier représentant la valeur du dé entre 1 et nbFaces
+    int valeur;
 
 
-    private:
-        unsigned int de1;
-        unsigned int de2;
+  public:
+    De();
+
+    De(int nbFaces);
+
+    ~De();
+
+    //Accesseur qui retourne la valeur du Dé
+    int getValeur();
+
+    //Lance le dé !
+    void lancer();
+
 };
-
 #endif

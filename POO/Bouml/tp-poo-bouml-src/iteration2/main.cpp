@@ -1,11 +1,12 @@
+#include "De.h"
 #include <iostream>
-#include "de.h"
 using namespace std;
 
 int main()
 {
     De de;
-    de.jouer();
+    de.lancer();
+    cout << de.getValeur() << endl;
 
-    return 1;
+    return 0;
 }
