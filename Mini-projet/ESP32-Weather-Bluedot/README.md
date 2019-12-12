@@ -98,10 +98,10 @@ Source : [ESP32-weather.zip](./ESP32-weather.zip)
 - Licence
 
 ### A propos
-Author *Thierry Vaira (IR) <tvaira@free.fr>*
-Author *Jérôme Beaumont (EC) <beaumontlasalle84@gmail.com>*
-Version *0.1*
-Date *2019*
+- Author *Thierry Vaira (IR) <tvaira@free.fr>*
+- Author *Jérôme Beaumont (EC) <beaumontlasalle84@gmail.com>*
+- Version *0.1*
+- Date *2019*
 
 ### Licence GPL
 
