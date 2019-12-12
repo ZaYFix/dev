@@ -1,5 +1,3 @@
-\page page_README README
-
 ## Nom : ESP32-Weather (version BlueDot)
 
 ## Numéro de version : 0.2
@@ -14,7 +12,7 @@ Le programme embarque aussi un **serveur TCP** multi-clients via un réseau **Wi
 
 La sonde communique aussi via le Bluetooth et la liaison série. Le même protocole est utilisé pour les trois modes de communication. L'écran de la sonde affiche l'adresse IP et le numéro de port utilisés pour une communication WiFi et l'adresse MAC de l'interface Bluetooth.
 
-\image html ./ESP32_weather_1.png
+![ESP32_WEATHER](https://github.com/ZaYFix/dev/blob/master/Mini-projet/ESP32-Weather-Bluedot/ESP32_weather_1.png)
 
 ## Protocole
 
@@ -65,7 +63,7 @@ _Remarque : la requête est insensible à la casse._
 
 Test de communication via la liaison série (logiciel cutecom) :
 
-\image html ./screenshot-cutecom.png
+![CUTECOM](https://github.com/ZaYFix/dev/blob/master/Mini-projet/ESP32-Weather-Bluedot/screenshot-cutecom.png)
 
 ## PlatformIO
 
@@ -82,7 +80,7 @@ lib_deps =
   Adafruit BME280 Library
 ~~~
 
-\mainpage ESP32-Weather
+## ESP32-Weather
 
 La carte ESP32-Weather est une sonde construite autour d'un ESP32 et équipée d'un module **BlueDot** I2C, qui intègre un capteur d'éclairement lumineux **TSL 2591** et un capteur **BME280** (température, humidité et pression atmosphétrique), et d'une Led Bicolore. Les mesures sont affichées périodiquement sur l'écran **OLED** de la carte.
 
@@ -90,22 +88,22 @@ Le programme embarque aussi un **serveur TCP** multi-clients via un réseau **Wi
 
 La sonde communique aussi via le Bluetooth et la liaison série. Le même protocole est utilisé pour les trois modes de communication. L'écran de la sonde affiche l'adresse IP et le numéro de port utilisés pour une communication WiFi et l'adresse MAC de l'interface Bluetooth.
 
-\image html ./ESP32_weather_1.png
+![ESP32_WEATHER_1](https://github.com/ZaYFix/dev/blob/master/Mini-projet/ESP32-Weather-Bluedot/ESP32_weather.png)
 
 Source : [ESP32-weather.zip](./ESP32-weather.zip)
 
-\section section_tdm Table des matières
-- \ref page_README
-- \ref page_about
-- \ref page_licence
+### Table des matières
+- README
+- About
+- Licence
 
-\page page_about A propos
-\author \a Thierry Vaira (IR) <tvaira@free.fr>
-\author \a Jérôme Beaumont (EC) <beaumontlasalle84@gmail.com>
-\version 0.1
-\date \b 2019
+### A propos
+Author *Thierry Vaira (IR) <tvaira@free.fr>*
+Author *Jérôme Beaumont (EC) <beaumontlasalle84@gmail.com>*
+Version *0.1*
+Date *2019*
 
-\page page_licence Licence GPL
+### Licence GPL
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -120,4 +118,3 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
-
