@@ -1,4 +1,4 @@
-## Nom : ESP32-Weather (version BlueDot)
+# ESP32-Weather (version BlueDot)
 
 ## Numéro de version : 0.2
 
