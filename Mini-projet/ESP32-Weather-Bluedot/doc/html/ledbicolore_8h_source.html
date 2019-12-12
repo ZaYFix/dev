@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>ESP32-Weather (version BlueDot):  Fichier source de ledbicolore.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ESP32_weather.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ESP32-Weather (version BlueDot)
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">IoT - BTS SN Avignon 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_6e338b7f83e899e3c2222c215ef2ff44.html">ledbicolore</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ledbicolore.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ledbicolore_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef LEDBICOLORE_H</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define LEDBICOLORE_H</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="ledbicolore_8h.html#aa05d014e416089deff7d05d656a08f36">   17</a></span>&#160;<span class="preprocessor">#define GPIO_LED_ROUGE_DEFAUT 17 //&lt;! Broche GPIO de led rouge</span></div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="ledbicolore_8h.html#ab59874e9d58225c7bbf429852b8d4809">   18</a></span>&#160;<span class="preprocessor">#define GPIO_LED_VERTE_DEFAUT 16 //&lt;! Broche GPIO de led verte</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7aa1d538486b3faf4668a79c2588f2eb5c">   26</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> { <a class="code" href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7a1ec0b9893291ed54a6f0cde962d001cd">Aucune</a>, <a class="code" href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7ac78027705d90ce96cada10ca69871d13">Rouge</a>, <a class="code" href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7aa1d538486b3faf4668a79c2588f2eb5c">Vert</a>, <a class="code" href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7a96c2b9b8ecc4d6cb96f43dcd27947bb4">Orange</a> };</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_led_bicolore.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_led_bicolore.html">LedBicolore</a></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="class_led_bicolore.html#af98c2bcfa74db404ae218f515ae02e23">LedBicolore</a>(<span class="keywordtype">int</span> <a class="code" href="class_led_bicolore.html#ac12808b116201dbbde350849b4498a7f">brocheGPIORouge</a>=<a class="code" href="ledbicolore_8h.html#aa05d014e416089deff7d05d656a08f36">GPIO_LED_ROUGE_DEFAUT</a>, <span class="keywordtype">int</span> <a class="code" href="class_led_bicolore.html#afd1a99f29f6788295fd8bd9497b58efe">brocheGPIOVerte</a>=<a class="code" href="ledbicolore_8h.html#ab59874e9d58225c7bbf429852b8d4809">GPIO_LED_VERTE_DEFAUT</a>);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_led_bicolore.html#a75ca43c6f457db1348b4cfefe974a201">estValide</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_led_bicolore.html#aa02dbe0219ce631356ceffa0c6942a15">getEtat</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="class_led_bicolore.html#a34ed0c5bfdca1ce21738018f1503e2ef">getCouleur</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  String <a class="code" href="class_led_bicolore.html#a4c620260e38f14cac6001d6d237b5175">getDonnees</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_led_bicolore.html#ac1a52b3e7df92673c42fb9c6b685a488">initialiser</a>();</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_led_bicolore.html#a43de22173dc835d7f89c63e02cde3214">commanderLedRouge</a>(<span class="keywordtype">bool</span> <a class="code" href="class_led_bicolore.html#af41378e18927e4ab191d83dc4a4bc4c8">etat</a>);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_led_bicolore.html#a960ac52a0ffd61cc135d8a572cf5cacd">commanderLedVerte</a>(<span class="keywordtype">bool</span> etat);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_led_bicolore.html#aaae11a4c574f2407268ee1db2db76e4e">allumer</a>(<a class="code" href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="class_led_bicolore.html#a3d6b5940ed8f4339f71b26b56faaafb8">couleur</a>);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_led_bicolore.html#ad53c2b3d3248377855734a0d7b52fdc8">eteindre</a>();</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  String <a class="code" href="class_led_bicolore.html#a8eeee954d447c642a986f53e99e43d28">traiterRequete</a>(String requete);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_led_bicolore.html#ac12808b116201dbbde350849b4498a7f">   54</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_led_bicolore.html#ac12808b116201dbbde350849b4498a7f">brocheGPIORouge</a>; </div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_led_bicolore.html#afd1a99f29f6788295fd8bd9497b58efe">   55</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_led_bicolore.html#afd1a99f29f6788295fd8bd9497b58efe">brocheGPIOVerte</a>; </div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_led_bicolore.html#a6994f227ff47dc0a0d5a4c7f41df3191">   56</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_led_bicolore.html#a6994f227ff47dc0a0d5a4c7f41df3191">etatLedRouge</a>; </div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_led_bicolore.html#a88a0759e044316d903a31cb8f23b8ed6">   57</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_led_bicolore.html#a88a0759e044316d903a31cb8f23b8ed6">etatLedVerte</a>; </div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_led_bicolore.html#af41378e18927e4ab191d83dc4a4bc4c8">   58</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_led_bicolore.html#af41378e18927e4ab191d83dc4a4bc4c8">etat</a>; </div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_led_bicolore.html#a3d6b5940ed8f4339f71b26b56faaafb8">   59</a></span>&#160;  <a class="code" href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="class_led_bicolore.html#a3d6b5940ed8f4339f71b26b56faaafb8">couleur</a>; </div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_led_bicolore.html#a32144565e77874fd5acda3b771695c3e">   60</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_led_bicolore.html#a32144565e77874fd5acda3b771695c3e">valide</a>; </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_led_bicolore_html_ac12808b116201dbbde350849b4498a7f"><div class="ttname"><a href="class_led_bicolore.html#ac12808b116201dbbde350849b4498a7f">LedBicolore::brocheGPIORouge</a></div><div class="ttdeci">int brocheGPIORouge</div><div class="ttdoc">numéro de broche de la Led Rouge </div><div class="ttdef"><b>Definition:</b> ledbicolore.h:54</div></div>
+<div class="ttc" id="class_led_bicolore_html_ac1a52b3e7df92673c42fb9c6b685a488"><div class="ttname"><a href="class_led_bicolore.html#ac1a52b3e7df92673c42fb9c6b685a488">LedBicolore::initialiser</a></div><div class="ttdeci">void initialiser()</div><div class="ttdoc">Initialise les broches GPIO de la led. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:83</div></div>
+<div class="ttc" id="ledbicolore_8h_html_aa304d0ca681f782b1d7735da33037dd7a96c2b9b8ecc4d6cb96f43dcd27947bb4"><div class="ttname"><a href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7a96c2b9b8ecc4d6cb96f43dcd27947bb4">Orange</a></div><div class="ttdef"><b>Definition:</b> ledbicolore.h:26</div></div>
+<div class="ttc" id="class_led_bicolore_html_af98c2bcfa74db404ae218f515ae02e23"><div class="ttname"><a href="class_led_bicolore.html#af98c2bcfa74db404ae218f515ae02e23">LedBicolore::LedBicolore</a></div><div class="ttdeci">LedBicolore(int brocheGPIORouge=GPIO_LED_ROUGE_DEFAUT, int brocheGPIOVerte=GPIO_LED_VERTE_DEFAUT)</div><div class="ttdoc">Constructeur de la classe LedBicolore. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:22</div></div>
+<div class="ttc" id="class_led_bicolore_html_a34ed0c5bfdca1ce21738018f1503e2ef"><div class="ttname"><a href="class_led_bicolore.html#a34ed0c5bfdca1ce21738018f1503e2ef">LedBicolore::getCouleur</a></div><div class="ttdeci">Couleur getCouleur() const </div><div class="ttdoc">Retourne la couleur courante de la Led. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:57</div></div>
+<div class="ttc" id="ledbicolore_8h_html_aa05d014e416089deff7d05d656a08f36"><div class="ttname"><a href="ledbicolore_8h.html#aa05d014e416089deff7d05d656a08f36">GPIO_LED_ROUGE_DEFAUT</a></div><div class="ttdeci">#define GPIO_LED_ROUGE_DEFAUT</div><div class="ttdef"><b>Definition:</b> ledbicolore.h:17</div></div>
+<div class="ttc" id="class_led_bicolore_html_a75ca43c6f457db1348b4cfefe974a201"><div class="ttname"><a href="class_led_bicolore.html#a75ca43c6f457db1348b4cfefe974a201">LedBicolore::estValide</a></div><div class="ttdeci">bool estValide() const </div><div class="ttdoc">Retourne l&amp;#39;état de la validité de la requête du client. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:33</div></div>
+<div class="ttc" id="ledbicolore_8h_html_aa304d0ca681f782b1d7735da33037dd7ac78027705d90ce96cada10ca69871d13"><div class="ttname"><a href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7ac78027705d90ce96cada10ca69871d13">Rouge</a></div><div class="ttdef"><b>Definition:</b> ledbicolore.h:26</div></div>
+<div class="ttc" id="class_led_bicolore_html_a4c620260e38f14cac6001d6d237b5175"><div class="ttname"><a href="class_led_bicolore.html#a4c620260e38f14cac6001d6d237b5175">LedBicolore::getDonnees</a></div><div class="ttdeci">String getDonnees() const </div><div class="ttdoc">Retourne les données en suivant le protocole. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:69</div></div>
+<div class="ttc" id="ledbicolore_8h_html_ab59874e9d58225c7bbf429852b8d4809"><div class="ttname"><a href="ledbicolore_8h.html#ab59874e9d58225c7bbf429852b8d4809">GPIO_LED_VERTE_DEFAUT</a></div><div class="ttdeci">#define GPIO_LED_VERTE_DEFAUT</div><div class="ttdef"><b>Definition:</b> ledbicolore.h:18</div></div>
+<div class="ttc" id="class_led_bicolore_html_afd1a99f29f6788295fd8bd9497b58efe"><div class="ttname"><a href="class_led_bicolore.html#afd1a99f29f6788295fd8bd9497b58efe">LedBicolore::brocheGPIOVerte</a></div><div class="ttdeci">int brocheGPIOVerte</div><div class="ttdoc">numéro de broche de la Led Verte </div><div class="ttdef"><b>Definition:</b> ledbicolore.h:55</div></div>
+<div class="ttc" id="class_led_bicolore_html_ad53c2b3d3248377855734a0d7b52fdc8"><div class="ttname"><a href="class_led_bicolore.html#ad53c2b3d3248377855734a0d7b52fdc8">LedBicolore::eteindre</a></div><div class="ttdeci">void eteindre()</div><div class="ttdoc">Eteint la led. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:180</div></div>
+<div class="ttc" id="class_led_bicolore_html"><div class="ttname"><a href="class_led_bicolore.html">LedBicolore</a></div><div class="ttdoc">Déclaration de la classe Led qui permet de commander une Led bicolore. </div><div class="ttdef"><b>Definition:</b> ledbicolore.h:38</div></div>
+<div class="ttc" id="class_led_bicolore_html_a43de22173dc835d7f89c63e02cde3214"><div class="ttname"><a href="class_led_bicolore.html#a43de22173dc835d7f89c63e02cde3214">LedBicolore::commanderLedRouge</a></div><div class="ttdeci">void commanderLedRouge(bool etat)</div><div class="ttdoc">Commande l&amp;#39;état de la led rouge. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:96</div></div>
+<div class="ttc" id="ledbicolore_8h_html_aa304d0ca681f782b1d7735da33037dd7a1ec0b9893291ed54a6f0cde962d001cd"><div class="ttname"><a href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7a1ec0b9893291ed54a6f0cde962d001cd">Aucune</a></div><div class="ttdef"><b>Definition:</b> ledbicolore.h:26</div></div>
+<div class="ttc" id="class_led_bicolore_html_a88a0759e044316d903a31cb8f23b8ed6"><div class="ttname"><a href="class_led_bicolore.html#a88a0759e044316d903a31cb8f23b8ed6">LedBicolore::etatLedVerte</a></div><div class="ttdeci">bool etatLedVerte</div><div class="ttdoc">l&amp;#39;état allumée ou éteint de la Led verte </div><div class="ttdef"><b>Definition:</b> ledbicolore.h:57</div></div>
+<div class="ttc" id="class_led_bicolore_html_a8eeee954d447c642a986f53e99e43d28"><div class="ttname"><a href="class_led_bicolore.html#a8eeee954d447c642a986f53e99e43d28">LedBicolore::traiterRequete</a></div><div class="ttdeci">String traiterRequete(String requete)</div><div class="ttdoc">Traite une requête client. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:193</div></div>
+<div class="ttc" id="ledbicolore_8h_html_aa304d0ca681f782b1d7735da33037dd7aa1d538486b3faf4668a79c2588f2eb5c"><div class="ttname"><a href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7aa1d538486b3faf4668a79c2588f2eb5c">Vert</a></div><div class="ttdef"><b>Definition:</b> ledbicolore.h:26</div></div>
+<div class="ttc" id="class_led_bicolore_html_a32144565e77874fd5acda3b771695c3e"><div class="ttname"><a href="class_led_bicolore.html#a32144565e77874fd5acda3b771695c3e">LedBicolore::valide</a></div><div class="ttdeci">bool valide</div><div class="ttdoc">état de la validité de la requête traitée. </div><div class="ttdef"><b>Definition:</b> ledbicolore.h:60</div></div>
+<div class="ttc" id="ledbicolore_8h_html_aa304d0ca681f782b1d7735da33037dd7"><div class="ttname"><a href="ledbicolore_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a></div><div class="ttdeci">Couleur</div><div class="ttdoc">Précise les couleurs possible pour une Led bicolore. </div><div class="ttdef"><b>Definition:</b> ledbicolore.h:26</div></div>
+<div class="ttc" id="class_led_bicolore_html_aa02dbe0219ce631356ceffa0c6942a15"><div class="ttname"><a href="class_led_bicolore.html#aa02dbe0219ce631356ceffa0c6942a15">LedBicolore::getEtat</a></div><div class="ttdeci">bool getEtat() const </div><div class="ttdoc">Retourne l&amp;#39;état allumée ou éteinte de la Led. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:45</div></div>
+<div class="ttc" id="class_led_bicolore_html_af41378e18927e4ab191d83dc4a4bc4c8"><div class="ttname"><a href="class_led_bicolore.html#af41378e18927e4ab191d83dc4a4bc4c8">LedBicolore::etat</a></div><div class="ttdeci">bool etat</div><div class="ttdoc">l&amp;#39;état allumée ou éteint de la Led </div><div class="ttdef"><b>Definition:</b> ledbicolore.h:58</div></div>
+<div class="ttc" id="class_led_bicolore_html_a6994f227ff47dc0a0d5a4c7f41df3191"><div class="ttname"><a href="class_led_bicolore.html#a6994f227ff47dc0a0d5a4c7f41df3191">LedBicolore::etatLedRouge</a></div><div class="ttdeci">bool etatLedRouge</div><div class="ttdoc">l&amp;#39;état allumée ou éteint de la Led Rouge </div><div class="ttdef"><b>Definition:</b> ledbicolore.h:56</div></div>
+<div class="ttc" id="class_led_bicolore_html_a960ac52a0ffd61cc135d8a572cf5cacd"><div class="ttname"><a href="class_led_bicolore.html#a960ac52a0ffd61cc135d8a572cf5cacd">LedBicolore::commanderLedVerte</a></div><div class="ttdeci">void commanderLedVerte(bool etat)</div><div class="ttdoc">Commande l&amp;#39;état de la led verte. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:117</div></div>
+<div class="ttc" id="class_led_bicolore_html_aaae11a4c574f2407268ee1db2db76e4e"><div class="ttname"><a href="class_led_bicolore.html#aaae11a4c574f2407268ee1db2db76e4e">LedBicolore::allumer</a></div><div class="ttdeci">void allumer(Couleur couleur)</div><div class="ttdoc">Allume la led. </div><div class="ttdef"><b>Definition:</b> ledbicolore.cpp:138</div></div>
+<div class="ttc" id="class_led_bicolore_html_a3d6b5940ed8f4339f71b26b56faaafb8"><div class="ttname"><a href="class_led_bicolore.html#a3d6b5940ed8f4339f71b26b56faaafb8">LedBicolore::couleur</a></div><div class="ttdeci">Couleur couleur</div><div class="ttdoc">la couleur actuelle de la Led </div><div class="ttdef"><b>Definition:</b> ledbicolore.h:59</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi 7 Décembre 2019 09:58:01 pour ESP32-Weather (version BlueDot) par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

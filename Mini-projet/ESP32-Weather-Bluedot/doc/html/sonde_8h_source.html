@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>ESP32-Weather (version BlueDot):  Fichier source de sonde.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ESP32_weather.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ESP32-Weather (version BlueDot)
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">IoT - BTS SN Avignon 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_6d6138d9f242848d35f59f976fa1ea59.html">sonde</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">sonde.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sonde_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef SONDE_H</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define SONDE_H</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;Adafruit_Sensor.h&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;Adafruit_TSL2591.h&quot;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;Adafruit_BME280.h&gt;</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;DHT.h&gt;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="sonde_8h.html#aa45df0c3ce34e44817bb334702138b3c">   21</a></span>&#160;<span class="preprocessor">#define PERIODE_ACQUISITION_DEFAUT      500 </span></div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="sonde_8h.html#ae0c7ca6a53caedcd4e9a4b569381870f">   22</a></span>&#160;<span class="preprocessor">#define TYPE_DHT_DEFAUT                 DHT22 </span></div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="sonde_8h.html#abd3ac869b6f6a8b0b577c7200e625cea">   23</a></span>&#160;<span class="preprocessor">#define GPIO_DHT_DEFAUT                 0 </span></div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="sonde_8h.html#a3fd1be5675628ccdd1cd809ee995b2e7">   24</a></span>&#160;<span class="preprocessor">#define SEALEVELPRESSURE_HPA            (1013.25) </span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_sonde.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sonde.html">Sonde</a></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_sonde.html#ae5036305f89ecf5a1299e039e6f2e36a">   39</a></span>&#160;  Adafruit_TSL2591 <a class="code" href="class_sonde.html#ae5036305f89ecf5a1299e039e6f2e36a">tsl</a>; </div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_sonde.html#aeeacb5b4f4662e85979a7676fca75f9b">   40</a></span>&#160;  Adafruit_BME280 <a class="code" href="class_sonde.html#aeeacb5b4f4662e85979a7676fca75f9b">bme</a>;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_sonde.html#a49546b6966fcf83cf42336187bc75163">   41</a></span>&#160;  DHT <a class="code" href="class_sonde.html#a49546b6966fcf83cf42336187bc75163">dht</a>; </div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_sonde.html#ab064406324738951e21147efbb705e31">   42</a></span>&#160;  uint16_t <a class="code" href="class_sonde.html#ab064406324738951e21147efbb705e31">luminosite</a>; </div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_sonde.html#aa41dcb41b4231ac4b9ffe1479d95070f">   43</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="class_sonde.html#aa41dcb41b4231ac4b9ffe1479d95070f">humidite</a>; </div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_sonde.html#abb5f186197429dbc6718504e0871e767">   44</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="class_sonde.html#abb5f186197429dbc6718504e0871e767">temperature</a>; </div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_sonde.html#a7f703569cc8f57621c2a85c616853fcc">   45</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="class_sonde.html#a7f703569cc8f57621c2a85c616853fcc">ressentie</a>; </div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_sonde.html#a2600e7ea80865e5dd8e9144bfccaca41">   46</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="class_sonde.html#a2600e7ea80865e5dd8e9144bfccaca41">pression</a>; </div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_sonde.html#a6f833b7e7d490c12ceabf8dd31948c15">   47</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="class_sonde.html#a6f833b7e7d490c12ceabf8dd31948c15">altitude</a>; </div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_sonde.html#a56ee9d086d833324fef3b2f0687c8c81">   48</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_sonde.html#a56ee9d086d833324fef3b2f0687c8c81">periode</a>; </div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_sonde.html#aea032ed7f9ed978b91a3dcc11d076893">   49</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_sonde.html#aea032ed7f9ed978b91a3dcc11d076893">tempsPrecedent</a>; </div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_sonde.html#a90520cfe01da5861b560b7d2309e8663">   50</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_sonde.html#a90520cfe01da5861b560b7d2309e8663">dhtDetection</a>;</div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_sonde.html#a103e233c3a98ce9036decdfe51bc8363">   51</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_sonde.html#a103e233c3a98ce9036decdfe51bc8363">bmeDetection</a>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#a780b3794423d340829d04ef3a3241ff9">initialiserCapteurs</a>();</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_sonde.html#a2f370f4988919a4c7c6c1d59bd05662c">estEcheance</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> intervalle);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">float</span> <a class="code" href="class_sonde.html#a5c7c955febb2ec357ee776906527a957">computeHeatIndex</a>(<span class="keywordtype">float</span> temperature, <span class="keywordtype">float</span> percentHumidity);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">float</span> <a class="code" href="class_sonde.html#af9a31faeba255f06b034220a2b8d011a">convertCtoF</a>(<span class="keywordtype">float</span> c);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">float</span> <a class="code" href="class_sonde.html#a04cd5af64b0c81f24f46fb74bad1f047">convertFtoC</a>(<span class="keywordtype">float</span> f);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="class_sonde.html#a3a79e2e450739ef034526db2abc905fa">Sonde</a>(<span class="keywordtype">int</span> brocheGPIODHT=<a class="code" href="sonde_8h.html#abd3ac869b6f6a8b0b577c7200e625cea">GPIO_DHT_DEFAUT</a>);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#a006ddcbbbab1e263d0f3351f6fb16056">demarrer</a>();</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#afb347abdbc4eb20c645a2238a5c4f5e3">setPeriode</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> periode);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_sonde.html#a63e8fa324e2c3938206739ec9bf82fd5">getPeriode</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  String <a class="code" href="class_sonde.html#acda4fd89a5d05eceaaec71c6416e9a87">getLuminosite</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  String <a class="code" href="class_sonde.html#ab932206b24c5d311460769a77795e638">getTemperature</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  String <a class="code" href="class_sonde.html#adb9a82b4320589010f2708472e626412">getRessentie</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  String <a class="code" href="class_sonde.html#a710d118bd35dc88cc83065fd527e14dd">getHumidite</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  String <a class="code" href="class_sonde.html#a78b2498238e46a01e6bcdd9c5bbdb491">getPression</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  String <a class="code" href="class_sonde.html#a69182b59d0878b41adbb7504fe6b562d">getAltitude</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  String <a class="code" href="class_sonde.html#a1df894215aeed8e4d63535afe07b8650">getDonnees</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_sonde.html#a18efe260d44192e19bf8a938fe57d930">acquerir</a>();</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_sonde_html_af9a31faeba255f06b034220a2b8d011a"><div class="ttname"><a href="class_sonde.html#af9a31faeba255f06b034220a2b8d011a">Sonde::convertCtoF</a></div><div class="ttdeci">float convertCtoF(float c)</div><div class="ttdef"><b>Definition:</b> sonde.cpp:311</div></div>
+<div class="ttc" id="class_sonde_html_a2f370f4988919a4c7c6c1d59bd05662c"><div class="ttname"><a href="class_sonde.html#a2f370f4988919a4c7c6c1d59bd05662c">Sonde::estEcheance</a></div><div class="ttdeci">bool estEcheance(unsigned long intervalle)</div><div class="ttdoc">Retourne true si l&amp;#39;échéance de la période fixée a été atteinte. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:268</div></div>
+<div class="ttc" id="class_sonde_html_a18efe260d44192e19bf8a938fe57d930"><div class="ttname"><a href="class_sonde.html#a18efe260d44192e19bf8a938fe57d930">Sonde::acquerir</a></div><div class="ttdeci">bool acquerir()</div><div class="ttdoc">Réalise l&amp;#39;acquisition des mesures de la Sonde à l&amp;#39;échéance de la période. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:177</div></div>
+<div class="ttc" id="class_sonde_html_a49546b6966fcf83cf42336187bc75163"><div class="ttname"><a href="class_sonde.html#a49546b6966fcf83cf42336187bc75163">Sonde::dht</a></div><div class="ttdeci">DHT dht</div><div class="ttdoc">capteur de température et d&amp;#39;humidité </div><div class="ttdef"><b>Definition:</b> sonde.h:41</div></div>
+<div class="ttc" id="class_sonde_html_a006ddcbbbab1e263d0f3351f6fb16056"><div class="ttname"><a href="class_sonde.html#a006ddcbbbab1e263d0f3351f6fb16056">Sonde::demarrer</a></div><div class="ttdeci">void demarrer()</div><div class="ttdoc">Assure le démarrage du fonctionnement de la Sonde. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:33</div></div>
+<div class="ttc" id="class_sonde_html_ab932206b24c5d311460769a77795e638"><div class="ttname"><a href="class_sonde.html#ab932206b24c5d311460769a77795e638">Sonde::getTemperature</a></div><div class="ttdeci">String getTemperature() const </div><div class="ttdoc">Retourne la température pour son affichage. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:83</div></div>
+<div class="ttc" id="class_sonde_html_a63e8fa324e2c3938206739ec9bf82fd5"><div class="ttname"><a href="class_sonde.html#a63e8fa324e2c3938206739ec9bf82fd5">Sonde::getPeriode</a></div><div class="ttdeci">unsigned long getPeriode() const </div><div class="ttdoc">Accesseur get pour le mebre periode. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:57</div></div>
+<div class="ttc" id="class_sonde_html_a103e233c3a98ce9036decdfe51bc8363"><div class="ttname"><a href="class_sonde.html#a103e233c3a98ce9036decdfe51bc8363">Sonde::bmeDetection</a></div><div class="ttdeci">bool bmeDetection</div><div class="ttdef"><b>Definition:</b> sonde.h:51</div></div>
+<div class="ttc" id="class_sonde_html_ab064406324738951e21147efbb705e31"><div class="ttname"><a href="class_sonde.html#ab064406324738951e21147efbb705e31">Sonde::luminosite</a></div><div class="ttdeci">uint16_t luminosite</div><div class="ttdoc">valeur de l&amp;#39;éclairement lumineux en lux </div><div class="ttdef"><b>Definition:</b> sonde.h:42</div></div>
+<div class="ttc" id="class_sonde_html"><div class="ttname"><a href="class_sonde.html">Sonde</a></div><div class="ttdoc">Déclaration de la classe Sonde qui regroupe les capteurs TSL 2591 et DHT22. </div><div class="ttdef"><b>Definition:</b> sonde.h:36</div></div>
+<div class="ttc" id="class_sonde_html_ae5036305f89ecf5a1299e039e6f2e36a"><div class="ttname"><a href="class_sonde.html#ae5036305f89ecf5a1299e039e6f2e36a">Sonde::tsl</a></div><div class="ttdeci">Adafruit_TSL2591 tsl</div><div class="ttdoc">capteur d&amp;#39;éclairement lumineux </div><div class="ttdef"><b>Definition:</b> sonde.h:39</div></div>
+<div class="ttc" id="class_sonde_html_a710d118bd35dc88cc83065fd527e14dd"><div class="ttname"><a href="class_sonde.html#a710d118bd35dc88cc83065fd527e14dd">Sonde::getHumidite</a></div><div class="ttdeci">String getHumidite() const </div><div class="ttdoc">Retourne l&amp;#39;humidité pour son affichage. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:111</div></div>
+<div class="ttc" id="class_sonde_html_aa41dcb41b4231ac4b9ffe1479d95070f"><div class="ttname"><a href="class_sonde.html#aa41dcb41b4231ac4b9ffe1479d95070f">Sonde::humidite</a></div><div class="ttdeci">float humidite</div><div class="ttdoc">valeur de l&amp;#39;humidité en % </div><div class="ttdef"><b>Definition:</b> sonde.h:43</div></div>
+<div class="ttc" id="class_sonde_html_a7f703569cc8f57621c2a85c616853fcc"><div class="ttname"><a href="class_sonde.html#a7f703569cc8f57621c2a85c616853fcc">Sonde::ressentie</a></div><div class="ttdeci">float ressentie</div><div class="ttdoc">valeur de la température ressentie (calculée à partir de la température et de l&amp;#39;humidité) ...</div><div class="ttdef"><b>Definition:</b> sonde.h:45</div></div>
+<div class="ttc" id="class_sonde_html_a780b3794423d340829d04ef3a3241ff9"><div class="ttname"><a href="class_sonde.html#a780b3794423d340829d04ef3a3241ff9">Sonde::initialiserCapteurs</a></div><div class="ttdeci">void initialiserCapteurs()</div><div class="ttdoc">Initialise les capteurs TSL 2591 et DHT22. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:231</div></div>
+<div class="ttc" id="class_sonde_html_a6f833b7e7d490c12ceabf8dd31948c15"><div class="ttname"><a href="class_sonde.html#a6f833b7e7d490c12ceabf8dd31948c15">Sonde::altitude</a></div><div class="ttdeci">float altitude</div><div class="ttdoc">valeur approchée de l&amp;#39;altitude en m&amp;#39; </div><div class="ttdef"><b>Definition:</b> sonde.h:47</div></div>
+<div class="ttc" id="class_sonde_html_a04cd5af64b0c81f24f46fb74bad1f047"><div class="ttname"><a href="class_sonde.html#a04cd5af64b0c81f24f46fb74bad1f047">Sonde::convertFtoC</a></div><div class="ttdeci">float convertFtoC(float f)</div><div class="ttdef"><b>Definition:</b> sonde.cpp:316</div></div>
+<div class="ttc" id="class_sonde_html_a5c7c955febb2ec357ee776906527a957"><div class="ttname"><a href="class_sonde.html#a5c7c955febb2ec357ee776906527a957">Sonde::computeHeatIndex</a></div><div class="ttdeci">float computeHeatIndex(float temperature, float percentHumidity)</div><div class="ttdef"><b>Definition:</b> sonde.cpp:279</div></div>
+<div class="ttc" id="class_sonde_html_a69182b59d0878b41adbb7504fe6b562d"><div class="ttname"><a href="class_sonde.html#a69182b59d0878b41adbb7504fe6b562d">Sonde::getAltitude</a></div><div class="ttdeci">String getAltitude() const </div><div class="ttdoc">Retourne l&amp;#39;altitude pour son affichage. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:142</div></div>
+<div class="ttc" id="class_sonde_html_a56ee9d086d833324fef3b2f0687c8c81"><div class="ttname"><a href="class_sonde.html#a56ee9d086d833324fef3b2f0687c8c81">Sonde::periode</a></div><div class="ttdeci">unsigned long periode</div><div class="ttdoc">période d&amp;#39;acquisition des valeurs en millisecondes </div><div class="ttdef"><b>Definition:</b> sonde.h:48</div></div>
+<div class="ttc" id="class_sonde_html_a90520cfe01da5861b560b7d2309e8663"><div class="ttname"><a href="class_sonde.html#a90520cfe01da5861b560b7d2309e8663">Sonde::dhtDetection</a></div><div class="ttdeci">bool dhtDetection</div><div class="ttdef"><b>Definition:</b> sonde.h:50</div></div>
+<div class="ttc" id="class_sonde_html_a78b2498238e46a01e6bcdd9c5bbdb491"><div class="ttname"><a href="class_sonde.html#a78b2498238e46a01e6bcdd9c5bbdb491">Sonde::getPression</a></div><div class="ttdeci">String getPression() const </div><div class="ttdoc">Retourne la pression atmosphérique pour son affichage. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:125</div></div>
+<div class="ttc" id="class_sonde_html_aea032ed7f9ed978b91a3dcc11d076893"><div class="ttname"><a href="class_sonde.html#aea032ed7f9ed978b91a3dcc11d076893">Sonde::tempsPrecedent</a></div><div class="ttdeci">unsigned long tempsPrecedent</div><div class="ttdoc">temps de la dernère acquisition en millisecondes </div><div class="ttdef"><b>Definition:</b> sonde.h:49</div></div>
+<div class="ttc" id="class_sonde_html_a1df894215aeed8e4d63535afe07b8650"><div class="ttname"><a href="class_sonde.html#a1df894215aeed8e4d63535afe07b8650">Sonde::getDonnees</a></div><div class="ttdeci">String getDonnees() const </div><div class="ttdoc">Retourne les données de la Sonde suivant le protocole. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:159</div></div>
+<div class="ttc" id="class_sonde_html_aeeacb5b4f4662e85979a7676fca75f9b"><div class="ttname"><a href="class_sonde.html#aeeacb5b4f4662e85979a7676fca75f9b">Sonde::bme</a></div><div class="ttdeci">Adafruit_BME280 bme</div><div class="ttdef"><b>Definition:</b> sonde.h:40</div></div>
+<div class="ttc" id="class_sonde_html_abb5f186197429dbc6718504e0871e767"><div class="ttname"><a href="class_sonde.html#abb5f186197429dbc6718504e0871e767">Sonde::temperature</a></div><div class="ttdeci">float temperature</div><div class="ttdoc">valeur de la température en degré Celcius </div><div class="ttdef"><b>Definition:</b> sonde.h:44</div></div>
+<div class="ttc" id="class_sonde_html_a3a79e2e450739ef034526db2abc905fa"><div class="ttname"><a href="class_sonde.html#a3a79e2e450739ef034526db2abc905fa">Sonde::Sonde</a></div><div class="ttdeci">Sonde(int brocheGPIODHT=GPIO_DHT_DEFAUT)</div><div class="ttdoc">Constructeur de la classe Sonde. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:21</div></div>
+<div class="ttc" id="class_sonde_html_adb9a82b4320589010f2708472e626412"><div class="ttname"><a href="class_sonde.html#adb9a82b4320589010f2708472e626412">Sonde::getRessentie</a></div><div class="ttdeci">String getRessentie() const </div><div class="ttdoc">Retourne la température ressentie pour son affichage. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:97</div></div>
+<div class="ttc" id="sonde_8h_html_abd3ac869b6f6a8b0b577c7200e625cea"><div class="ttname"><a href="sonde_8h.html#abd3ac869b6f6a8b0b577c7200e625cea">GPIO_DHT_DEFAUT</a></div><div class="ttdeci">#define GPIO_DHT_DEFAUT</div><div class="ttdoc">pas de DHT </div><div class="ttdef"><b>Definition:</b> sonde.h:23</div></div>
+<div class="ttc" id="class_sonde_html_acda4fd89a5d05eceaaec71c6416e9a87"><div class="ttname"><a href="class_sonde.html#acda4fd89a5d05eceaaec71c6416e9a87">Sonde::getLuminosite</a></div><div class="ttdeci">String getLuminosite() const </div><div class="ttdoc">Retourne la luminosité pour son affichage. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:69</div></div>
+<div class="ttc" id="class_sonde_html_a2600e7ea80865e5dd8e9144bfccaca41"><div class="ttname"><a href="class_sonde.html#a2600e7ea80865e5dd8e9144bfccaca41">Sonde::pression</a></div><div class="ttdeci">float pression</div><div class="ttdoc">valeur de la pression atmosphérique en hPa </div><div class="ttdef"><b>Definition:</b> sonde.h:46</div></div>
+<div class="ttc" id="class_sonde_html_afb347abdbc4eb20c645a2238a5c4f5e3"><div class="ttname"><a href="class_sonde.html#afb347abdbc4eb20c645a2238a5c4f5e3">Sonde::setPeriode</a></div><div class="ttdeci">void setPeriode(unsigned long periode)</div><div class="ttdoc">Mutateur set pour le membre periode. </div><div class="ttdef"><b>Definition:</b> sonde.cpp:45</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi 7 Décembre 2019 09:58:01 pour ESP32-Weather (version BlueDot) par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

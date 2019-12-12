@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>ESP32-Weather (version BlueDot): Référence du fichier monserveur.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ESP32_weather.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ESP32-Weather (version BlueDot)
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">IoT - BTS SN Avignon 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_e39c773965db29941914c1de3111857c.html">monserveur</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier monserveur.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Déclaration de la classe <a class="el" href="class_mon_serveur.html" title="Déclaration de la classe MonServeur qui permet d&#39;exécuter un serveur TCP multi-clients. ">MonServeur</a>.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;Arduino.h&quot;</code><br />
+<code>#include &lt;WiFi.h&gt;</code><br />
+<code>#include &lt;WiFiClient.h&gt;</code><br />
+<code>#include &lt;WiFiServer.h&gt;</code><br />
+<code>#include &quot;BluetoothSerial.h&quot;</code><br />
+</div>
+<p><a href="monserveur_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_requete.html">Requete</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour une requête émise par un client.  <a href="struct_requete.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mon_serveur.html">MonServeur</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déclaration de la classe <a class="el" href="class_mon_serveur.html" title="Déclaration de la classe MonServeur qui permet d&#39;exécuter un serveur TCP multi-clients. ">MonServeur</a> qui permet d'exécuter un serveur TCP multi-clients.  <a href="class_mon_serveur.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a14ed8168071c3bb8602b38ecb1b28178"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#a14ed8168071c3bb8602b38ecb1b28178">WIFI</a></td></tr>
+<tr class="memdesc:a14ed8168071c3bb8602b38ecb1b28178"><td class="mdescLeft">&#160;</td><td class="mdescRight">active le mode de communication WiFi  <a href="#a14ed8168071c3bb8602b38ecb1b28178">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a14ed8168071c3bb8602b38ecb1b28178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab908bf5e11a07e37406f24860f2fe877"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#ab908bf5e11a07e37406f24860f2fe877">RS232</a></td></tr>
+<tr class="memdesc:ab908bf5e11a07e37406f24860f2fe877"><td class="mdescLeft">&#160;</td><td class="mdescRight">active le mode de communication série  <a href="#ab908bf5e11a07e37406f24860f2fe877">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab908bf5e11a07e37406f24860f2fe877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f30897fa8435dc9811642367a328be8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#a3f30897fa8435dc9811642367a328be8">BLUETOOTH</a></td></tr>
+<tr class="memdesc:a3f30897fa8435dc9811642367a328be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">active le mode de communication Bluetooth  <a href="#a3f30897fa8435dc9811642367a328be8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3f30897fa8435dc9811642367a328be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1a6080da78bdddc526a5e0b7064b3cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#ac1a6080da78bdddc526a5e0b7064b3cd">ATTENTE_RECONNEXION_WIFI</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="memdesc:ac1a6080da78bdddc526a5e0b7064b3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">temps d'attente avant une nouvelle tentative de connexion  <a href="#ac1a6080da78bdddc526a5e0b7064b3cd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac1a6080da78bdddc526a5e0b7064b3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c8170ef9088b95f71b0eea09d40195"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#a00c8170ef9088b95f71b0eea09d40195">NB_TENTATIVES_WIFI</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a00c8170ef9088b95f71b0eea09d40195"><td class="mdescLeft">&#160;</td><td class="mdescRight">nombre de tentaives max  <a href="#a00c8170ef9088b95f71b0eea09d40195">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a00c8170ef9088b95f71b0eea09d40195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad474c819827889bdf640ed2199e5437d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#ad474c819827889bdf640ed2199e5437d">PERIODE_ENVOI_DEFAUT</a>&#160;&#160;&#160;5000</td></tr>
+<tr class="memdesc:ad474c819827889bdf640ed2199e5437d"><td class="mdescLeft">&#160;</td><td class="mdescRight">période d'envoi des données par défaut (en millisecondes)  <a href="#ad474c819827889bdf640ed2199e5437d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad474c819827889bdf640ed2199e5437d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a8f91f93d75a07f0ae45077db45b3eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#a0a8f91f93d75a07f0ae45077db45b3eb">MAX_CLIENTS</a>&#160;&#160;&#160;14</td></tr>
+<tr class="memdesc:a0a8f91f93d75a07f0ae45077db45b3eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">nombre de clients max  <a href="#a0a8f91f93d75a07f0ae45077db45b3eb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0a8f91f93d75a07f0ae45077db45b3eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab888f463269de2ef46cd81c35646df75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#ab888f463269de2ef46cd81c35646df75">MAX_LENGTH_PASSWORD</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memdesc:ab888f463269de2ef46cd81c35646df75"><td class="mdescLeft">&#160;</td><td class="mdescRight">longueur maximal du mot de passe  <a href="#ab888f463269de2ef46cd81c35646df75">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab888f463269de2ef46cd81c35646df75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a680ae545d9a9b2b1fb225872ea7a196f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#a680ae545d9a9b2b1fb225872ea7a196f">PORT_DEFAUT</a>&#160;&#160;&#160;5000</td></tr>
+<tr class="memdesc:a680ae545d9a9b2b1fb225872ea7a196f"><td class="mdescLeft">&#160;</td><td class="mdescRight">numéro de port par défaut  <a href="#a680ae545d9a9b2b1fb225872ea7a196f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a680ae545d9a9b2b1fb225872ea7a196f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2f74a09950ca9ac8bf1eb8ef23d8b20b"><td class="memItemLeft" align="right" valign="top">BluetoothSerial&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="monserveur_8h.html#a2f74a09950ca9ac8bf1eb8ef23d8b20b">ESPBluetooth</a></td></tr>
+<tr class="separator:a2f74a09950ca9ac8bf1eb8ef23d8b20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><dl class="section author"><dt>Auteur</dt><dd>Thierry Vaira</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="ac1a6080da78bdddc526a5e0b7064b3cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ATTENTE_RECONNEXION_WIFI&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Référencé par <a class="el" href="class_mon_serveur.html#aa7d8cf3ffd117bd9f706a88dec0e7374">MonServeur::activerWifi()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f30897fa8435dc9811642367a328be8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLUETOOTH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0a8f91f93d75a07f0ae45077db45b3eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_CLIENTS&#160;&#160;&#160;14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Référencé par <a class="el" href="class_mon_serveur.html#a8c9fd49037ea8fa3f6692dc720a15422">MonServeur::connecterClient()</a>, <a class="el" href="class_mon_serveur.html#aedeac38259b36791ad5596e73cdfd8a0">MonServeur::envoyer()</a>, et <a class="el" href="class_mon_serveur.html#a6254c8ac7139affc561b34103902bb59">MonServeur::lireRequete()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab888f463269de2ef46cd81c35646df75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_LENGTH_PASSWORD&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Référencé par <a class="el" href="class_mon_serveur.html#a8e93015a4ad9f11a1ddc7b5dbfcdb33f">MonServeur::detecterWLAN()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a00c8170ef9088b95f71b0eea09d40195"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NB_TENTATIVES_WIFI&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Référencé par <a class="el" href="class_mon_serveur.html#aa7d8cf3ffd117bd9f706a88dec0e7374">MonServeur::activerWifi()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad474c819827889bdf640ed2199e5437d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIODE_ENVOI_DEFAUT&#160;&#160;&#160;5000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a680ae545d9a9b2b1fb225872ea7a196f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PORT_DEFAUT&#160;&#160;&#160;5000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab908bf5e11a07e37406f24860f2fe877"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RS232</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a14ed8168071c3bb8602b38ecb1b28178"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WIFI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a class="anchor" id="a2f74a09950ca9ac8bf1eb8ef23d8b20b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BluetoothSerial ESPBluetooth</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Référencé par <a class="el" href="class_mon_serveur.html#aedeac38259b36791ad5596e73cdfd8a0">MonServeur::envoyer()</a>, <a class="el" href="class_mon_serveur.html#a6254c8ac7139affc561b34103902bb59">MonServeur::lireRequete()</a>, <a class="el" href="class_mon_serveur.html#a9708dbe48c5862ada1b0989d0d92a346">MonServeur::repondreRequete()</a>, et <a class="el" href="main_8cpp.html#a1d04139db3a5ad5713ecbd14d97da879">setup()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi 7 Décembre 2019 09:58:01 pour ESP32-Weather (version BlueDot) par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
