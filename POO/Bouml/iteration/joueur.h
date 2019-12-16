@@ -1,10 +1,9 @@
 #ifndef _JOUEUR_H
 #define _JOUEUR_H
 
-
 #include <string>
-using namespace std;
 #include <vector>
+#include <iostream>
 using namespace std;
 
 class De;
@@ -21,7 +20,6 @@ class Joueur
     void setNom(string nom);
 
     void jouerAuxDes();
-
 
   private:
     string nom;
