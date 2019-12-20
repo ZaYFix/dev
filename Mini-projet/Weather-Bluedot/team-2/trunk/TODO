@@ -1,0 +1,24 @@
+Version 1 :
+- Visualiser les trames de la sonde
+- Commander la Led
+- Visualiser les mesures de la sonde
+- Réaliser l'IHM
+- ExtraireMesures
+- Tous les get de la classe mesures
+- Tous les get de la classe Leds
+- extraireLeds()
+- connecterPort()
+- Read/Write
+- getTrameMesures()
+- getTrameLeds()
+
+
+Version 2 :
+- Configurer la communication avec la sonde
+- Charger la dernière configuration
+- Enregistrer la configuration
+
+Version 3 :
+- Affichage donnée graphique et tableaux
+- Récuperation et affichage données météos d'un serveur
+- Connection bluetooth

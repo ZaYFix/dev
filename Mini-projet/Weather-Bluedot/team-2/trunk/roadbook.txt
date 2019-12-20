@@ -1,0 +1,20 @@
+## 18/12/19
+
+- Début du projet
+- Créations des classes
+- Création de la liaison série
+- Début de la découpe des trames
+
+## 13/12/19
+
+- TP Réseau
+
+## 12/12/19
+
+- Suite du TP n°0 sur Qt Creator.
+- Création du roadbook.
+
+## 11/12/19
+
+- Début du TP n°0 sur Qt Creator.
+- Installation de Qt Creator version 5.11.2.
