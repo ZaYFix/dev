@@ -10,6 +10,7 @@ class Sonde : public QObject
 {
     Q_OBJECT
 public:
+
     Sonde(QObject *parent = nullptr);
     void envoyerMesuresIHM();
 

@@ -18,6 +18,9 @@ public:
     explicit IHM(QWidget *parent = nullptr);
     ~IHM();
 
+signals:
+    void changerCouleurLED(QString couleur);
+
 private:
     Ui::IHM *ui;
     Supervision *supervision;
@@ -29,6 +32,11 @@ public slots:
     void afficherLuminosite(unsigned int luminosite, QString uniteLuminosite);
     void afficherPression(unsigned int pression, QString unitePression);
     void afficherAltitude(int altitude, QString uniteAltitude);
+private slots:
+    void on_pushButton_orange_clicked();
+    void on_pushButton_vert_clicked();
+    void on_pushbutton_rouge_clicked();
+    void on_pushButton_eteindre_clicked();
 };
 
 #endif // IHM_H

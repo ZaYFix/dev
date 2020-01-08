@@ -4,6 +4,11 @@
 #include "Sonde.h"
 #include "Led.h"
 
+/**
+ * @brief Constructeur de la classe Supervision
+ *
+ * @param parent
+ */
 Supervision::Supervision(IHM *parent) : QObject(parent), ihm(parent), communication(new Communication()), sonde(new Sonde()), led(new Led())
 {
     connect(communication, SIGNAL(tramePrete(QString)), sonde, SLOT(extraireMesures(QString)));
@@ -20,9 +25,15 @@ Supervision::Supervision(IHM *parent) : QObject(parent), ihm(parent), communicat
 
     connect(sonde, SIGNAL(nouvelleAltitude(int, QString)), ihm, SLOT(afficherAltitude(int, QString)));
 
+    connect(ihm, SIGNAL(changerCouleurLED(QString)), communication, SLOT(envoyerCouleurLED(QString)));
+
     demarrer();
 }
 
+/**
+ * @brief Destructeur de la classe Supervision
+ *
+ */
 Supervision::~Supervision()
 {
     delete communication;
@@ -30,6 +41,10 @@ Supervision::~Supervision()
     delete led;
 }
 
+/**
+ * @brief Méthode pour demarer le port série
+ *
+ */
 void Supervision::demarrer()
 {
     communication->demarrerCommunicationPort();

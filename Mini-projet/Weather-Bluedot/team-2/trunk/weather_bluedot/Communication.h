@@ -20,6 +20,7 @@ public:
 
 public slots:
     void recevoirTrame();
+    void envoyerCouleurLED(QString couleur);
 
 signals:
     void tramePrete(QString trame);

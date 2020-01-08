@@ -1,11 +1,21 @@
 #include "Sonde.h"
 
+/**
+ * @brief Constructeur de la classe Ihm
+ *
+ * @param parent
+ */
 Sonde::Sonde(QObject *parent) : QObject(parent), temperature(0), uniteTemperature("\0"), temperatureRessentie(0), uniteTemperatureRessentie("\0"),  luminosite(0), uniteLuminosite("\0"), humidite(0), \
                  uniteHumidite("\0"), pression(0), unitePression("\0"), altitude(0), uniteAltitude("\0")
 {
 
 }
 
+/**
+ * @brief Méthode découpant la trame et placants les valeurs dans les variables
+ *
+ * @param trameBrut
+ */
 void Sonde::extraireMesures(QString trameBrut)
 {
     #ifdef SIMULATION_SONDE
@@ -20,7 +30,7 @@ void Sonde::extraireMesures(QString trameBrut)
     qDebug() << Q_FUNC_INFO << "Température Ressentie" << temperatureRessentie << uniteTemperatureRessentie;
     humidite = (trameBrut.section(';',5,5)).toUInt();
     uniteHumidite = trameBrut.section(';',6,6);
-    qDebug() << Q_FUNC_INFO << "Humdité" << humidite << uniteHumidite;
+    qDebug() << Q_FUNC_INFO << "Humidité" << humidite << uniteHumidite;
     luminosite = (trameBrut.section(';',7,7)).toUInt();
     uniteLuminosite = trameBrut.section(';',8,8);
     qDebug() << Q_FUNC_INFO << "Luminosité" << luminosite << uniteLuminosite;
@@ -34,6 +44,10 @@ void Sonde::extraireMesures(QString trameBrut)
     envoyerMesuresIHM();
 }
 
+/**
+ * @brief Méthode qui envoie un signal avec les valeurs reçut
+ *
+ */
 void Sonde::envoyerMesuresIHM()
 {
     emit nouvelleTemperature(temperature, uniteTemperature);

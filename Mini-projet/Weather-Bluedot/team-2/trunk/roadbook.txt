@@ -1,20 +1,25 @@
-## 18/12/19
+## 08/01/2020
+
+- Possibilité de changer la couleur des LEDs.
+
+
+## 18/12/2019
 
 - Début du projet
 - Créations des classes
 - Création de la liaison série
 - Début de la découpe des trames
 
-## 13/12/19
+## 13/12/2019
 
 - TP Réseau
 
-## 12/12/19
+## 12/12/2019
 
 - Suite du TP n°0 sur Qt Creator.
 - Création du roadbook.
 
-## 11/12/19
+## 11/12/2019
 
 - Début du TP n°0 sur Qt Creator.
 - Installation de Qt Creator version 5.11.2.

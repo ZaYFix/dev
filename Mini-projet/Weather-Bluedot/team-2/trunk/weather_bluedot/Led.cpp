@@ -1,10 +1,19 @@
 #include "Led.h"
 
+/**
+ * @brief Constructeur de la classe led
+ *
+ */
 Led::Led() : ledRouge(0), ledVerte(0), etat(0), couleur(0)
 {
 
 }
 
+/**
+ * @brief Méthode pour découper la trame
+ *
+ * @param trame
+ */
 void Led::extraireEtatLed(QString const trame)
 {
     ledRouge = (trame.section(';',1,1)).toUInt();
