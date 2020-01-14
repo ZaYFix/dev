@@ -1,7 +1,7 @@
 #include "Led.h"
 
 /**
- * @brief Constructeur de la classe led
+ * @brief Constructeur de la classe Led
  *
  */
 Led::Led() : ledRouge(0), ledVerte(0), etat(0), couleur(0)
@@ -10,7 +10,7 @@ Led::Led() : ledRouge(0), ledVerte(0), etat(0), couleur(0)
 }
 
 /**
- * @brief Méthode pour découper la trame
+ * @brief Méthode pour découper la trame et extraire l'état de la LED
  *
  * @param trame
  */

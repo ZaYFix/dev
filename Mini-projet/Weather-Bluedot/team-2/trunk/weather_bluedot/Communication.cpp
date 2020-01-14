@@ -32,8 +32,13 @@ void Communication::demarrerCommunicationPort()
     ouvrirPort();
 }
 
+/**
+ * @brief Méthode qui ferme le port série
+ *
+ */
 void Communication::arreterCommunicationPort()
 {
+    qDebug() << Q_FUNC_INFO << "Déconnexion du port série";
     port->close();
 }
 
@@ -43,12 +48,14 @@ void Communication::arreterCommunicationPort()
  */
 void Communication::configurerPort()
 {
+    qDebug() << Q_FUNC_INFO << "Configuration du port série..";
     port->setPortName(port_serie);
     port->setBaudRate(QSerialPort::Baud115200);
     port->setDataBits(QSerialPort::Data8);
     port->setParity(QSerialPort::NoParity);
     port->setStopBits(QSerialPort::OneStop);
     port->setFlowControl(QSerialPort::NoFlowControl);
+    qDebug() << Q_FUNC_INFO << "Configuration du port terminée.";
 }
 
 /**
@@ -59,12 +66,12 @@ void Communication::ouvrirPort()
 {
     if (port->open(QIODevice::ReadWrite))
         {
-            qDebug() << Q_FUNC_INFO << "Connecté au port";
+            qDebug() << Q_FUNC_INFO << "Connecté au port.";
             connect(port, SIGNAL(readyRead()), this, SLOT(recevoirTrame()));
         }
     else
         {
-            qDebug() << Q_FUNC_INFO << "Erreur ouverture du port";
+            qDebug() << Q_FUNC_INFO << "Erreur ouverture du port : " << port->error();
         }
 }
 
@@ -91,6 +98,7 @@ void Communication::recevoirTrame()
 /**
  * @brief Méthode qui permet d'envoyer la nouvelle couleur de la LED via le port série
  *
+ * @param couleur
  */
 void Communication::envoyerCouleurLED(QString couleur)
 {
@@ -100,6 +108,11 @@ void Communication::envoyerCouleurLED(QString couleur)
     port->write(led);
 }
 
+/**
+ * @brief Méthode qui permet de définir le nom du port série à utiliser
+ *
+ * @param nouveauPortSerie
+ */
 void Communication::setPortSerie(QString nouveauPortSerie)
 {
     port_serie = nouveauPortSerie;

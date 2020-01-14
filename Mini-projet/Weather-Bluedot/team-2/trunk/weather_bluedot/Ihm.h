@@ -24,7 +24,6 @@ signals:
 private:
     Ui::IHM *ui;
     Supervision *supervision;
-
     int valeurBoutton;
 
 public slots:
@@ -41,6 +40,7 @@ private slots:
     void on_pushButton_eteindre_clicked();
     void on_pushbutton_demarrer_clicked();
     void on_pushButton_confirmerPortSerie_clicked();
+    void on_rafraichirListePortSerie_clicked();
 };
 
 #endif // IHM_H

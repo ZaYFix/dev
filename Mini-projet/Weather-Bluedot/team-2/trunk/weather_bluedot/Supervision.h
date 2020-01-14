@@ -18,12 +18,15 @@ public:
     void demarrerCommunicationPort();
     void arreterCommunicationPort();
     void setNouveauPortSerie(QString nouveauPortSerie);
+    QString rafraichirListePortSerie();
 
 private:
     IHM *ihm;
     Communication *communication;
     Sonde *sonde;
     Led *led;
+
+    QString listePortSerie;
 };
 
 #endif // SUPERVISION_H

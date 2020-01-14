@@ -2,6 +2,7 @@
 #include "ui_ihm.h"
 #include <QDebug>
 #include <QMessageBox>
+#include <QStyleFactory>
 
 /**
  * @brief Constructeur de la classe Ihm
@@ -11,6 +12,7 @@
 IHM::IHM(QWidget *parent) : QWidget(parent), ui(new Ui::IHM), supervision(new Supervision(this)), valeurBoutton(0)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":weather.png"));
 }
 
 /**
@@ -136,6 +138,10 @@ void IHM::on_pushButton_eteindre_clicked()
     emit changerCouleurLED("0");
 }
 
+/**
+ * @brief Méthode qui vérifie si le port série a été définie avant de démarrer la liaison série
+ *
+ */
 void IHM::on_pushbutton_demarrer_clicked()
 {
     if(ui->port_serie->text().isEmpty())
@@ -166,8 +172,21 @@ void IHM::on_pushbutton_demarrer_clicked()
 
 }
 
+/**
+ * @brief Méthode qui définie le nouveau port série
+ *
+ */
 void IHM::on_pushButton_confirmerPortSerie_clicked()
 {
     QString nouveauPortSerie = ui->port_serie->text();
     supervision->setNouveauPortSerie(nouveauPortSerie);
+}
+
+/**
+ * @brief Méthode qui rafraichie la liste de port série
+ *
+ */
+void IHM::on_rafraichirListePortSerie_clicked()
+{
+    ui->listePortSerie->setText(supervision->rafraichirListePortSerie());
 }
