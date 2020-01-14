@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>446</width>
-    <height>290</height>
+    <height>301</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,13 @@
   <layout class="QHBoxLayout" name="horizontalLayout_9">
    <item>
     <widget class="QTabWidget" name="technicien_2">
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="mesures">
       <attribute name="title">
@@ -156,11 +161,28 @@
          </item>
         </layout>
        </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QPushButton" name="pushbutton_demarrer">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>DÉMARRER</string>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="leds">
       <attribute name="title">
-       <string>Page</string>
+       <string>LED</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -219,6 +241,57 @@
       <attribute name="title">
        <string>Mode Technicien</string>
       </attribute>
+     </widget>
+     <widget class="QWidget" name="configuration">
+      <attribute name="title">
+       <string>Configuration</string>
+      </attribute>
+      <widget class="QLineEdit" name="port_serie">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Port série :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_confirmerPortSerie">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>50</y>
+         <width>31</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>

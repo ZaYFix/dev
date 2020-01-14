@@ -25,18 +25,22 @@ private:
     Ui::IHM *ui;
     Supervision *supervision;
 
+    int valeurBoutton;
+
 public slots:
     void afficherTemperature(double temperature, QString uniteTemperature);
     void afficherTemperatureRessentie(double temperatureRessentie, QString uniteTemperatureRessentie);
-    void afficherHumidite(unsigned int humidite, QString uniteHumidite);
-    void afficherLuminosite(unsigned int luminosite, QString uniteLuminosite);
-    void afficherPression(unsigned int pression, QString unitePression);
-    void afficherAltitude(int altitude, QString uniteAltitude);
+    void afficherHumidite(double humidite, QString uniteHumidite);
+    void afficherLuminosite(double luminosite, QString uniteLuminosite);
+    void afficherPression(double pression, QString unitePression);
+    void afficherAltitude(double altitude, QString uniteAltitude);
 private slots:
     void on_pushButton_orange_clicked();
     void on_pushButton_vert_clicked();
     void on_pushbutton_rouge_clicked();
     void on_pushButton_eteindre_clicked();
+    void on_pushbutton_demarrer_clicked();
+    void on_pushButton_confirmerPortSerie_clicked();
 };
 
 #endif // IHM_H

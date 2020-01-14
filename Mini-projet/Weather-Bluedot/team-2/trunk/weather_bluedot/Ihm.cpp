@@ -1,13 +1,14 @@
 #include "Ihm.h"
 #include "ui_ihm.h"
 #include <QDebug>
+#include <QMessageBox>
 
 /**
  * @brief Constructeur de la classe Ihm
  *
  * @param parent
  */
-IHM::IHM(QWidget *parent) : QWidget(parent), ui(new Ui::IHM), supervision(new Supervision(this))
+IHM::IHM(QWidget *parent) : QWidget(parent), ui(new Ui::IHM), supervision(new Supervision(this)), valeurBoutton(0)
 {
     ui->setupUi(this);
 }
@@ -42,8 +43,8 @@ void IHM::afficherTemperature(double temperature, QString uniteTemperature)
  */
 void IHM::afficherTemperatureRessentie(double temperatureRessentie, QString uniteTemperatureRessentie)
 {
-    ui->affichageTemperature->display(temperatureRessentie);
-    ui->uniteTemperature->setText(QString::fromUtf8("°") + uniteTemperatureRessentie);
+    ui->affichageTemperatureRessentie->display(temperatureRessentie);
+    ui->uniteTemperatureRessentie->setText(QString::fromUtf8("°") + uniteTemperatureRessentie);
     qDebug() << Q_FUNC_INFO << "Température Ressentie" << temperatureRessentie << uniteTemperatureRessentie;
 }
 
@@ -53,10 +54,10 @@ void IHM::afficherTemperatureRessentie(double temperatureRessentie, QString unit
  * @param humidite
  * @param uniteHumidite
  */
-void IHM::afficherHumidite(unsigned int humidite, QString uniteHumidite)
+void IHM::afficherHumidite(double humidite, QString uniteHumidite)
 {
-    //ui->affichageHumidite->display(humidite);
-    ui->uniteTemperature->setText(QString::fromUtf8("°") + uniteHumidite);
+    ui->affichageHumidite->display(humidite);
+    ui->uniteHumidite->setText(uniteHumidite);
     qDebug() << Q_FUNC_INFO << "Humidité" << humidite << uniteHumidite;
 }
 
@@ -66,10 +67,10 @@ void IHM::afficherHumidite(unsigned int humidite, QString uniteHumidite)
  * @param luminosite
  * @param uniteLuminosite
  */
-void IHM::afficherLuminosite(unsigned int luminosite, QString uniteLuminosite)
+void IHM::afficherLuminosite(double luminosite, QString uniteLuminosite)
 {
-    //ui->affichageLuminosite->display(luminosite);
-    ui->uniteTemperature->setText(QString::fromUtf8("°") + uniteLuminosite);
+    ui->affichageLuminosite->display(luminosite);
+    ui->uniteLuminosite->setText(uniteLuminosite);
     qDebug() << Q_FUNC_INFO << "Luminosité" << luminosite << uniteLuminosite;
 }
 
@@ -79,10 +80,10 @@ void IHM::afficherLuminosite(unsigned int luminosite, QString uniteLuminosite)
  * @param pression
  * @param unitePression
  */
-void IHM::afficherPression(unsigned int pression, QString unitePression)
+void IHM::afficherPression(double pression, QString unitePression)
 {
-    //ui->affichagePression->display(pression);
-    ui->uniteTemperature->setText(QString::fromUtf8("°") + unitePression);
+    ui->affichagePression->display(pression);
+    ui->unitePression->setText(unitePression);
     qDebug() << Q_FUNC_INFO << "Pression" << pression << unitePression;
 }
 
@@ -92,10 +93,10 @@ void IHM::afficherPression(unsigned int pression, QString unitePression)
  * @param altitude
  * @param uniteAltitude
  */
-void IHM::afficherAltitude(int altitude, QString uniteAltitude)
+void IHM::afficherAltitude(double altitude, QString uniteAltitude)
 {
     ui->affichageAltitude->display(altitude);
-    ui->uniteTemperature->setText(QString::fromUtf8("°") + uniteAltitude);
+    ui->uniteAltitude->setText(uniteAltitude);
     qDebug() << Q_FUNC_INFO << "Altitude" << altitude << uniteAltitude;
 }
 
@@ -133,4 +134,40 @@ void IHM::on_pushButton_orange_clicked()
 void IHM::on_pushButton_eteindre_clicked()
 {
     emit changerCouleurLED("0");
+}
+
+void IHM::on_pushbutton_demarrer_clicked()
+{
+    if(ui->port_serie->text().isEmpty())
+    {
+        QMessageBox::warning(
+            this,
+            tr("Weather Bluedot"),
+            tr("Veuillez d'abord choisir un port série.") );
+    }
+    else
+    {
+        switch(valeurBoutton)
+        {
+            case 0:
+                ui->pushbutton_demarrer->setText("STOP");
+                ui->pushbutton_demarrer->setStyleSheet("background-color:rgb(255,0,0)");
+                supervision->demarrerCommunicationPort();
+                valeurBoutton = 1;
+            break;
+            case 1:
+                ui->pushbutton_demarrer->setText("DÉMARRER");
+                ui->pushbutton_demarrer->setStyleSheet("background-color:rgb(0,128,0)");
+                supervision->arreterCommunicationPort();
+                valeurBoutton = 0;
+            break;
+        }
+    }
+
+}
+
+void IHM::on_pushButton_confirmerPortSerie_clicked()
+{
+    QString nouveauPortSerie = ui->port_serie->text();
+    supervision->setNouveauPortSerie(nouveauPortSerie);
 }

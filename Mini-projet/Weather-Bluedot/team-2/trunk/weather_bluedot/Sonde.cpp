@@ -24,16 +24,16 @@ void Sonde::extraireMesures(QString trameBrut)
     temperatureRessentie = (trameBrut.section(';',3,3)).toDouble();
     uniteTemperatureRessentie = trameBrut.section(';',4,4);
     qDebug() << Q_FUNC_INFO << "Température Ressentie" << temperatureRessentie << uniteTemperatureRessentie;
-    humidite = (trameBrut.section(';',5,5)).toUInt();
+    humidite = (trameBrut.section(';',5,5)).toDouble();
     uniteHumidite = trameBrut.section(';',6,6);
     qDebug() << Q_FUNC_INFO << "Humidité" << humidite << uniteHumidite;
-    luminosite = (trameBrut.section(';',7,7)).toUInt();
+    luminosite = (trameBrut.section(';',7,7)).toDouble();
     uniteLuminosite = trameBrut.section(';',8,8);
     qDebug() << Q_FUNC_INFO << "Luminosité" << luminosite << uniteLuminosite;
-    pression = (trameBrut.section(';',9,9)).toUInt();
+    pression = (trameBrut.section(';',9,9)).toDouble();
     unitePression = trameBrut.section(';',10,10);
     qDebug() << Q_FUNC_INFO << "Pression" << pression << unitePression;
-    altitude = (trameBrut.section(';',11,11)).toInt();
+    altitude = (trameBrut.section(';',11,11)).toDouble();
     uniteAltitude = trameBrut.section(';',12,12);
     qDebug() << Q_FUNC_INFO << "Altitude" << altitude << uniteAltitude;
 

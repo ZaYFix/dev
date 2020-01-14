@@ -8,7 +8,7 @@
  *
  * @param parent
  */
-Communication::Communication(QObject *parent) : QObject(parent), port(new QSerialPort), trameBrut("\0")
+Communication::Communication(QObject *parent) : QObject(parent), port(new QSerialPort), trameBrut("\0"), port_serie("\0")
 {
 
 }
@@ -32,13 +32,18 @@ void Communication::demarrerCommunicationPort()
     ouvrirPort();
 }
 
+void Communication::arreterCommunicationPort()
+{
+    port->close();
+}
+
 /**
  * @brief Méthode qui configure le port serie
  *
  */
 void Communication::configurerPort()
 {
-    port->setPortName(SERIALPORT);
+    port->setPortName(port_serie);
     port->setBaudRate(QSerialPort::Baud115200);
     port->setDataBits(QSerialPort::Data8);
     port->setParity(QSerialPort::NoParity);
@@ -93,4 +98,10 @@ void Communication::envoyerCouleurLED(QString couleur)
     QByteArray led = message.toUtf8();
     qDebug() << Q_FUNC_INFO << led;
     port->write(led);
+}
+
+void Communication::setPortSerie(QString nouveauPortSerie)
+{
+    port_serie = nouveauPortSerie;
+     qDebug() << Q_FUNC_INFO << port_serie;
 }

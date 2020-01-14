@@ -17,17 +17,15 @@ Supervision::Supervision(IHM *parent) : QObject(parent), ihm(parent), communicat
 
     connect(sonde, SIGNAL(nouvelleTemperatureRessentie(double, QString)), ihm, SLOT(afficherTemperatureRessentie(double, QString)));
 
-    connect(sonde, SIGNAL(nouvelleHumidite(unsigned int, QString)), ihm, SLOT(afficherHumidite(unsigned int, QString)));
+    connect(sonde, SIGNAL(nouvelleHumidite(double, QString)), ihm, SLOT(afficherHumidite(double, QString)));
 
-    connect(sonde, SIGNAL(nouvelleLuminosite(unsigned int, QString)), ihm, SLOT(afficherLuminosite(unsigned int, QString)));
+    connect(sonde, SIGNAL(nouvelleLuminosite(double, QString)), ihm, SLOT(afficherLuminosite(double, QString)));
 
-    connect(sonde, SIGNAL(nouvellePression(unsigned int, QString)), ihm, SLOT(afficherPression(unsigned int, QString)));
+    connect(sonde, SIGNAL(nouvellePression(double, QString)), ihm, SLOT(afficherPression(double, QString)));
 
-    connect(sonde, SIGNAL(nouvelleAltitude(int, QString)), ihm, SLOT(afficherAltitude(int, QString)));
+    connect(sonde, SIGNAL(nouvelleAltitude(double, QString)), ihm, SLOT(afficherAltitude(double, QString)));
 
     connect(ihm, SIGNAL(changerCouleurLED(QString)), communication, SLOT(envoyerCouleurLED(QString)));
-
-    demarrer();
 }
 
 /**
@@ -45,7 +43,17 @@ Supervision::~Supervision()
  * @brief Méthode pour demarer le port série
  *
  */
-void Supervision::demarrer()
+void Supervision::demarrerCommunicationPort()
 {
     communication->demarrerCommunicationPort();
+}
+
+void Supervision::arreterCommunicationPort()
+{
+    communication->arreterCommunicationPort();
+}
+
+void Supervision::setNouveauPortSerie(QString nouveauPortSerie)
+{
+    communication->setPortSerie(nouveauPortSerie);
 }

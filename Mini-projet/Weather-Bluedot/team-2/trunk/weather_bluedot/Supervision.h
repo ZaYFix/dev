@@ -15,7 +15,9 @@ public:
     Supervision(IHM *parent = nullptr);
     ~Supervision();
 
-    void demarrer();
+    void demarrerCommunicationPort();
+    void arreterCommunicationPort();
+    void setNouveauPortSerie(QString nouveauPortSerie);
 
 private:
     IHM *ihm;

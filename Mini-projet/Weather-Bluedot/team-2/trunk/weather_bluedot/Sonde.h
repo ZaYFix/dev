@@ -15,10 +15,10 @@ public:
 signals:
     void nouvelleTemperature(double temperature, QString uniteTemperature);
     void nouvelleTemperatureRessentie(double temperatureRessentie, QString uniteTemperatureRessentie);
-    void nouvelleHumidite(unsigned int humidite, QString uniteHumidite);
-    void nouvelleLuminosite(unsigned int luminosite, QString uniteLuminosite);
-    void nouvellePression(unsigned int pression, QString unitePression);
-    void nouvelleAltitude(int altitude, QString uniteAltitude);
+    void nouvelleHumidite(double humidite, QString uniteHumidite);
+    void nouvelleLuminosite(double luminosite, QString uniteLuminosite);
+    void nouvellePression(double pression, QString unitePression);
+    void nouvelleAltitude(double altitude, QString uniteAltitude);
 
 public slots:
     void extraireMesures(QString trame);
@@ -30,16 +30,16 @@ private:
     double temperatureRessentie; //!< valeur de la température ressentie
     QString uniteTemperatureRessentie; //!< unité de la température ressentie
 
-    unsigned int luminosite; //!< valeur de la luminosité
+    double luminosite; //!< valeur de la luminosité
     QString uniteLuminosite; //!< unité de la luminosité
 
-    unsigned int humidite; //!< valeur de l'humidité
+    double humidite; //!< valeur de l'humidité
     QString uniteHumidite; //!< unité de l'humidité
 
-    unsigned int pression; //!< valeur de la pression
+    double pression; //!< valeur de la pression
     QString unitePression; //!< unité de la pression
 
-    int altitude; //!< valeur de l'altitude
+    double altitude; //!< valeur de l'altitude
     QString uniteAltitude; //!< unité de l'altitude
 };
 
