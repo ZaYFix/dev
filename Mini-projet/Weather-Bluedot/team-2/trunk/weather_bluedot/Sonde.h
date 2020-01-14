@@ -4,8 +4,6 @@
 #include <QString>
 #include <QtDebug>
 
-//#define SIMULATION_SONDE
-
 class Sonde : public QObject
 {
     Q_OBJECT
@@ -26,23 +24,23 @@ public slots:
     void extraireMesures(QString trame);
 
 private:
-    double temperature;
-    QString uniteTemperature;
+    double temperature; //!< valeur de la température
+    QString uniteTemperature; //!< unité de la température
 
-    double temperatureRessentie;
-    QString uniteTemperatureRessentie;
+    double temperatureRessentie; //!< valeur de la température ressentie
+    QString uniteTemperatureRessentie; //!< unité de la température ressentie
 
-    unsigned int luminosite;
-    QString uniteLuminosite;
+    unsigned int luminosite; //!< valeur de la luminosité
+    QString uniteLuminosite; //!< unité de la luminosité
 
-    unsigned int humidite;
-    QString uniteHumidite;
+    unsigned int humidite; //!< valeur de l'humidité
+    QString uniteHumidite; //!< unité de l'humidité
 
-    unsigned int pression;
-    QString unitePression;
+    unsigned int pression; //!< valeur de la pression
+    QString unitePression; //!< unité de la pression
 
-    int altitude;
-    QString uniteAltitude;
+    int altitude; //!< valeur de l'altitude
+    QString uniteAltitude; //!< unité de l'altitude
 };
 
 #endif // SONDE_H

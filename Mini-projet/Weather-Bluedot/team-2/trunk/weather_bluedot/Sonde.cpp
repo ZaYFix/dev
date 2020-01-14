@@ -12,16 +12,12 @@ Sonde::Sonde(QObject *parent) : QObject(parent), temperature(0), uniteTemperatur
 }
 
 /**
- * @brief Méthode découpant la trame et placants les valeurs dans les variables
+ * @brief Méthode découpant la trame et plaçant les valeurs des capteurs dans des variables
  *
  * @param trameBrut
  */
 void Sonde::extraireMesures(QString trameBrut)
 {
-    #ifdef SIMULATION_SONDE
-    trameBrut = "SONDE;28.6;C;28.2;C;40;%;218;lux;1014;hPa;-10;m;\r\n";
-    #endif
-
     temperature = (trameBrut.section(';',1,1)).toDouble();
     uniteTemperature = (trameBrut.section(';',2,2));
     qDebug() << Q_FUNC_INFO << "Température" << temperature << uniteTemperature;
@@ -45,7 +41,7 @@ void Sonde::extraireMesures(QString trameBrut)
 }
 
 /**
- * @brief Méthode qui envoie un signal avec les valeurs reçut
+ * @brief Méthode qui envoie un signal avec les valeurs des capteurs reçut
  *
  */
 void Sonde::envoyerMesuresIHM()

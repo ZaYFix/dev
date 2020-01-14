@@ -22,7 +22,7 @@ IHM::~IHM()
 }
 
 /**
- * @brief Méthode qui affiche la valeur de la température
+ * @brief Méthode qui affiche la valeur de la température sur l'IHM
  *
  * @param temperature
  * @param uniteTemperature
@@ -35,7 +35,7 @@ void IHM::afficherTemperature(double temperature, QString uniteTemperature)
 }
 
 /**
- * @brief Méthode qui affiche la valeur de la température ressentie
+ * @brief Méthode qui affiche la valeur de la température ressentie sur l'IHM
  *
  * @param temperatureRessentie
  * @param uniteTemperatureRessentie
@@ -48,7 +48,7 @@ void IHM::afficherTemperatureRessentie(double temperatureRessentie, QString unit
 }
 
 /**
- * @brief Méthode qui affiche la valeur de l'humidité
+ * @brief Méthode qui affiche la valeur de l'humidité sur l'IHM
  *
  * @param humidite
  * @param uniteHumidite
@@ -61,7 +61,7 @@ void IHM::afficherHumidite(unsigned int humidite, QString uniteHumidite)
 }
 
 /**
- * @brief Méthode qui affiche la valeur de la luminosité
+ * @brief Méthode qui affiche la valeur de la luminosité sur l'IHM
  *
  * @param luminosite
  * @param uniteLuminosite
@@ -74,7 +74,7 @@ void IHM::afficherLuminosite(unsigned int luminosite, QString uniteLuminosite)
 }
 
 /**
- * @brief Méthode qui affiche la valeur de la pression
+ * @brief Méthode qui affiche la valeur de la pression sur l'IHM
  *
  * @param pression
  * @param unitePression
@@ -87,7 +87,7 @@ void IHM::afficherPression(unsigned int pression, QString unitePression)
 }
 
 /**
- * @brief Méthode qui affiche la valeur de l'altitude
+ * @brief Méthode qui affiche la valeur de l'altitude sur l'IHM
  *
  * @param altitude
  * @param uniteAltitude
@@ -99,21 +99,37 @@ void IHM::afficherAltitude(int altitude, QString uniteAltitude)
     qDebug() << Q_FUNC_INFO << "Altitude" << altitude << uniteAltitude;
 }
 
+/**
+ * @brief Méthode qui émet un signal pour changer la couleur de la LED en rouge
+ *
+ */
 void IHM::on_pushbutton_rouge_clicked()
 {
     emit changerCouleurLED("1");
 }
 
+/**
+ * @brief Méthode qui émet un signal pour changer la couleur de la LED en vert
+ *
+ */
 void IHM::on_pushButton_vert_clicked()
 {
     emit changerCouleurLED("2");
 }
 
+/**
+ * @brief Méthode qui émet un signal pour changer la couleur de la LED en orange
+ *
+ */
 void IHM::on_pushButton_orange_clicked()
 {
     emit changerCouleurLED("3");
 }
 
+/**
+ * @brief Méthode qui émet un signal pour éteindre la LED
+ *
+ */
 void IHM::on_pushButton_eteindre_clicked()
 {
     emit changerCouleurLED("0");

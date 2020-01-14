@@ -4,7 +4,7 @@
 #include <QObject>
 
 /**
- * @brief
+ * @brief Constructeur de la classe Communication
  *
  * @param parent
  */
@@ -14,7 +14,7 @@ Communication::Communication(QObject *parent) : QObject(parent), port(new QSeria
 }
 
 /**
- * @brief
+ * @brief Destructeur de la classe Communication
  *
  */
 Communication::~Communication()
@@ -23,7 +23,7 @@ Communication::~Communication()
 }
 
 /**
- * @brief
+ * @brief Méthode qui démarre la configuration du port serie et ouvre le port serie
  *
  */
 void Communication::demarrerCommunicationPort()
@@ -33,7 +33,7 @@ void Communication::demarrerCommunicationPort()
 }
 
 /**
- * @brief
+ * @brief Méthode qui configure le port serie
  *
  */
 void Communication::configurerPort()
@@ -47,7 +47,7 @@ void Communication::configurerPort()
 }
 
 /**
- * @brief
+ * @brief Méthode qui ouvre le port serie en lecture et écriture
  *
  */
 void Communication::ouvrirPort()
@@ -64,7 +64,7 @@ void Communication::ouvrirPort()
 }
 
 /**
- * @brief
+ * @brief Méthode qui permet de recevoir une trame via le port série
  *
  */
 void Communication::recevoirTrame()
@@ -83,6 +83,10 @@ void Communication::recevoirTrame()
         emit tramePrete(trameBrut);
 }
 
+/**
+ * @brief Méthode qui permet d'envoyer la nouvelle couleur de la LED via le port série
+ *
+ */
 void Communication::envoyerCouleurLED(QString couleur)
 {
     QString message = "SET LED " + couleur + "\n";
