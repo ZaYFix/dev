@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Weather Bluedot:  Fichier source de weather_bluedot/Communication.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="weather.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Weather Bluedot
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">BTS SN 2020</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f5618a82bc407f0c14069e468facf3c9.html">weather_bluedot</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Communication.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_communication_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef COMMUNICATION_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define COMMUNICATION_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QSerialPort&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_communication.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_communication.html">Communication</a> : <span class="keyword">public</span> QObject</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Q_OBJECT</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_communication.html#a56cf4b262e592bcae1d987c3dd00487f">Communication</a>(QObject *parent = <span class="keyword">nullptr</span>);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_communication.html#a75ba08ce908d45251e28e4c1db94e6f4">~Communication</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_communication.html#a8fe8d15efd2590a1061a015f5f761924">demarrerCommunicationPort</a>();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_communication.html#aa447a2fe9e2e5c2467a0816865a77340">arreterCommunicationPort</a>();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_communication.html#ae39284eac0920a3d11c085b48c6234da">configurerPort</a>();</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_communication.html#ad5969603a6b7232d0227a461fd479251">ouvrirPort</a>();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_communication.html#a434b62c7ef7438eba27913eb96fa63d8">setPortSerie</a>(QString nouveauPortSerie);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span> slots:</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_communication.html#a0b8edc96112e71e1ec4a28cc6309cbbc">recevoirTrame</a>();</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_communication.html#ae1daea9e872325b56ded7984ee882dec">envoyerCouleurLED</a>(QString couleur);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_communication.html#aff7d55208f31232fbdc1dcec488908f1">   36</a></span>&#160;     QSerialPort *<a class="code" href="class_communication.html#aff7d55208f31232fbdc1dcec488908f1">port</a>; </div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_communication.html#a143db06b5a7fcac2e341be745464bac0">   37</a></span>&#160;     QString <a class="code" href="class_communication.html#a143db06b5a7fcac2e341be745464bac0">trameBrut</a>; </div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_communication.html#a87bb22867b854a48834fb1abdabbf045">   38</a></span>&#160;     QString <a class="code" href="class_communication.html#a87bb22867b854a48834fb1abdabbf045">port_serie</a>; </div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;signals:</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_communication.html#a3b51e6cec94cbc95f55c2de01802cb09">tramePrete</a>(QString trame);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif // COMMUNICATION_H</span></div><div class="ttc" id="class_communication_html_a434b62c7ef7438eba27913eb96fa63d8"><div class="ttname"><a href="class_communication.html#a434b62c7ef7438eba27913eb96fa63d8">Communication::setPortSerie</a></div><div class="ttdeci">void setPortSerie(QString nouveauPortSerie)</div><div class="ttdoc">Méthode qui permet de définir le nom du port série à utiliser. </div><div class="ttdef"><b>Definition:</b> Communication.cpp:90</div></div>
+<div class="ttc" id="class_communication_html_a143db06b5a7fcac2e341be745464bac0"><div class="ttname"><a href="class_communication.html#a143db06b5a7fcac2e341be745464bac0">Communication::trameBrut</a></div><div class="ttdeci">QString trameBrut</div><div class="ttdef"><b>Definition:</b> Communication.h:37</div></div>
+<div class="ttc" id="class_communication_html_ae1daea9e872325b56ded7984ee882dec"><div class="ttname"><a href="class_communication.html#ae1daea9e872325b56ded7984ee882dec">Communication::envoyerCouleurLED</a></div><div class="ttdeci">void envoyerCouleurLED(QString couleur)</div><div class="ttdoc">Méthode qui permet d&amp;#39;envoyer la nouvelle couleur de la LED via le port série. </div><div class="ttdef"><b>Definition:</b> Communication.cpp:121</div></div>
+<div class="ttc" id="class_communication_html_a75ba08ce908d45251e28e4c1db94e6f4"><div class="ttname"><a href="class_communication.html#a75ba08ce908d45251e28e4c1db94e6f4">Communication::~Communication</a></div><div class="ttdeci">~Communication()</div><div class="ttdoc">Destructeur de la classe Communication et ferme le port. </div><div class="ttdef"><b>Definition:</b> Communication.cpp:27</div></div>
+<div class="ttc" id="class_communication_html_aa447a2fe9e2e5c2467a0816865a77340"><div class="ttname"><a href="class_communication.html#aa447a2fe9e2e5c2467a0816865a77340">Communication::arreterCommunicationPort</a></div><div class="ttdeci">void arreterCommunicationPort()</div><div class="ttdoc">Méthode qui ferme le port série. </div><div class="ttdef"><b>Definition:</b> Communication.cpp:46</div></div>
+<div class="ttc" id="class_communication_html_a3b51e6cec94cbc95f55c2de01802cb09"><div class="ttname"><a href="class_communication.html#a3b51e6cec94cbc95f55c2de01802cb09">Communication::tramePrete</a></div><div class="ttdeci">void tramePrete(QString trame)</div><div class="ttdoc">Envoie un signal quand une trame est prête. </div></div>
+<div class="ttc" id="class_communication_html_aff7d55208f31232fbdc1dcec488908f1"><div class="ttname"><a href="class_communication.html#aff7d55208f31232fbdc1dcec488908f1">Communication::port</a></div><div class="ttdeci">QSerialPort * port</div><div class="ttdef"><b>Definition:</b> Communication.h:36</div></div>
+<div class="ttc" id="class_communication_html_ad5969603a6b7232d0227a461fd479251"><div class="ttname"><a href="class_communication.html#ad5969603a6b7232d0227a461fd479251">Communication::ouvrirPort</a></div><div class="ttdeci">void ouvrirPort()</div><div class="ttdoc">Méthode qui ouvre le port serie en lecture et écriture. </div><div class="ttdef"><b>Definition:</b> Communication.cpp:72</div></div>
+<div class="ttc" id="class_communication_html_a0b8edc96112e71e1ec4a28cc6309cbbc"><div class="ttname"><a href="class_communication.html#a0b8edc96112e71e1ec4a28cc6309cbbc">Communication::recevoirTrame</a></div><div class="ttdeci">void recevoirTrame()</div><div class="ttdef"><b>Definition:</b> Communication.cpp:100</div></div>
+<div class="ttc" id="class_communication_html"><div class="ttname"><a href="class_communication.html">Communication</a></div><div class="ttdef"><b>Definition:</b> Communication.h:15</div></div>
+<div class="ttc" id="class_communication_html_a8fe8d15efd2590a1061a015f5f761924"><div class="ttname"><a href="class_communication.html#a8fe8d15efd2590a1061a015f5f761924">Communication::demarrerCommunicationPort</a></div><div class="ttdeci">void demarrerCommunicationPort()</div><div class="ttdoc">Méthode qui démarre la configuration du port serie et ouvre le port serie. </div><div class="ttdef"><b>Definition:</b> Communication.cpp:36</div></div>
+<div class="ttc" id="class_communication_html_ae39284eac0920a3d11c085b48c6234da"><div class="ttname"><a href="class_communication.html#ae39284eac0920a3d11c085b48c6234da">Communication::configurerPort</a></div><div class="ttdeci">void configurerPort()</div><div class="ttdoc">Méthode qui configure le port serie. </div><div class="ttdef"><b>Definition:</b> Communication.cpp:56</div></div>
+<div class="ttc" id="class_communication_html_a87bb22867b854a48834fb1abdabbf045"><div class="ttname"><a href="class_communication.html#a87bb22867b854a48834fb1abdabbf045">Communication::port_serie</a></div><div class="ttdeci">QString port_serie</div><div class="ttdef"><b>Definition:</b> Communication.h:38</div></div>
+<div class="ttc" id="class_communication_html_a56cf4b262e592bcae1d987c3dd00487f"><div class="ttname"><a href="class_communication.html#a56cf4b262e592bcae1d987c3dd00487f">Communication::Communication</a></div><div class="ttdeci">Communication(QObject *parent=nullptr)</div><div class="ttdoc">Constructeur de la classe Communication. </div><div class="ttdef"><b>Definition:</b> Communication.cpp:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<map id="Supervision::demarrerCommunicationPort" name="Supervision::demarrerCommunicationPort">
+<area shape="rect" id="node2" href="$class_communication.html#a8fe8d15efd2590a1061a015f5f761924" title="Méthode qui démarre la configuration du port serie et ouvre le port serie. " alt="" coords="317,31,604,57"/>
+<area shape="rect" id="node3" href="$class_communication.html#ae39284eac0920a3d11c085b48c6234da" title="Méthode qui configure le port serie. " alt="" coords="652,5,855,32"/>
+<area shape="rect" id="node4" href="$class_communication.html#ad5969603a6b7232d0227a461fd479251" title="Méthode qui ouvre le port serie en lecture et écriture. " alt="" coords="665,56,842,83"/>
+<area shape="rect" id="node5" href="$class_communication.html#a0b8edc96112e71e1ec4a28cc6309cbbc" title="Communication::recevoirTrame" alt="" coords="903,56,1107,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Communication::demarrerCommunicationPort" name="Communication::demarrerCommunicationPort">
+<area shape="rect" id="node2" href="$class_communication.html#ae39284eac0920a3d11c085b48c6234da" title="Méthode qui configure le port serie. " alt="" coords="340,5,543,32"/>
+<area shape="rect" id="node3" href="$class_communication.html#ad5969603a6b7232d0227a461fd479251" title="Méthode qui ouvre le port serie en lecture et écriture. " alt="" coords="353,56,530,83"/>
+<area shape="rect" id="node4" href="$class_communication.html#a0b8edc96112e71e1ec4a28cc6309cbbc" title="Communication::recevoirTrame" alt="" coords="591,56,795,83"/>
+</map>

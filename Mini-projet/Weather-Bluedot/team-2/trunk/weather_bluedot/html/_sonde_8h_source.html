@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Weather Bluedot:  Fichier source de weather_bluedot/Sonde.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="weather.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Weather Bluedot
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">BTS SN 2020</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f5618a82bc407f0c14069e468facf3c9.html">weather_bluedot</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Sonde.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_sonde_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SONDE_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SONDE_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QtDebug&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_sonde.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sonde.html">Sonde</a> : <span class="keyword">public</span> QObject</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Q_OBJECT</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_sonde.html#a0d144e04c2288a4207088c5c52b883fd">Sonde</a>(QObject *parent = <span class="keyword">nullptr</span>);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_sonde.html#a6ae91890c81afd3497684b34652598de">~Sonde</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#a77fdaed26780d414376755dae4311ee2">envoyerMesuresIHM</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#a26c8be2721778a79a7eebec358f2df93">envoyerEtatLED</a>(QString trameBrut);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span> slots:</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#a5460fc5443f3834e1633a66af66eac98">extraireMesures</a>(QString trame);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_sonde.html#a38c8be8aff3e75d52e5d6f1803531b09">   30</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_sonde.html#a38c8be8aff3e75d52e5d6f1803531b09">temperature</a>; </div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_sonde.html#a2ed3aa1801509c1d5181ec511ccd674e">   31</a></span>&#160;    QString <a class="code" href="class_sonde.html#a2ed3aa1801509c1d5181ec511ccd674e">uniteTemperature</a>; </div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_sonde.html#ae67429cc3fd34606708002c5db52fe7b">   33</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_sonde.html#ae67429cc3fd34606708002c5db52fe7b">temperatureRessentie</a>; </div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_sonde.html#a5257a817b4785e2c84ded40fe32a05aa">   34</a></span>&#160;    QString <a class="code" href="class_sonde.html#a5257a817b4785e2c84ded40fe32a05aa">uniteTemperatureRessentie</a>; </div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_sonde.html#a1e3d0c4da5e50bcbc1d19b16569dd294">   36</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_sonde.html#a1e3d0c4da5e50bcbc1d19b16569dd294">luminosite</a>; </div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_sonde.html#a7c29b3867d816bb933871c8a1cd96cbd">   37</a></span>&#160;    QString <a class="code" href="class_sonde.html#a7c29b3867d816bb933871c8a1cd96cbd">uniteLuminosite</a>; </div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_sonde.html#a94ab0ef44c287ab470719f8e7da063a3">   39</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_sonde.html#a94ab0ef44c287ab470719f8e7da063a3">humidite</a>; </div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_sonde.html#a54fba004b47ec1358291c7f5e9e3f456">   40</a></span>&#160;    QString <a class="code" href="class_sonde.html#a54fba004b47ec1358291c7f5e9e3f456">uniteHumidite</a>; </div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_sonde.html#ae7f9000e78509094f4ee12fa245a0e41">   42</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_sonde.html#ae7f9000e78509094f4ee12fa245a0e41">pression</a>; </div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_sonde.html#a630a45bb9bc709baa9f5f65e154b7480">   43</a></span>&#160;    QString <a class="code" href="class_sonde.html#a630a45bb9bc709baa9f5f65e154b7480">unitePression</a>; </div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_sonde.html#a2d5e49c0dd4fce3803302fdbcc1670bf">   45</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_sonde.html#a2d5e49c0dd4fce3803302fdbcc1670bf">altitude</a>; </div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_sonde.html#a78bb04f22872d623612977996c085db7">   46</a></span>&#160;    QString <a class="code" href="class_sonde.html#a78bb04f22872d623612977996c085db7">uniteAltitude</a>; </div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;signals:</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#a6ad855e658d10e4d68e65e3f41bea122">nouvelleTemperature</a>(<span class="keywordtype">double</span> temperature, QString uniteTemperature);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#a1d8cfbf181110f716a49846074599d79">nouvelleTemperatureRessentie</a>(<span class="keywordtype">double</span> temperatureRessentie, QString uniteTemperatureRessentie);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#ace1a14d8ab42fc34a88d5a2164f9185b">nouvelleHumidite</a>(<span class="keywordtype">double</span> humidite, QString uniteHumidite);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#aa6d7ef374a38f6c3a62febc86670e808">nouvelleLuminosite</a>(<span class="keywordtype">double</span> luminosite, QString uniteLuminosite);</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#aa6e8b8222add83f188c1c49c27ffd79b">nouvellePression</a>(<span class="keywordtype">double</span> pression, QString unitePression);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#a0e0a506b783607de96db196630cee2cb">nouvelleAltitude</a>(<span class="keywordtype">double</span> altitude, QString uniteAltitude);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sonde.html#a72b6992d41d54c3478d0d47a81edca41">nouvelleEtatLED</a>(QString trameBrut);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif // SONDE_H</span></div><div class="ttc" id="class_sonde_html_a2d5e49c0dd4fce3803302fdbcc1670bf"><div class="ttname"><a href="class_sonde.html#a2d5e49c0dd4fce3803302fdbcc1670bf">Sonde::altitude</a></div><div class="ttdeci">double altitude</div><div class="ttdef"><b>Definition:</b> Sonde.h:45</div></div>
+<div class="ttc" id="class_sonde_html_a72b6992d41d54c3478d0d47a81edca41"><div class="ttname"><a href="class_sonde.html#a72b6992d41d54c3478d0d47a81edca41">Sonde::nouvelleEtatLED</a></div><div class="ttdeci">void nouvelleEtatLED(QString trameBrut)</div><div class="ttdoc">Signal envoyant les nouveaux états des leds. </div></div>
+<div class="ttc" id="class_sonde_html_a5460fc5443f3834e1633a66af66eac98"><div class="ttname"><a href="class_sonde.html#a5460fc5443f3834e1633a66af66eac98">Sonde::extraireMesures</a></div><div class="ttdeci">void extraireMesures(QString trame)</div><div class="ttdoc">Méthode découpant la trame et plaçant les valeurs des capteurs dans des variables. </div><div class="ttdef"><b>Definition:</b> Sonde.cpp:36</div></div>
+<div class="ttc" id="class_sonde_html_a94ab0ef44c287ab470719f8e7da063a3"><div class="ttname"><a href="class_sonde.html#a94ab0ef44c287ab470719f8e7da063a3">Sonde::humidite</a></div><div class="ttdeci">double humidite</div><div class="ttdef"><b>Definition:</b> Sonde.h:39</div></div>
+<div class="ttc" id="class_sonde_html_aa6d7ef374a38f6c3a62febc86670e808"><div class="ttname"><a href="class_sonde.html#aa6d7ef374a38f6c3a62febc86670e808">Sonde::nouvelleLuminosite</a></div><div class="ttdeci">void nouvelleLuminosite(double luminosite, QString uniteLuminosite)</div><div class="ttdoc">Signal envoyant les nouvelles données de luminosité et son unité </div></div>
+<div class="ttc" id="class_sonde_html_a77fdaed26780d414376755dae4311ee2"><div class="ttname"><a href="class_sonde.html#a77fdaed26780d414376755dae4311ee2">Sonde::envoyerMesuresIHM</a></div><div class="ttdeci">void envoyerMesuresIHM()</div><div class="ttdoc">Méthode qui envoie un signal avec les valeurs des capteurs reçut. </div><div class="ttdef"><b>Definition:</b> Sonde.cpp:65</div></div>
+<div class="ttc" id="class_sonde_html_a6ae91890c81afd3497684b34652598de"><div class="ttname"><a href="class_sonde.html#a6ae91890c81afd3497684b34652598de">Sonde::~Sonde</a></div><div class="ttdeci">~Sonde()</div><div class="ttdef"><b>Definition:</b> Sonde.cpp:26</div></div>
+<div class="ttc" id="class_sonde_html_ae67429cc3fd34606708002c5db52fe7b"><div class="ttname"><a href="class_sonde.html#ae67429cc3fd34606708002c5db52fe7b">Sonde::temperatureRessentie</a></div><div class="ttdeci">double temperatureRessentie</div><div class="ttdef"><b>Definition:</b> Sonde.h:33</div></div>
+<div class="ttc" id="class_sonde_html_a6ad855e658d10e4d68e65e3f41bea122"><div class="ttname"><a href="class_sonde.html#a6ad855e658d10e4d68e65e3f41bea122">Sonde::nouvelleTemperature</a></div><div class="ttdeci">void nouvelleTemperature(double temperature, QString uniteTemperature)</div><div class="ttdoc">Signal envoyant les nouvelles données de temperature et son unité </div></div>
+<div class="ttc" id="class_sonde_html_a630a45bb9bc709baa9f5f65e154b7480"><div class="ttname"><a href="class_sonde.html#a630a45bb9bc709baa9f5f65e154b7480">Sonde::unitePression</a></div><div class="ttdeci">QString unitePression</div><div class="ttdef"><b>Definition:</b> Sonde.h:43</div></div>
+<div class="ttc" id="class_sonde_html"><div class="ttname"><a href="class_sonde.html">Sonde</a></div><div class="ttdef"><b>Definition:</b> Sonde.h:14</div></div>
+<div class="ttc" id="class_sonde_html_a2ed3aa1801509c1d5181ec511ccd674e"><div class="ttname"><a href="class_sonde.html#a2ed3aa1801509c1d5181ec511ccd674e">Sonde::uniteTemperature</a></div><div class="ttdeci">QString uniteTemperature</div><div class="ttdef"><b>Definition:</b> Sonde.h:31</div></div>
+<div class="ttc" id="class_sonde_html_a7c29b3867d816bb933871c8a1cd96cbd"><div class="ttname"><a href="class_sonde.html#a7c29b3867d816bb933871c8a1cd96cbd">Sonde::uniteLuminosite</a></div><div class="ttdeci">QString uniteLuminosite</div><div class="ttdef"><b>Definition:</b> Sonde.h:37</div></div>
+<div class="ttc" id="class_sonde_html_a0e0a506b783607de96db196630cee2cb"><div class="ttname"><a href="class_sonde.html#a0e0a506b783607de96db196630cee2cb">Sonde::nouvelleAltitude</a></div><div class="ttdeci">void nouvelleAltitude(double altitude, QString uniteAltitude)</div><div class="ttdoc">Signal envoyant les nouvelles données d&amp;#39;altitude et son unité </div></div>
+<div class="ttc" id="class_sonde_html_a0d144e04c2288a4207088c5c52b883fd"><div class="ttname"><a href="class_sonde.html#a0d144e04c2288a4207088c5c52b883fd">Sonde::Sonde</a></div><div class="ttdeci">Sonde(QObject *parent=nullptr)</div><div class="ttdoc">Constructeur de la classe Sonde. </div><div class="ttdef"><b>Definition:</b> Sonde.cpp:16</div></div>
+<div class="ttc" id="class_sonde_html_ae7f9000e78509094f4ee12fa245a0e41"><div class="ttname"><a href="class_sonde.html#ae7f9000e78509094f4ee12fa245a0e41">Sonde::pression</a></div><div class="ttdeci">double pression</div><div class="ttdef"><b>Definition:</b> Sonde.h:42</div></div>
+<div class="ttc" id="class_sonde_html_ace1a14d8ab42fc34a88d5a2164f9185b"><div class="ttname"><a href="class_sonde.html#ace1a14d8ab42fc34a88d5a2164f9185b">Sonde::nouvelleHumidite</a></div><div class="ttdeci">void nouvelleHumidite(double humidite, QString uniteHumidite)</div><div class="ttdoc">Signal envoyant les nouvelles données d&amp;#39;humidité et son unité </div></div>
+<div class="ttc" id="class_sonde_html_a5257a817b4785e2c84ded40fe32a05aa"><div class="ttname"><a href="class_sonde.html#a5257a817b4785e2c84ded40fe32a05aa">Sonde::uniteTemperatureRessentie</a></div><div class="ttdeci">QString uniteTemperatureRessentie</div><div class="ttdef"><b>Definition:</b> Sonde.h:34</div></div>
+<div class="ttc" id="class_sonde_html_a26c8be2721778a79a7eebec358f2df93"><div class="ttname"><a href="class_sonde.html#a26c8be2721778a79a7eebec358f2df93">Sonde::envoyerEtatLED</a></div><div class="ttdeci">void envoyerEtatLED(QString trameBrut)</div><div class="ttdoc">Méthode qui envoie un signal avec la trame. </div><div class="ttdef"><b>Definition:</b> Sonde.cpp:80</div></div>
+<div class="ttc" id="class_sonde_html_a38c8be8aff3e75d52e5d6f1803531b09"><div class="ttname"><a href="class_sonde.html#a38c8be8aff3e75d52e5d6f1803531b09">Sonde::temperature</a></div><div class="ttdeci">double temperature</div><div class="ttdef"><b>Definition:</b> Sonde.h:30</div></div>
+<div class="ttc" id="class_sonde_html_a1d8cfbf181110f716a49846074599d79"><div class="ttname"><a href="class_sonde.html#a1d8cfbf181110f716a49846074599d79">Sonde::nouvelleTemperatureRessentie</a></div><div class="ttdeci">void nouvelleTemperatureRessentie(double temperatureRessentie, QString uniteTemperatureRessentie)</div><div class="ttdoc">Signal envoyant les nouvelles données de temperature ressentie et son unité </div></div>
+<div class="ttc" id="class_sonde_html_aa6e8b8222add83f188c1c49c27ffd79b"><div class="ttname"><a href="class_sonde.html#aa6e8b8222add83f188c1c49c27ffd79b">Sonde::nouvellePression</a></div><div class="ttdeci">void nouvellePression(double pression, QString unitePression)</div><div class="ttdoc">Signal envoyant les nouvelles données de pression et son unité </div></div>
+<div class="ttc" id="class_sonde_html_a78bb04f22872d623612977996c085db7"><div class="ttname"><a href="class_sonde.html#a78bb04f22872d623612977996c085db7">Sonde::uniteAltitude</a></div><div class="ttdeci">QString uniteAltitude</div><div class="ttdef"><b>Definition:</b> Sonde.h:46</div></div>
+<div class="ttc" id="class_sonde_html_a1e3d0c4da5e50bcbc1d19b16569dd294"><div class="ttname"><a href="class_sonde.html#a1e3d0c4da5e50bcbc1d19b16569dd294">Sonde::luminosite</a></div><div class="ttdeci">double luminosite</div><div class="ttdef"><b>Definition:</b> Sonde.h:36</div></div>
+<div class="ttc" id="class_sonde_html_a54fba004b47ec1358291c7f5e9e3f456"><div class="ttname"><a href="class_sonde.html#a54fba004b47ec1358291c7f5e9e3f456">Sonde::uniteHumidite</a></div><div class="ttdeci">QString uniteHumidite</div><div class="ttdef"><b>Definition:</b> Sonde.h:40</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

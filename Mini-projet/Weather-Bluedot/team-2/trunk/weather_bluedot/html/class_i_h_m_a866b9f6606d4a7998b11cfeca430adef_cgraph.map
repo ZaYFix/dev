@@ -1,0 +1,4 @@
+<map id="IHM::on_pushButton_confirmerPortSerie_clicked" name="IHM::on_pushButton_confirmerPortSerie_clicked">
+<area shape="rect" id="node2" href="$class_supervision.html#ac26e3c0dc6e87e1b2edcb84ca2f2c13f" title="Méthode pour définir le nom du nouveau port série. " alt="" coords="196,13,388,54"/>
+<area shape="rect" id="node3" href="$class_communication.html#a434b62c7ef7438eba27913eb96fa63d8" title="Méthode qui permet de définir le nom du port série à utiliser. " alt="" coords="436,20,629,47"/>
+</map>

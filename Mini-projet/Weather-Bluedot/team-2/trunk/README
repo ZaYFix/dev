@@ -1,0 +1,28 @@
+Nom du logiciel :
+ Weather Bluedot
+
+Date de début : 
+ 11/12/2019
+
+ Numéro de version du logiciel : v1.0
+
+Date de cette version du logiciel : 
+ 15/01/2020
+
+Objectif : 
+	Le logiciel doit pouvoir recevoir des trames d'un ESP32,
+	puis en extraire les données et les afficher sur l'IHM.
+	Il doit pouvoir également contrôler la led de l'ESP32.
+
+Équipe de développement : 
+ nom et prénom : ACKERMANN Théo email : théoackrm@gmail.com
+ nom et prénom : LEGGER Pierre-Antoine email : pierreantoinelegger@gmail.com
+
+Ce que le logiciel fait dans cette version : 
+ Le logiciel permet de recevoir les trames de l'ESP32,
+ de découper la trame et d'afficher les valeurs reçu sur l'IHM.
+ Le logiciel comporte aussi un mode technicien pour afficher la trame brut.
+ Il permet aussi de contrôler la led sur l'ESP32 via le port série.
+
+Défauts constatés non corrigés :
+ Pas de défaut constaté dans cette version.
