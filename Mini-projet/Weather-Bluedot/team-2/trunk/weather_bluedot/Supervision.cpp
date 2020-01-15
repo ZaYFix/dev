@@ -7,6 +7,7 @@
 
 /**
  * @file    Supervision.cpp
+ * @brief   Déclaration de la classe Supervision
  * @author  ACKERMANN Théo
  * @author  LEGGER Pierre-Antoine
  * @version 1.0

@@ -6,6 +6,7 @@
 /**
 * @file     Led.h
 * @brief    Définition de la classe Led
+* @details  La classe LED permet de connaitre l'état et la couleur de la LED
 * @author   ACKERMANN Théo
 * @author   LEGGER Pierre-Antoine
 * @version  1.0

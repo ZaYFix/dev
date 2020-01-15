@@ -3,13 +3,14 @@
 
 /**
  * @file    main.cpp
+ * @brief   Programme principal
  * @author  ACKERMANN Théo
  * @author  LEGGER Pierre-Antoine
  * @version 1.0
  */
 
 /**
- * @brief   Programme principale déclarant une classe Ihm et l'affiche
+ * @brief   Programme principal déclarant une classe Ihm et l'affiche
  * @param   argc
  * @param   argv[]
  * @return  int

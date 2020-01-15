@@ -4,6 +4,7 @@
 
 /**
  * @file    Led.cpp
+ * @brief   Déclaration de la classe Led
  * @author  ACKERMANN Théo
  * @author  LEGGER Pierre-Antoine
  * @version 1.0

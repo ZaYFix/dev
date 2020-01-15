@@ -10,7 +10,8 @@ class Led;
 
 /**
  * @file    Supervision.h
- * @brief   Classe gérant la communication entre les classes du projet
+ * @brief   Définition de la classe Sonde
+ * @details La classe Supervision gère la communication entre les différentes classes
  * @author  ACKERMANN Théo
  * @author  LEGGER Pierre-Antoine
  * @version 1.0

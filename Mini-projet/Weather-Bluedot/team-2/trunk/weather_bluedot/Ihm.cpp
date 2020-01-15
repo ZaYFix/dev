@@ -6,6 +6,7 @@
 
 /**
  * @file    Ihm.cpp
+ * @brief   Déclaration de la classe Ihm
  * @author  ACKERMANN Théo
  * @author  LEGGER Pierre-Antoine
  * @version 1.0

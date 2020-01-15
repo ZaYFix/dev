@@ -6,7 +6,8 @@
 
 /**
  * @file    Communication.h
- * @brief   Classe gérant la communication sur le port série
+ * @brief   Définition de la classe Communication
+ * @details La classe Communication permet de communiquer avec le port série
  * @author  ACKERMANN Théo
  * @author  LEGGER Pierre-Antoine
  * @version 1.0

@@ -2,6 +2,7 @@
 
 /**
  * @file    Sonde.cpp
+ * @brief   Déclaration de la classe Sonde
  * @author  ACKERMANN Théo
  * @author  LEGGER Pierre-Antoine
  * @version 1.0

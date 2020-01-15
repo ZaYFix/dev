@@ -4,6 +4,7 @@
 
 /**
  * @file    Communication.cpp
+ * @brief   Déclaration de la classe Communication
  * @author  ACKERMANN Théo
  * @author  LEGGER Pierre-Antoine
  * @version 1.0

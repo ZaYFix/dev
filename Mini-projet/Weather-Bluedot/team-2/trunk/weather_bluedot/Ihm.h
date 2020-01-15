@@ -13,6 +13,7 @@ class IHM;
 /**
 * @file     Ihm.h
 * @brief    Définition de la classe IHM
+* @details  La classe IHM affiche les données récupéré par la classe Communication
 * @author   ACKERMANN Théo
 * @author   LEGGER Pierre-Antoine
 * @version  1.0

@@ -6,6 +6,7 @@
 /**
  * @file    Sonde.h
  * @brief   Définition de la classe Sonde
+ * @details La classe Sonde permet d'extraire et d'envoyer les données reçu à l'IHM
  * @author  ACKERMANN Théo
  * @author  LEGGER Pierre-Antoine
  * @version 1.0
