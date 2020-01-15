@@ -1,14 +1,9 @@
-Version 1 :
-- Commander la Led
-- Réaliser l'IHM
-
 Version 2 :
-- Configurer la communication avec la sonde
+- Configurer la communication avec la sonde (port,vitesse,etc)
 - Charger la dernière configuration
-- Enregistrer la configuration*
-- Choisir le port
+- Enregistrer la configuration
 
 Version 3 :
 - Affichage donnée graphique et tableaux
 - Récuperation et affichage données météos d'un serveur
-- Connection bluetooth
+- Connexion bluetooth

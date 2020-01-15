@@ -2,31 +2,50 @@
 #include "ui_ihm.h"
 #include <QDebug>
 #include <QMessageBox>
-#include <QStyleFactory>
+#include <QTime>
 
 /**
- * @brief Constructeur de la classe Ihm
- *
- * @param parent
+ * @file    Ihm.cpp
+ * @author  ACKERMANN Théo
+ * @author  LEGGER Pierre-Antoine
+ * @version 1.0
  */
+
+/**
+* @brief Constructeur de la classe IHM
+* @fn IHM::IHM
+* @param parent
+*/
 IHM::IHM(QWidget *parent) : QWidget(parent), ui(new Ui::IHM), supervision(new Supervision(this)), valeurBoutton(0)
 {
     ui->setupUi(this);
-    setWindowIcon(QIcon(":weather.png"));
 }
 
 /**
- * @brief Destructeur de la classe Ihm
- *
- */
+* @brief Destructeur de la classe IHM
+* @fn IHM::IHM
+*/
 IHM::~IHM()
 {
     delete ui;
 }
 
 /**
+ * @brief IHM::afficherTrame
+ * @fn IHM::afficherTrame
+ * @param trame
+ */
+void IHM::afficherTrame(QString trame)
+{
+    QTime heureActuel = heureActuel.currentTime();
+    ui->affichageTrame->append("[ " + heureActuel.toString() + " ]");
+    ui->affichageTrame->append(trame);
+
+}
+
+/**
  * @brief Méthode qui affiche la valeur de la température sur l'IHM
- *
+ * @fn IHM::afficherTemperature
  * @param temperature
  * @param uniteTemperature
  */
@@ -39,7 +58,7 @@ void IHM::afficherTemperature(double temperature, QString uniteTemperature)
 
 /**
  * @brief Méthode qui affiche la valeur de la température ressentie sur l'IHM
- *
+ * @fn IHM::afficherTemperatureRessentie
  * @param temperatureRessentie
  * @param uniteTemperatureRessentie
  */
@@ -52,7 +71,7 @@ void IHM::afficherTemperatureRessentie(double temperatureRessentie, QString unit
 
 /**
  * @brief Méthode qui affiche la valeur de l'humidité sur l'IHM
- *
+ * @fn IHM::afficherHumidite
  * @param humidite
  * @param uniteHumidite
  */
@@ -65,7 +84,7 @@ void IHM::afficherHumidite(double humidite, QString uniteHumidite)
 
 /**
  * @brief Méthode qui affiche la valeur de la luminosité sur l'IHM
- *
+ * @fn IHM::afficherLuminosite
  * @param luminosite
  * @param uniteLuminosite
  */
@@ -78,7 +97,7 @@ void IHM::afficherLuminosite(double luminosite, QString uniteLuminosite)
 
 /**
  * @brief Méthode qui affiche la valeur de la pression sur l'IHM
- *
+ * @fn IHM::afficherPression
  * @param pression
  * @param unitePression
  */
@@ -91,7 +110,7 @@ void IHM::afficherPression(double pression, QString unitePression)
 
 /**
  * @brief Méthode qui affiche la valeur de l'altitude sur l'IHM
- *
+ * @fn IHM::afficherAltitude
  * @param altitude
  * @param uniteAltitude
  */
@@ -104,7 +123,7 @@ void IHM::afficherAltitude(double altitude, QString uniteAltitude)
 
 /**
  * @brief Méthode qui émet un signal pour changer la couleur de la LED en rouge
- *
+ * @fn IHM::on_pushbutton_rouge_clicked
  */
 void IHM::on_pushbutton_rouge_clicked()
 {
@@ -113,7 +132,7 @@ void IHM::on_pushbutton_rouge_clicked()
 
 /**
  * @brief Méthode qui émet un signal pour changer la couleur de la LED en vert
- *
+ * @fn IHM::on_pushButton_vert_clicked
  */
 void IHM::on_pushButton_vert_clicked()
 {
@@ -122,7 +141,7 @@ void IHM::on_pushButton_vert_clicked()
 
 /**
  * @brief Méthode qui émet un signal pour changer la couleur de la LED en orange
- *
+ * @fn IHM::on_pushButton_orange_clicked
  */
 void IHM::on_pushButton_orange_clicked()
 {
@@ -131,7 +150,7 @@ void IHM::on_pushButton_orange_clicked()
 
 /**
  * @brief Méthode qui émet un signal pour éteindre la LED
- *
+ * @fn IHM::on_pushButton_eteindre_clicked
  */
 void IHM::on_pushButton_eteindre_clicked()
 {
@@ -139,8 +158,56 @@ void IHM::on_pushButton_eteindre_clicked()
 }
 
 /**
+ * @brief Méthode qui modifie un texte pour informer l'état de la LED
+ * @fn IHM::ledAllumee
+ */
+void IHM::ledAllumee()
+{
+    ui->etatLED->setText("allumée");
+    ui->texteCouleurLED->setText("et est de couleur");
+}
+
+/**
+ * @brief Méthode qui modifie un texte pour informer l'état de la LED
+ * @fn IHM::ledEteinte
+ */
+void IHM::ledEteinte()
+{
+    ui->etatLED->setText("éteinte");
+    ui->texteCouleurLED->setText("\0");
+    ui->couleurLED->setText("\0");
+}
+
+/**
+ * @brief Méthode qui modifie un texte pour informer que la LED est de couleur rouge
+ * @fn IHM::ledCouleurRouge
+ */
+void IHM::ledCouleurRouge()
+{
+    ui->couleurLED->setText("rouge.");
+}
+
+/**
+ * @brief Méthode qui modifie un texte pour informer que la LED est de couleur verte
+ * @fn IHM::ledCouleurVerte
+ */
+void IHM::ledCouleurVerte()
+{
+    ui->couleurLED->setText("verte.");
+}
+
+/**
+ * @brief Méthode qui modifie un texte pour informer que la LED est de couleur orange
+ * @fn IHM::ledCouleurOrange
+ */
+void IHM::ledCouleurOrange()
+{
+    ui->couleurLED->setText("orange.");
+}
+
+/**
  * @brief Méthode qui vérifie si le port série a été définie avant de démarrer la liaison série
- *
+ * @fn IHM::on_pushbutton_demarrer_clicked
  */
 void IHM::on_pushbutton_demarrer_clicked()
 {
@@ -174,7 +241,7 @@ void IHM::on_pushbutton_demarrer_clicked()
 
 /**
  * @brief Méthode qui définie le nouveau port série
- *
+ * @fn IHM::on_pushButton_confirmerPortSerie_clicked
  */
 void IHM::on_pushButton_confirmerPortSerie_clicked()
 {
@@ -184,7 +251,7 @@ void IHM::on_pushButton_confirmerPortSerie_clicked()
 
 /**
  * @brief Méthode qui rafraichie la liste de port série
- *
+ * @fn IHM::on_rafraichirListePortSerie_clicked
  */
 void IHM::on_rafraichirListePortSerie_clicked()
 {

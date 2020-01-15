@@ -1,7 +1,12 @@
+## 15/01/2020
+- Affichage des trames dans l'onglet technicien
+- Mises à jours commentaires sur touts le projet
+- Affichage de l'état actuel de la LED
+
 ## 08/01/2020
 
 - Possibilité de changer la couleur des LEDs.
-
+- Ajout de l'onglet "LED".
 
 ## 18/12/2019
 

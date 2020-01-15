@@ -1,8 +1,15 @@
 #include "Sonde.h"
 
 /**
- * @brief Constructeur de la classe Ihm
- *
+ * @file    Sonde.cpp
+ * @author  ACKERMANN Théo
+ * @author  LEGGER Pierre-Antoine
+ * @version 1.0
+ */
+
+/**
+ * @brief Constructeur de la classe Sonde
+ * @fn Sonde::Sonde
  * @param parent
  */
 Sonde::Sonde(QObject *parent) : QObject(parent), temperature(0), uniteTemperature("\0"), temperatureRessentie(0), uniteTemperatureRessentie("\0"),  luminosite(0), uniteLuminosite("\0"), humidite(0), \
@@ -12,8 +19,17 @@ Sonde::Sonde(QObject *parent) : QObject(parent), temperature(0), uniteTemperatur
 }
 
 /**
+ * @brief  Destructeur de la classe Sonde
+ * @fn Sonde::Sonde
+ */
+Sonde::~Sonde()
+{
+
+}
+
+/**
  * @brief Méthode découpant la trame et plaçant les valeurs des capteurs dans des variables
- *
+ * @fn Sonde::extraireMesures
  * @param trameBrut
  */
 void Sonde::extraireMesures(QString trameBrut)
@@ -38,11 +54,12 @@ void Sonde::extraireMesures(QString trameBrut)
     qDebug() << Q_FUNC_INFO << "Altitude" << altitude << uniteAltitude;
 
     envoyerMesuresIHM();
+    envoyerEtatLED(trameBrut);
 }
 
 /**
  * @brief Méthode qui envoie un signal avec les valeurs des capteurs reçut
- *
+ * @fn Sonde::envoyerMesuresIHM
  */
 void Sonde::envoyerMesuresIHM()
 {
@@ -52,4 +69,14 @@ void Sonde::envoyerMesuresIHM()
     emit nouvelleLuminosite(luminosite, uniteLuminosite);
     emit nouvellePression(pression, unitePression);
     emit nouvelleAltitude(altitude, uniteAltitude);
+}
+
+/**
+ * @brief Méthode qui envoie un signal avec la trame
+ * @fn Sonde::envoyerEtatLED
+ * @param trameBrut
+ */
+void Sonde::envoyerEtatLED(QString trameBrut)
+{
+    emit nouvelleEtatLED(trameBrut);
 }

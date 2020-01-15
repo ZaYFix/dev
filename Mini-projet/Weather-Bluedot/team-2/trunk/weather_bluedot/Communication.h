@@ -3,12 +3,20 @@
 
 #include <QObject>
 #include <QSerialPort>
-#include <QString>
 
+/**
+ * @file    Communication.h
+ * @brief   Classe gérant la communication sur le port série
+ * @author  ACKERMANN Théo
+ * @author  LEGGER Pierre-Antoine
+ * @version 1.0
+ */
 class Communication : public QObject
 {
     Q_OBJECT
+
 public:
+
     Communication(QObject *parent = nullptr);
     ~Communication();
 
@@ -19,16 +27,21 @@ public:
     void setPortSerie(QString nouveauPortSerie);
 
 public slots:
+
     void recevoirTrame();
     void envoyerCouleurLED(QString couleur);
 
-signals:
-    void tramePrete(QString trame);
-
 private:
-     QSerialPort *port;
-     QString trameBrut;
-     QString port_serie;
+     QSerialPort *port; /**< Variable pointeur sur le port */
+     QString trameBrut; /**< Variable qui contient la trame brut */
+     QString port_serie; /**< Variable qui contient le nom du port serie */
+
+signals:
+    /**
+     * @brief Envoie un signal quand une trame est prête
+     * @param trame
+     */
+    void tramePrete(QString trame);
 };
 
 #endif // COMMUNICATION_H
