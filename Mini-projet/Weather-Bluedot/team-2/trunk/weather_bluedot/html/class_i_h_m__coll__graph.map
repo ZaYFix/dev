@@ -1,6 +1,0 @@
-<map id="IHM" name="IHM">
-<area shape="rect" id="node3" href="$class_supervision.html" title="{Supervision\n|&#45; listePortSerie\l|+ Supervision()\l+ ~Supervision()\l+ demarrerCommunicationPort()\l+ arreterCommunicationPort()\l+ setNouveauPortSerie()\l+ rafraichirListePortSerie()\l}" alt="" coords="382,683,590,833"/>
-<area shape="rect" id="node5" href="$class_communication.html" title="{Communication\n|&#45; port\l&#45; trameBrut\l&#45; port_serie\l|+ Communication()\l+ ~Communication()\l+ demarrerCommunicationPort()\l+ arreterCommunicationPort()\l+ configurerPort()\l+ ouvrirPort()\l+ setPortSerie()\l+ recevoirTrame()\l+ envoyerCouleurLED()\l}" alt="" coords="109,264,317,488"/>
-<area shape="rect" id="node6" href="$class_led.html" title="{Led\n|&#45; ledRouge\l&#45; ledVerte\l&#45; etat\l&#45; couleur\l|+ Led()\l+ ~Led()\l+ extraireEtatLed()\l+ deduireEtatLed()\l}" alt="" coords="341,293,471,459"/>
-<area shape="rect" id="node7" href="$class_sonde.html" title="{Sonde\n|&#45; temperature\l&#45; uniteTemperature\l&#45; temperatureRessentie\l&#45; uniteTemperatureRessentie\l&#45; luminosite\l&#45; uniteLuminosite\l&#45; humidite\l&#45; uniteHumidite\l&#45; pression\l&#45; unitePression\l&#45; altitude\l&#45; uniteAltitude\l|+ Sonde()\l+ ~Sonde()\l+ envoyerMesuresIHM()\l+ envoyerEtatLED()\l+ extraireMesures()\l}" alt="" coords="496,227,687,525"/>
-</map>
