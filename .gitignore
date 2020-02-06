@@ -31,4 +31,11 @@
 *.out
 *.app
 
+# Qt creator
+*.user
+
+# Java
+*.class
+
+#SVN
 .svn/
