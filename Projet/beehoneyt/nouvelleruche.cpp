@@ -6,6 +6,7 @@ nouvelleRuche::nouvelleRuche(QWidget *parent) :
     ui(new Ui::nouvelleRuche)
 {
     ui->setupUi(this);
+    ui->dateEdit_mise_en_service->setDate(QDate::currentDate());
 }
 
 nouvelleRuche::~nouvelleRuche()
