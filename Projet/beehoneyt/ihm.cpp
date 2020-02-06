@@ -61,6 +61,7 @@ void ihm::on_pushButton_alertes_clicked()
     ui->stackedWidget->setCurrentIndex(4);
     ui->pushButton_alertes->setIcon(QIcon(":/alertes.png"));
 
+    ui->pushButton_ruches->setIcon(QIcon(":/ruches_gris.png"));
     ui->pushButton_graphiques->setIcon(QIcon(":/graphiques_gris.png"));
 }
 
