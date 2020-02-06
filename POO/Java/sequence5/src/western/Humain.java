@@ -1,3 +1,5 @@
+package western;
+
 public class Humain
 {
     private String nom;

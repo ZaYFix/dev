@@ -1,3 +1,5 @@
+package western;
+
 public class Dame extends Humain
 {
     private String boissonFavorite = "lait";

@@ -1,3 +1,5 @@
+package western;
+
 public class Cowboy extends Humain
 {
     private String boissonFavorite = "whisky";
