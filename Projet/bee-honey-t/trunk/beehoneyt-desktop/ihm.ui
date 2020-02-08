@@ -289,6 +289,16 @@
             <string>Graphiques</string>
            </property>
           </widget>
+          <widget class="QGraphicsView" name="graphicsView">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>150</y>
+             <width>256</width>
+             <height>192</height>
+            </rect>
+           </property>
+          </widget>
          </widget>
          <widget class="QWidget" name="alertes">
           <layout class="QVBoxLayout" name="verticalLayout_4">

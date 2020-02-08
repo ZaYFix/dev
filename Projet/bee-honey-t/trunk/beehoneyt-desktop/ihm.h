@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 class nouvelleRuche;
+class reglageRuche;
 
 namespace Ui {
 class ihm;
@@ -30,9 +31,14 @@ private slots:
 
     void on_pushButton_nouvelle_ruche_clicked();
 
+    void on_pushButton_reglage_clicked();
+
+    void on_pushButton_supprimer_ruche_clicked();
+
 private:
     Ui::ihm *ui;
-    nouvelleRuche *nvRuche;
+    nouvelleRuche *nouvelleRucheIHM;
+    reglageRuche *reglageRucheIHM;
 };
 
 #endif // IHM_H

@@ -1,20 +1,27 @@
+#include <QMessageBox>
+
+#include <QDebug>
+
 #include "ihm.h"
 #include "ui_ihm.h"
 #include "nouvelleruche.h"
+#include "reglageruche.h"
 
-ihm::ihm(QWidget *parent) :QMainWindow(parent),ui(new Ui::ihm),nvRuche(0)
+ihm::ihm(QWidget *parent) :QMainWindow(parent),ui(new Ui::ihm),nouvelleRucheIHM(0),reglageRucheIHM(0)
 {
     ui->setupUi(this);
 
     ui->pushButton_graphiques->setIcon(QIcon(":/graphiques_gris.png"));
     ui->pushButton_alertes->setIcon(QIcon(":/alertes_gris.png"));
 
-    nvRuche = new nouvelleRuche(this);
+    nouvelleRucheIHM = new nouvelleRuche(this);
+    reglageRucheIHM = new reglageRuche(this);
 }
 
 ihm::~ihm()
 {
-    delete nvRuche;
+    delete nouvelleRucheIHM;
+    delete reglageRucheIHM;
     delete ui;
 }
 
@@ -67,5 +74,22 @@ void ihm::on_pushButton_alertes_clicked()
 
 void ihm::on_pushButton_nouvelle_ruche_clicked()
 {
-    nvRuche->exec();
+    nouvelleRucheIHM->exec();
+}
+
+void ihm::on_pushButton_reglage_clicked()
+{
+    reglageRucheIHM->exec();
+}
+
+void ihm::on_pushButton_supprimer_ruche_clicked()
+{
+    QMessageBox::StandardButton reponse;
+    reponse = QMessageBox::question(
+        this,"","Êtes-vous sûr de vouloir supprimer la ruche ?",QMessageBox::Yes|QMessageBox::No); // Ajouter nom de la ruche
+
+    if(reponse == QMessageBox::Yes)
+        qDebug() << "Oui";
+    else
+        qDebug() << "Non";
 }

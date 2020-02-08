@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,16 +28,19 @@ SOURCES += \
         main.cpp \
         ihm.cpp \
     communication.cpp \
-    nouvelleruche.cpp
+    nouvelleruche.cpp \
+    reglageruche.cpp
 
 HEADERS += \
         ihm.h \
     communication.h \
-    nouvelleruche.h
+    nouvelleruche.h \
+    reglageruche.h
 
 FORMS += \
         ihm.ui \
-    nouvelleruche.ui
+    nouvelleruche.ui \
+    reglageruche.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
