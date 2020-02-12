@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include <QtWidgets>
+#include <QtCharts>
+
 class nouvelleRuche;
 class reglageRuche;
 
@@ -17,6 +20,23 @@ class ihm : public QMainWindow
 public:
     explicit ihm(QWidget *parent = nullptr);
     ~ihm();
+
+    void demarrerGraphiques();
+
+    void graphiqueTemperature();
+    void graphiqueHumidite();
+    void graphiqueLuminosite();
+    void graphiquePression();
+    void graphiquePoids();
+    void graphiqueActivite();
+
+    void setValeurGraphique(QLineSeries *serie, int x, int y);
+
+    void demarrerGraphiquesBatons();
+    void graphiqueBatonTemperatureInterieure();
+    void graphiqueBatonTemperatureExterieure();
+
+    void demarrerTableauAlertes();
 
 private slots:
     void on_pushButton_ruches_clicked();
