@@ -1,0 +1,16 @@
+### 13/02/2020
+- Mise en place du boitier "The things gateway"
+
+### 12/02/2020
+- Découverte de Qt Chart
+- Création de l'onglet "Graphiques" dans l'IHM
+- Ajouts de différents Qt Chart pour les graphiques
+
+### 07/02/2020
+- Suite de la création de l'IHM 
+
+### 06/02/2020
+- Création de la maquette de l'IHM
+- Création du diagramme de classe
+- Début de la création de l'IHM sur Qt Creator
+- Création de l'onglet "Ruches"
