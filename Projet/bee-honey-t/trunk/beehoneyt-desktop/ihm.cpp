@@ -31,6 +31,11 @@ ihm::ihm(QWidget *parent) :QMainWindow(parent),ui(new Ui::ihm),nouvelleRucheIHM(
 
     ui->comboBox_liste_ruches->addItem("Nom de la ruche");
 
+    ui->comboBox_reglages_graphiques->addItem("1j");
+    ui->comboBox_reglages_graphiques->addItem("7j");
+
+    connect(ui->comboBox_reglages_graphiques, SIGNAL(currentIndexChanged(int)), SLOT(changerAbscisseGraphiques()));
+
     demarrerGraphiques();
     demarrerGraphiquesBatons();
     demarrerTableauAlertes();
@@ -154,7 +159,7 @@ void ihm::demarrerGraphiques()
 {
     graphiqueTemperature();
     graphiqueHumidite();
-    //graphiqueLuminosite();
+    graphiqueLuminosite();
     //graphiquePression();
     //graphiquePoids();
     //graphiqueActivite();
@@ -201,11 +206,12 @@ void ihm::graphiqueTemperature()
     axisX->setMin(QDateTime::currentDateTime().addDays(-3));
     axisX->setMax(QDateTime::currentDateTime().addDays(3));
 
-    //QValueAxis *axisY = new QValueAxis();
-    //axisY->setMin(-10);
-    //axisY->setMax(45);
+    QValueAxis *axisY = new QValueAxis();
+    axisY->setTitleText("°C");
+    axisY->setMin(-10);
+    axisY->setMax(45);
 
-    //chart->setAxisY(axisY);
+    chart->setAxisY(axisY);
     chart->setAxisX(axisX);
 }
 
@@ -238,12 +244,62 @@ void ihm::graphiqueHumidite()
     axisX->setMax(QDateTime::currentDateTime().addDays(3));
 
     QValueAxis *axisY = new QValueAxis();
+    axisY->setTitleText("%");
     axisY->setMin(0);
     axisY->setMax(100);
 
     chart->setAxisY(axisY);
     chart->setAxisX(axisX);
     //humidite->attachAxis(axisX);
+}
+
+void ihm::graphiqueLuminosite()
+{
+    QLineSeries *luminosite = new QLineSeries();
+    // Valeurs de test
+    luminosite->append(0, 321);
+    luminosite->append(1, 354);
+    luminosite->append(2, 396);
+    luminosite->append(3, 348);
+    luminosite->append(4, 240);
+
+    QChart *chart = new QChart();
+    chart->legend()->hide();
+    chart->addSeries(luminosite);
+    chart->setTitle("Luminosité");
+    ui->chartView_luminosite->setChart(chart);
+    ui->chartView_luminosite->setRenderHint(QPainter::Antialiasing);
+
+    QDateTimeAxis *axisX = new QDateTimeAxis();
+    axisX->setTickCount(7);
+    axisX->setFormat("dd.MM");
+    axisX->setTitleText("Jours");
+    axisX->setMin(QDateTime::currentDateTime().addDays(-3));
+    axisX->setMax(QDateTime::currentDateTime().addDays(3));
+
+    QValueAxis *axisY = new QValueAxis();
+    axisY->setTitleText("lux");
+    axisY->setMin(0);
+    axisY->setMax(500);
+
+    chart->setAxisY(axisY);
+    chart->setAxisX(axisX);
+    //luminosite->attachAxis(axisX);
+}
+
+void ihm::changerAbscisseGraphiques()
+{
+    switch(ui->comboBox_reglages_graphiques->currentIndex())
+    {
+        case 0:
+            qDebug() << "1j";
+            break;
+        case 1:
+            qDebug() << "7j";
+            break;
+        default:
+            qDebug() << ui->comboBox_reglages_graphiques->currentIndex();
+     }
 }
 
 /**

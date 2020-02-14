@@ -417,6 +417,19 @@
          <widget class="QWidget" name="graph">
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
+            <widget class="QComboBox" name="comboBox_reglages_graphiques">
+             <property name="maximumSize">
+              <size>
+               <width>205</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QTabWidget" name="tabWidget">
              <property name="currentIndex">
               <number>0</number>

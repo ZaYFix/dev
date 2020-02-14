@@ -55,6 +55,8 @@ private slots:
 
     void on_pushButton_supprimer_ruche_clicked();
 
+    void changerAbscisseGraphiques();
+
 private:
     Ui::ihm *ui;
     nouvelleRuche *nouvelleRucheIHM;
