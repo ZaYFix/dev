@@ -17,7 +17,7 @@
    <string>Bee-honey't</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout_6">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
     <item>
      <widget class="QWidget" name="widget" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -258,6 +258,12 @@
                </property>
                <item>
                 <widget class="QLabel" name="label_4">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>0</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>Humidité</string>
                  </property>
@@ -266,7 +272,14 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_7">
                  <item>
-                  <widget class="QLCDNumber" name="lcdNumber"/>
+                  <widget class="QLCDNumber" name="lcdNumber">
+                   <property name="minimumSize">
+                    <size>
+                     <width>90</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
                  </item>
                  <item>
                   <widget class="QLabel" name="label_5">
@@ -303,7 +316,14 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_8">
                  <item>
-                  <widget class="QLCDNumber" name="lcdNumber_2"/>
+                  <widget class="QLCDNumber" name="lcdNumber_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>90</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
                  </item>
                  <item>
                   <widget class="QLabel" name="label_6">
@@ -340,7 +360,14 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_9">
                  <item>
-                  <widget class="QLCDNumber" name="lcdNumber_3"/>
+                  <widget class="QLCDNumber" name="lcdNumber_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>90</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
                  </item>
                  <item>
                   <widget class="QLabel" name="label_8">
@@ -390,107 +417,71 @@
          <widget class="QWidget" name="graph">
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_8">
+            <widget class="QTabWidget" name="tabWidget">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="tab">
+              <attribute name="title">
+               <string>Températures</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
                <item>
                 <widget class="QChartView" name="chartView_temperature"/>
                </item>
               </layout>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_9">
-               <item>
-                <widget class="QLabel" name="label_humidite">
-                 <property name="text">
-                  <string>Humidité </string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
+             </widget>
+             <widget class="QWidget" name="tab_2">
+              <attribute name="title">
+               <string>Humidité</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
                <item>
                 <widget class="QChartView" name="chartView_humidite"/>
                </item>
               </layout>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_7">
-               <item>
-                <widget class="QLabel" name="label_luminosite">
-                 <property name="text">
-                  <string>Luminosité</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
+             </widget>
+             <widget class="QWidget" name="tab_3">
+              <attribute name="title">
+               <string>Luminosité</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
                 <widget class="QChartView" name="chartView_luminosite"/>
                </item>
               </layout>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,0">
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_11">
-               <item>
-                <widget class="QLabel" name="label_pression">
-                 <property name="text">
-                  <string>Pression atmosphèrique</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
+             </widget>
+             <widget class="QWidget" name="tab_4">
+              <attribute name="title">
+               <string>Pression</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_12">
                <item>
                 <widget class="QChartView" name="chartView_pression"/>
                </item>
               </layout>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_12">
-               <item>
-                <widget class="QLabel" name="label_poids">
-                 <property name="text">
-                  <string>Poids</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
+             </widget>
+             <widget class="QWidget" name="tab_5">
+              <attribute name="title">
+               <string>Poids</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_13">
                <item>
                 <widget class="QChartView" name="chartView_poids"/>
                </item>
               </layout>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_10">
-               <item>
-                <widget class="QLabel" name="label_activite">
-                 <property name="text">
-                  <string>Activité</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
+             </widget>
+             <widget class="QWidget" name="tab_6">
+              <attribute name="title">
+               <string>Activité</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_14">
                <item>
                 <widget class="QChartView" name="chartView_activite"/>
                </item>
               </layout>
-             </item>
-            </layout>
+             </widget>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -509,7 +500,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QTableView" name="tableView_alertes"/>
+            <widget class="QTableWidget" name="tableWidget_alertes"/>
            </item>
           </layout>
          </widget>

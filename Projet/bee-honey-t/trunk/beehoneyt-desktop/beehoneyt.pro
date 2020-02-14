@@ -35,7 +35,8 @@ HEADERS += \
         ihm.h \
     communication.h \
     nouvelleruche.h \
-    reglageruche.h
+    reglageruche.h \
+    parametres_communications.h
 
 FORMS += \
         ihm.ui \
