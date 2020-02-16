@@ -5,6 +5,20 @@
 #include <QtWidgets>
 #include <QtCharts>
 
+/**
+ * @enum PagesIHM
+ * @brief Définit les numéros de page de l'IHM
+ *
+ */
+enum PagesIHM
+{
+    PAGE_ACCUEIL,       //!< Page principale
+    PAGE_MESURES,       //!< Page
+    PAGE_TABLEAUX,      //!< Page
+    PAGE_GRAPHIQUES,    //!< Page des graphiques
+    PAGE_ALERTES        //!< Page des dernières alertes
+};
+
 class IHMNouvelleRuche;
 class IHMReglageRuche;
 

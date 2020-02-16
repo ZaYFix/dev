@@ -1,11 +1,9 @@
-#include <QMessageBox>
-
-#include <QDebug>
-
 #include "ihm.h"
 #include "ui_ihm.h"
 #include "nouvelleruche.h"
 #include "reglageruche.h"
+#include <QMessageBox>
+#include <QDebug>
 
 /**
  * @file    Ihm.cpp
@@ -57,7 +55,7 @@ Ihm::~Ihm()
  */
 void Ihm::on_pushButton_ruches_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(PagesIHM::PAGE_ACCUEIL);
     ui->pushButton_ruches->setIcon(QIcon(":/ruches.png"));
 
     ui->pushButton_graphiques->setIcon(QIcon(":/graphiques_gris.png"));
@@ -70,7 +68,7 @@ void Ihm::on_pushButton_ruches_clicked()
  */
 void Ihm::on_pushButton_mesures_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(PagesIHM::PAGE_MESURES);
 
     ui->pushButton_ruches->setIcon(QIcon(":/ruches_gris.png"));
     ui->pushButton_graphiques->setIcon(QIcon(":/graphiques_gris.png"));
@@ -83,7 +81,7 @@ void Ihm::on_pushButton_mesures_clicked()
  */
 void Ihm::on_pushButton_tableaux_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(PagesIHM::PAGE_TABLEAUX);
 
     ui->pushButton_ruches->setIcon(QIcon(":/ruches_gris.png"));
     ui->pushButton_graphiques->setIcon(QIcon(":/graphiques_gris.png"));
@@ -96,7 +94,7 @@ void Ihm::on_pushButton_tableaux_clicked()
  */
 void Ihm::on_pushButton_graphiques_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(PagesIHM::PAGE_GRAPHIQUES);
     ui->pushButton_graphiques->setIcon(QIcon(":/graphiques.png"));
 
     ui->pushButton_ruches->setIcon(QIcon(":/ruches_gris.png"));
@@ -109,7 +107,7 @@ void Ihm::on_pushButton_graphiques_clicked()
  */
 void Ihm::on_pushButton_alertes_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidget->setCurrentIndex(PagesIHM::PAGE_ALERTES);
     ui->pushButton_alertes->setIcon(QIcon(":/alertes.png"));
 
     ui->pushButton_ruches->setIcon(QIcon(":/ruches_gris.png"));
@@ -141,13 +139,16 @@ void Ihm::on_pushButton_reglage_clicked()
 void Ihm::on_pushButton_supprimer_ruche_clicked()
 {
     QMessageBox::StandardButton reponse;
-    reponse = QMessageBox::question(
-        this,"","Êtes-vous sûr de vouloir supprimer la ruche ?",QMessageBox::No|QMessageBox::Yes); // Ajouter nom de la ruche
+    reponse = QMessageBox::question(this,"","Êtes-vous sûr de vouloir supprimer la ruche ?",QMessageBox::Yes|QMessageBox::No); // Ajouter nom de la ruche
 
     if(reponse == QMessageBox::Yes)
-        qDebug() << "Oui";
+    {
+        qDebug() << Q_FUNC_INFO << "reponse : Oui";
+    }
     else
-        qDebug() << "Non";
+    {
+        qDebug() << Q_FUNC_INFO << "reponse : Non";
+    }
 }
 
 /**
@@ -291,13 +292,13 @@ void Ihm::changerAbscisseGraphiques()
     switch(ui->comboBox_reglages_graphiques->currentIndex())
     {
         case 0:
-            qDebug() << "1j";
+            qDebug() << Q_FUNC_INFO << "reponse : 1j";
             break;
         case 1:
-            qDebug() << "7j";
+            qDebug() << Q_FUNC_INFO << "reponse : 7j";
             break;
         default:
-            qDebug() << ui->comboBox_reglages_graphiques->currentIndex();
+            qDebug() << Q_FUNC_INFO << ui->comboBox_reglages_graphiques->currentIndex();
      }
 }
 

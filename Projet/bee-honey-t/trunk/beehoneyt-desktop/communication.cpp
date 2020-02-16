@@ -1,6 +1,7 @@
 #include "communication.h"
+#include <QDebug>
 
-Communication::Communication()
+Communication::Communication(QObject *parent) : QObject(parent)
 {
 
 }
