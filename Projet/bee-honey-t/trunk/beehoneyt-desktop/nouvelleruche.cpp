@@ -1,7 +1,8 @@
 #include "nouvelleruche.h"
 #include "ui_nouvelleruche.h"
+#include <QDebug>
 
-nouvelleRuche::nouvelleRuche(QWidget *parent) :
+IHMNouvelleRuche::IHMNouvelleRuche(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::nouvelleRuche)
 {
@@ -9,7 +10,7 @@ nouvelleRuche::nouvelleRuche(QWidget *parent) :
     ui->dateEdit_mise_en_service->setDate(QDate::currentDate());
 }
 
-nouvelleRuche::~nouvelleRuche()
+IHMNouvelleRuche::~IHMNouvelleRuche()
 {
     delete ui;
 }

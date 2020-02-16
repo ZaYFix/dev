@@ -8,26 +8,25 @@
 #include "reglageruche.h"
 
 /**
- * @file    ihm.cpp
- * @brief   Déclaration de la classe ihm
+ * @file    Ihm.cpp
+ * @brief   Déclaration de la classe Ihm
  * @author  ACKERMANN Théo
  * @version 0.1
  */
 
 /**
- * @brief Constructeur de la classe ihm
- * @fn ihm::ihm
+ * @brief Constructeur de la classe Ihm
+ * @fn Ihm::Ihm
  * @param parent
  */
-ihm::ihm(QWidget *parent) :QMainWindow(parent),ui(new Ui::ihm),nouvelleRucheIHM(0),reglageRucheIHM(0)
+Ihm::Ihm(QWidget *parent) :QMainWindow(parent),ui(new Ui::ihm),ihmNouvelleRuche(0),ihmReglageRuche(0)
 {
     ui->setupUi(this);
 
-    ui->pushButton_graphiques->setIcon(QIcon(":/graphiques_gris.png"));
-    ui->pushButton_alertes->setIcon(QIcon(":/alertes_gris.png"));
+    chargerIconesBoutons();
 
-    nouvelleRucheIHM = new nouvelleRuche(this);
-    reglageRucheIHM = new reglageRuche(this);
+    ihmNouvelleRuche = new IHMNouvelleRuche(this);
+    ihmReglageRuche = new IHMReglageRuche(this);
 
     ui->comboBox_liste_ruches->addItem("Nom de la ruche");
 
@@ -42,21 +41,21 @@ ihm::ihm(QWidget *parent) :QMainWindow(parent),ui(new Ui::ihm),nouvelleRucheIHM(
 }
 
 /**
- * @brief Destructeur de la classe ihm
- * @fn ihm::~ihm
+ * @brief Destructeur de la classe Ihm
+ * @fn Ihm::~Ihm
  */
-ihm::~ihm()
+Ihm::~Ihm()
 {
-    delete nouvelleRucheIHM;
-    delete reglageRucheIHM;
+    delete ihmNouvelleRuche;
+    delete ihmReglageRuche;
     delete ui;
 }
 
 /**
  * @brief Bouton/icone qui permet d'aller sur l'onglet de la ruche
- * @fn ihm::on_pushButton_ruches_clicked
+ * @fn Ihm::on_pushButton_ruches_clicked
  */
-void ihm::on_pushButton_ruches_clicked()
+void Ihm::on_pushButton_ruches_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->pushButton_ruches->setIcon(QIcon(":/ruches.png"));
@@ -69,7 +68,7 @@ void ihm::on_pushButton_ruches_clicked()
  * @brief
  *
  */
-void ihm::on_pushButton_mesures_clicked()
+void Ihm::on_pushButton_mesures_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 
@@ -82,7 +81,7 @@ void ihm::on_pushButton_mesures_clicked()
  * @brief
  *
  */
-void ihm::on_pushButton_tableaux_clicked()
+void Ihm::on_pushButton_tableaux_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 
@@ -95,7 +94,7 @@ void ihm::on_pushButton_tableaux_clicked()
  * @brief Bouton/icone qui permet d'aller sur l'onglet des graphiques
  *
  */
-void ihm::on_pushButton_graphiques_clicked()
+void Ihm::on_pushButton_graphiques_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
     ui->pushButton_graphiques->setIcon(QIcon(":/graphiques.png"));
@@ -108,7 +107,7 @@ void ihm::on_pushButton_graphiques_clicked()
  * @brief Bouton/icone qui permet d'aller sur l'onglet des alertes
  *
  */
-void ihm::on_pushButton_alertes_clicked()
+void Ihm::on_pushButton_alertes_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
     ui->pushButton_alertes->setIcon(QIcon(":/alertes.png"));
@@ -121,25 +120,25 @@ void ihm::on_pushButton_alertes_clicked()
  * @brief Bouton qui permet d'ouvrir la fenêtre de création du nouvelle ruche
  *
  */
-void ihm::on_pushButton_nouvelle_ruche_clicked()
+void Ihm::on_pushButton_nouvelle_ruche_clicked()
 {
-    nouvelleRucheIHM->exec();
+    ihmNouvelleRuche->exec();
 }
 
 /**
  * @brief Bouton qui permet d'ouvrir la fenêtre des réglages de la ruche
  *
  */
-void ihm::on_pushButton_reglage_clicked()
+void Ihm::on_pushButton_reglage_clicked()
 {
-    reglageRucheIHM->exec();
+    ihmReglageRuche->exec();
 }
 
 /**
  * @brief Bouton qui permet de supprimer la ruche selectionné
  *
  */
-void ihm::on_pushButton_supprimer_ruche_clicked()
+void Ihm::on_pushButton_supprimer_ruche_clicked()
 {
     QMessageBox::StandardButton reponse;
     reponse = QMessageBox::question(
@@ -153,9 +152,9 @@ void ihm::on_pushButton_supprimer_ruche_clicked()
 
 /**
  * @brief Méthode qui initialise les graphiques
- * @fn ihm::demarrerGraphiques
+ * @fn Ihm::demarrerGraphiques
  */
-void ihm::demarrerGraphiques()
+void Ihm::demarrerGraphiques()
 {
     graphiqueTemperature();
     graphiqueHumidite();
@@ -167,9 +166,9 @@ void ihm::demarrerGraphiques()
 
 /**
  * @brief Méthode qui initialise le graphique de température
- * @fn ihm::graphiqueTemperature
+ * @fn Ihm::graphiqueTemperature
  */
-void ihm::graphiqueTemperature()
+void Ihm::graphiqueTemperature()
 {
     QLineSeries *temperatureInterieure = new QLineSeries();
     temperatureInterieure->setName("Intérieure");
@@ -217,9 +216,9 @@ void ihm::graphiqueTemperature()
 
 /**
  * @brief Méthode qui initialise le graphique d'humidité
- * @fn ihm::graphiqueHumidite
+ * @fn Ihm::graphiqueHumidite
  */
-void ihm::graphiqueHumidite()
+void Ihm::graphiqueHumidite()
 {
     QLineSeries *humidite = new QLineSeries();
     // Valeurs de test
@@ -253,7 +252,7 @@ void ihm::graphiqueHumidite()
     //humidite->attachAxis(axisX);
 }
 
-void ihm::graphiqueLuminosite()
+void Ihm::graphiqueLuminosite()
 {
     QLineSeries *luminosite = new QLineSeries();
     // Valeurs de test
@@ -287,7 +286,7 @@ void ihm::graphiqueLuminosite()
     //luminosite->attachAxis(axisX);
 }
 
-void ihm::changerAbscisseGraphiques()
+void Ihm::changerAbscisseGraphiques()
 {
     switch(ui->comboBox_reglages_graphiques->currentIndex())
     {
@@ -308,7 +307,7 @@ void ihm::changerAbscisseGraphiques()
  * @param x
  * @param y
  */
-void ihm::setValeurGraphique(QLineSeries *serie, int x, int y)
+void Ihm::setValeurGraphique(QLineSeries *serie, int x, int y)
 {
     serie->append(x,y);
 }
@@ -317,7 +316,7 @@ void ihm::setValeurGraphique(QLineSeries *serie, int x, int y)
  * @brief
  *
  */
-void ihm::demarrerGraphiquesBatons()
+void Ihm::demarrerGraphiquesBatons()
 {
     graphiqueBatonTemperatureInterieure();
     graphiqueBatonTemperatureExterieure();
@@ -327,7 +326,7 @@ void ihm::demarrerGraphiquesBatons()
  * @brief
  *
  */
-void ihm::graphiqueBatonTemperatureInterieure()
+void Ihm::graphiqueBatonTemperatureInterieure()
 {
     QBarSet *set0 = new QBarSet("Température Intérieure");
     *set0 << 37;
@@ -352,7 +351,7 @@ void ihm::graphiqueBatonTemperatureInterieure()
  * @brief
  *
  */
-void ihm::graphiqueBatonTemperatureExterieure()
+void Ihm::graphiqueBatonTemperatureExterieure()
 {
     QBarSet *set0 = new QBarSet("Température Extérieure");
     *set0 << 37;
@@ -376,7 +375,14 @@ void ihm::graphiqueBatonTemperatureExterieure()
  * @brief
  *
  */
-void ihm::demarrerTableauAlertes()
+void Ihm::demarrerTableauAlertes()
 {
 
+}
+
+void Ihm::chargerIconesBoutons()
+{
+    ui->pushButton_ruches->setIcon(QIcon(":/ruches.png"));
+    ui->pushButton_graphiques->setIcon(QIcon(":/graphiques_gris.png"));
+    ui->pushButton_alertes->setIcon(QIcon(":/alertes_gris.png"));
 }

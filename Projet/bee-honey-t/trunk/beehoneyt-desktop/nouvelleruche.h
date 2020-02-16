@@ -7,13 +7,13 @@ namespace Ui {
 class nouvelleRuche;
 }
 
-class nouvelleRuche : public QDialog
+class IHMNouvelleRuche : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit nouvelleRuche(QWidget *parent = nullptr);
-    ~nouvelleRuche();
+    explicit IHMNouvelleRuche(QWidget *parent = nullptr);
+    ~IHMNouvelleRuche();
 
 private:
     Ui::nouvelleRuche *ui;

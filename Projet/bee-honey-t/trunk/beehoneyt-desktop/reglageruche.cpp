@@ -1,14 +1,15 @@
 #include "reglageruche.h"
 #include "ui_reglageruche.h"
+#include <QDebug>
 
-reglageRuche::reglageRuche(QWidget *parent) :
+IHMReglageRuche::IHMReglageRuche(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::reglageRuche)
 {
     ui->setupUi(this);
 }
 
-reglageRuche::~reglageRuche()
+IHMReglageRuche::~IHMReglageRuche()
 {
     delete ui;
 }

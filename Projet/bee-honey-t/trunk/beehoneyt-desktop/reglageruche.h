@@ -7,13 +7,13 @@ namespace Ui {
 class reglageRuche;
 }
 
-class reglageRuche : public QDialog
+class IHMReglageRuche : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit reglageRuche(QWidget *parent = nullptr);
-    ~reglageRuche();
+    explicit IHMReglageRuche(QWidget *parent = nullptr);
+    ~IHMReglageRuche();
 
 private:
     Ui::reglageRuche *ui;

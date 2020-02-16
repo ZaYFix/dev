@@ -2,24 +2,23 @@
 #define IHM_H
 
 #include <QMainWindow>
-
 #include <QtWidgets>
 #include <QtCharts>
 
-class nouvelleRuche;
-class reglageRuche;
+class IHMNouvelleRuche;
+class IHMReglageRuche;
 
 namespace Ui {
 class ihm;
 }
 
-class ihm : public QMainWindow
+class Ihm : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit ihm(QWidget *parent = nullptr);
-    ~ihm();
+    explicit Ihm(QWidget *parent = nullptr);
+    ~Ihm();
 
     void demarrerGraphiques();
 
@@ -59,8 +58,10 @@ private slots:
 
 private:
     Ui::ihm *ui;
-    nouvelleRuche *nouvelleRucheIHM;
-    reglageRuche *reglageRucheIHM;
+    IHMNouvelleRuche *ihmNouvelleRuche;
+    IHMReglageRuche *ihmReglageRuche;
+
+    void chargerIconesBoutons();
 };
 
 #endif // IHM_H

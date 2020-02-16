@@ -1,6 +1,6 @@
 #include "communication.h"
 
-communication::communication()
+Communication::Communication()
 {
 
 }

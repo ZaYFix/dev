@@ -3,10 +3,10 @@
 
 #include "parametres_communications.h"
 
-class communication
+class Communication
 {
 public:
-    communication();
+    Communication();
 };
 
 #endif // COMMUNICATION_H
