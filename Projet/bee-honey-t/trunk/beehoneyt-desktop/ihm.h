@@ -45,12 +45,6 @@ public:
 
     void setValeurGraphique(QLineSeries *serie, int x, int y);
 
-    void demarrerGraphiquesBatons();
-    void graphiqueBatonTemperatureInterieure();
-    void graphiqueBatonTemperatureExterieure();
-
-    void demarrerTableauAlertes();
-
 private slots:
     void on_pushButton_ruches_clicked();
 

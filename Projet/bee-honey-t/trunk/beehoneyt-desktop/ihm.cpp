@@ -27,6 +27,8 @@ Ihm::Ihm(QWidget *parent) :QMainWindow(parent),ui(new Ui::ihm),ihmNouvelleRuche(
     ihmReglageRuche = new IHMReglageRuche(this);
 
     ui->comboBox_liste_ruches->addItem("Nom de la ruche");
+    ui->comboBox_donnees_affiche->addItem("Température");
+    ui->comboBox_donnees_affiche->addItem("Humidité");
 
     ui->comboBox_reglages_graphiques->addItem("1j");
     ui->comboBox_reglages_graphiques->addItem("7j");
@@ -34,8 +36,6 @@ Ihm::Ihm(QWidget *parent) :QMainWindow(parent),ui(new Ui::ihm),ihmNouvelleRuche(
     connect(ui->comboBox_reglages_graphiques, SIGNAL(currentIndexChanged(int)), SLOT(changerAbscisseGraphiques()));
 
     demarrerGraphiques();
-    demarrerGraphiquesBatons();
-    demarrerTableauAlertes();
 }
 
 /**
@@ -311,74 +311,6 @@ void Ihm::changerAbscisseGraphiques()
 void Ihm::setValeurGraphique(QLineSeries *serie, int x, int y)
 {
     serie->append(x,y);
-}
-
-/**
- * @brief
- *
- */
-void Ihm::demarrerGraphiquesBatons()
-{
-    graphiqueBatonTemperatureInterieure();
-    graphiqueBatonTemperatureExterieure();
-}
-
-/**
- * @brief
- *
- */
-void Ihm::graphiqueBatonTemperatureInterieure()
-{
-    QBarSet *set0 = new QBarSet("Température Intérieure");
-    *set0 << 37;
-
-    QBarSeries *series = new QBarSeries();
-    series->append(set0);
-
-    QChart *chart = new QChart();
-    chart->addSeries(series);
-    chart->setAnimationOptions(QChart::SeriesAnimations);
-
-    QValueAxis *axisY = new QValueAxis();
-    axisY->setRange(36,40);
-    axisY->setTickCount(10);
-    chart->addAxis(axisY, Qt::AlignLeft);
-    series->attachAxis(axisY);
-
-    ui->chartView_baton_temperature_interieure->setChart(chart);
-}
-
-/**
- * @brief
- *
- */
-void Ihm::graphiqueBatonTemperatureExterieure()
-{
-    QBarSet *set0 = new QBarSet("Température Extérieure");
-    *set0 << 37;
-
-    QBarSeries *series = new QBarSeries();
-    series->append(set0);
-
-    QChart *chart = new QChart();
-    chart->addSeries(series);
-    chart->setAnimationOptions(QChart::SeriesAnimations);
-
-    QValueAxis *axisY = new QValueAxis();
-    axisY->setRange(0,45);
-    chart->addAxis(axisY, Qt::AlignLeft);
-    series->attachAxis(axisY);
-
-    ui->chartView_baton_temperature_exterieure->setChart(chart);
-}
-
-/**
- * @brief
- *
- */
-void Ihm::demarrerTableauAlertes()
-{
-
 }
 
 void Ihm::chargerIconesBoutons()
